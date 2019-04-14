@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AmuroPeng</title>
-    <link>http://AmuroPeng.github.io/</link>
+    <link>https://AmuroPeng.github.io/</link>
     <description>Recent content on AmuroPeng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://AmuroPeng.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://AmuroPeng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
