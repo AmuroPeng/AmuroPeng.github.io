@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Other on Amuro Peng</title>
+    <link>http://www.amuro.top/other/</link>
+    <description>Recent content in Other on Amuro Peng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 03 Sep 2019 00:04:34 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.amuro.top/other/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo的搭建</title>
+      <link>http://www.amuro.top/other/hugo/</link>
+      <pubDate>Tue, 03 Sep 2019 00:04:34 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/other/hugo/</guid>
+      <description>hugo的搭建、使用、插件与技巧 搭建 参考文章 使用主题 插件 谷歌分析 不蒜子 设置默认模板 规划分类（_index.md的用处 以及其实跟文件夹是无关系</description>
+    </item>
+    
+  </channel>
+</rss>
