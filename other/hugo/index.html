@@ -2,18 +2,18 @@
 <html lang='en'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='hugo的搭建、使用、插件与技巧 搭建 参考文章 使用主题 插件 谷歌分析 不蒜子 初始化数量 Pv:13319922次 Uv:805087次 本文总阅读量48'>
+<meta name='description' content='在 Github Pages上搭建基于 Hugo的 Blog'>
 <meta name='theme-color' content='#ffcd00'>
 
-<meta property='og:title' content='Hugo的搭建 • Amuro Peng'>
-<meta property='og:description' content='hugo的搭建、使用、插件与技巧 搭建 参考文章 使用主题 插件 谷歌分析 不蒜子 初始化数量 Pv:13319922次 Uv:805087次 本文总阅读量48'>
+<meta property='og:title' content='Hugo的搭建与使用 • Amuro Peng'>
+<meta property='og:description' content='在 Github Pages上搭建基于 Hugo的 Blog'>
 <meta property='og:url' content='http://www.amuro.top/other/hugo/'>
 <meta property='og:site_name' content='Amuro Peng'>
-<meta property='og:type' content='article'><meta property='article:section' content='Other'><meta property='article:tag' content='hugo'><meta property='article:published_time' content='2019-09-03T00:04:34&#43;08:00'/><meta property='article:modified_time' content='2019-09-03T00:04:34&#43;08:00'/><meta name='twitter:card' content='summary'>
+<meta property='og:type' content='article'><meta property='og:image' content='http://www.amuro.top/media/Other/Hugo/Hugo_logo.png'><meta property='article:section' content='Other'><meta property='article:tag' content='Hugo'><meta property='article:tag' content='Blog'><meta property='article:published_time' content='2019-09-03T00:04:34&#43;08:00'/><meta property='article:modified_time' content='2019-09-03T00:04:34&#43;08:00'/><meta name='twitter:card' content='summary_large_image'><meta property='twitter:image' content='http://www.amuro.top/media/Other/Hugo/Hugo_logo.png'>
 
 <meta name="generator" content="Hugo 0.55.1" />
 
-  <title>Hugo的搭建 • Amuro Peng</title>
+  <title>Hugo的搭建与使用 • Amuro Peng</title>
   <link rel='canonical' href='http://www.amuro.top/other/hugo/'>
   
   
@@ -36,7 +36,7 @@ if (!doNotTrack) {
   
 
 </head>
-<body class='page type-Other has-sidebar'>
+<body class='page type-Other has-cover has-sidebar'>
 
   <div class='site'><div id='sidebar' class='sidebar'>
   <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
@@ -91,7 +91,9 @@ if (!doNotTrack) {
 
   <div class='container list-container'>
   <ul class='list taxonomy-cloud'><li>
-        <a href='/tags/hugo/' style='font-size:1em'>hugo</a>
+        <a href='/tags/blog/' style='font-size:1em'>Blog</a>
+      </li><li>
+        <a href='/tags/hugo/' style='font-size:1em'>Hugo</a>
       </li></ul>
 </div>
 
@@ -142,7 +144,7 @@ if (!doNotTrack) {
     <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
   <section class='widget widget-breadcrumbs sep-after'>
     <nav id='breadcrumbs'>
-      <ol><li><a href='/'>Home</a></li><li><a href='/other/'>Other</a></li><li><span>Hugo的搭建</span></li></ol>
+      <ol><li><a href='/'>Home</a></li><li><a href='/other/'>Other</a></li><li><span>Hugo的搭建与使用</span></li></ol>
     </nav>
   </section></div>
       </div>
@@ -179,8 +181,10 @@ if (!doNotTrack) {
   <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>Hugo的搭建</h1>
+      <h1 class='title'>Hugo的搭建与使用</h1>
       
+<p class='desc'>在 Github Pages上搭建基于 Hugo的 Blog</p>
+
 
     </div>
     <div class='entry-meta'>
@@ -204,7 +208,7 @@ if (!doNotTrack) {
   <polyline points="12 6 12 12 15 15"/>
   
 </svg>
-One min read
+7 mins read
 </span>
 
 
@@ -227,46 +231,206 @@ One min read
   </div>
 </header>
 
-  
+  <div class='entry-cover'>
+  <figure class='container cover-normal'>
+    <img src='/media/Other/Hugo/Hugo_logo.png'/>
+    
+  </figure>
+</div>
   
 
   <div class='container entry-content'>
   
 
-<h1 id="hugo的搭建-使用-插件与技巧">hugo的搭建、使用、插件与技巧</h1>
+<p><a href="https://gohugo.io/" target="_blank">Hugo</a>是一个用Go语言编写的静态网站生成器，是一个非常适合搭建静态博客的工具。相似的生成器还有<a href="https://hexo.io/" target="_blank">Hexo</a>，Github自家生成器<a href="https://jekyllcn.com/" target="_blank">Jekyll</a>等。相比于其他生成器，我最终选择Hugo是由于它搭建方便简单，并且页面加载速度更快更稳定👍👍👍。</p>
 
-<p>搭建</p>
+<p>选择使用<a href="https://pages.github.com/" target="_blank">Github Pages</a>保存博客文件是因为前几天自己租的服务器到期，平时使用时经常因为跑代码需要重启服务器或者调整配置，导致博客经常无法访问。再加上自己几乎很少有使用动态数据的情况，于是最后决定将博客这部分与服务器分开，在免费的Github Pages上搭建我的小博客😊。</p>
 
-<p>参考文章</p>
+<h1 id="搭建">搭建</h1>
 
-<p>使用主题</p>
+<p>在为搭建做准备时我参考了
+<a href="https://gdzhu8023.github.io/post/buildblog/" target="_blank">几</a>
+<a href="https://blog.olowolo.com/post/hugo-quick-start/" target="_blank">篇</a>
+<a href="https://blog.coderzh.com/2015/08/29/hugo/" target="_blank">文</a>
+<a href="https://www.jianshu.com/p/58c644011f7d" target="_blank">章</a>
+，按照思路软安装了hugo.exe，添加环境变量后即可马上使用。</p>
 
-<p>插件
-谷歌分析
-不蒜子
-初始化数量
-Pv:13319922次   Uv:805087次 本文总阅读量4815665次
-<a href="https://feathericons.com/" target="_blank">https://feathericons.com/</a></p>
+<h2 id="使用主题">使用主题</h2>
 
-<p>设置默认模板
-规划分类（_index.md的用处 以及其实跟文件夹是无关系的，父子层只靠menu和parent标签决定）</p>
+<p>Hugo有很多官方或第三方的<a href="https://themes.gohugo.io/" target="_blank">主题</a>可以一键下载安装，并且所有主题都可以随时更换完全兼容（当然如果重写的话需要在自己的layout中更改，优先度高可以覆盖）。我选择的是<a href="https://themes.gohugo.io/minimo/" target="_blank">Minimo</a>主题，简约的风格我比较喜欢，并且搜索、词云等功能也被开发的比较完善，<a href="https://minimo.netlify.com/" target="_blank">官方文档</a>写的也很清晰容易上手。</p>
 
-<p>social
-图标</p>
+<h2 id="插件">插件</h2>
 
-<p>使用</p>
+<h3 id="谷歌分析">谷歌分析</h3>
 
-<p>流程
-server预览</p>
+<p><a href="https://marketingplatform.google.com/about/analytics/" target="_blank">谷歌分析</a>是由Google所提供的个人免费的网站流量统计服务，在博客运行期间可以通过网页或者移动端使用谷歌分析Google Analytics
+来查看实时或一段时间内的流量等，并有很多看着很高大上的数据分析功能。</p>
 
-<p>新建文章</p>
+<p>使用时只需要申请建立一个个人免费项目，获得独一无二的追踪编号UA-XXXXXX-X，并将它添加在config.toml中。</p>
 
-<p>media文件放在static</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">googleAnalytics</span> = <span style="color:#e6db74">&#34;UA-XXXXXX-X&#34;</span></code></pre></div>
 
-<p>捣腾方法（写批处理）</p>
+<p>然后在重写的\layouts\partials\header.html下添加代码</p>
 
-<p>技巧
-emoji</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">&lt;!<span style="color:#f92672">--</span> <span style="color:#a6e22e">添加谷歌分析插件Google</span> <span style="color:#a6e22e">Analytics</span> <span style="color:#f92672">--</span>&gt;
+{{ <span style="color:#a6e22e">template</span> <span style="color:#e6db74">&#34;_internal/google_analytics.html&#34;</span> . }}</code></pre></div>
+
+<p>即可放心食用。</p>
+
+<p>完整详细清晰的步骤在<a href="http://cloudywithachanceofdevops.com/posts/2018/05/17/setting-up-google-analytics-on-hugo/" target="_blank">这里</a>，这个大佬把所有的情况全部列举了。</p>
+
+<h3 id="不蒜子">不蒜子</h3>
+
+<p><a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank">不蒜子</a>是一个静态页面计数服务，可以将页面的访问次数显示在页面之上。配置很简单，但是如果想更美观的话需要重写自己的主题文件，包括图标、框架等。前端小白表示需要善用搜索功能，对着主题提供的example_sites和官方文档进行重写。</p>
+
+<p>总的来说分为<strong>两步</strong>，<strong>第一步</strong>需要在一个所有网页都会加载的html部分，加入不蒜子插件的源网址，我是在header.html中加载的（虽然是在header里添加，但是不会显示出来）。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">&lt;!<span style="color:#f92672">--</span> <span style="color:#a6e22e">插件</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">不蒜子</span><span style="color:#f92672">-</span><span style="color:#a6e22e">展示统计信息</span> <span style="color:#f92672">--</span>&gt;
+&lt;<span style="color:#a6e22e">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&#34;</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">script</span>&gt;</code></pre></div>
+
+<p><strong>第二步</strong>即是在需要显示的位置单独添加需要的不同部件。</p>
+
+<p>可以通过不同的id选择三种计数：</p>
+
+<ul>
+<li>显示站点总访问量Page View(site_pv)</li>
+<li>显示站点总访客数User View(site_uv)</li>
+<li>显示单页面访问量Page View(page_pv)</li>
+</ul>
+
+<h4 id="站点数据统计">站点数据统计</h4>
+
+<p>站点总访问量和总访客数的显示，我放在了footer.html中</p>
+
+<figure>
+    <img src="/media/Other/Hugo/screenshot_busuanzi_site.png"
+         alt="站点数据统计示意图"/> 
+</figure>
+
+<p>踩坑：原则上并不需要初始化计数（清零），如果出现下面这个😵情况:</p>
+
+<blockquote>
+<p>Pv:13319922次   Uv:805087次 本文总阅读量4815665次</p>
+</blockquote>
+
+<p><a href="https://blog.skk.moe/post/busuanzi-offset/" target="_blank">可能</a>是由于在使用localhost调试，真正部署到站点上就没事啦😊</p>
+
+<h4 id="页面数据统计">页面数据统计</h4>
+
+<p>出于美观的考虑我不得不放弃之前footer那样贴补丁的显示方法，而选择在本身的主题设计上添加数据统计一向，来显示单篇页面访问量。实现起来很简单，原始搜索定位同div的其他item，将几层嵌套的模板进行添加和替换即可。
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">/</span><span style="color:#a6e22e">themes</span><span style="color:#f92672">/</span><span style="color:#a6e22e">minimo</span><span style="color:#f92672">/</span><span style="color:#a6e22e">layouts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">partials</span><span style="color:#f92672">/</span><span style="color:#a6e22e">entry</span><span style="color:#f92672">/</span><span style="color:#a6e22e">meta</span>.<span style="color:#a6e22e">html</span>
+  {{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;entry/meta/posted-on&#34;</span> . }}
+  {{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;entry/meta/author&#34;</span> . }}
+  {{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;entry/meta/reading-time&#34;</span> . }}
+  <span style="color:#960050;background-color:#1e0010">👉</span>{{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;entry/meta/PageView&#34;</span> . }}<span style="color:#960050;background-color:#1e0010">👈</span></code></pre></div></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">/</span><span style="color:#a6e22e">layouts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">partials</span><span style="color:#f92672">/</span><span style="color:#a6e22e">entry</span><span style="color:#f92672">/</span><span style="color:#a6e22e">meta</span><span style="color:#f92672">/</span><span style="color:#a6e22e">PageView</span>.<span style="color:#a6e22e">html</span>
+  {{ <span style="color:#66d9ef">if</span> .<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">settings</span>.<span style="color:#a6e22e">showPageView</span> }}
+    &lt;<span style="color:#a6e22e">span</span> <span style="color:#a6e22e">class</span>=<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">PageView</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;
+  {{<span style="color:#f92672">-</span> <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;svg/icons&#34;</span> <span style="color:#e6db74">&#34;PageView&#34;</span> <span style="color:#f92672">-</span>}}
+      &lt;<span style="color:#a6e22e">span</span> <span style="color:#a6e22e">id</span>=<span style="color:#e6db74">&#34;busuanzi_container_page_pv&#34;</span>&gt;
+          <span style="color:#a6e22e">View</span> &lt;<span style="color:#a6e22e">span</span> <span style="color:#a6e22e">id</span>=<span style="color:#e6db74">&#34;busuanzi_value_page_pv&#34;</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">span</span>&gt;<span style="color:#a6e22e">times</span>
+      &lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">span</span>&gt;
+    &lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">span</span>&gt;
+{{ <span style="color:#a6e22e">end</span> }}</code></pre></div>
+
+<p>实现后的样子像这样：
+<figure>
+    <img src="/media/Other/Hugo/screenshot_busuanzi_page.png"
+         alt="页面数据统计示意图"/>
+</figure></p>
+
+<p>当然同风格的icon资源需要<a href="https://feathericons.com/" target="_blank">在网上找一些</a>，找到后将size和color适当调整，把svg代码复制到&rdquo;layouts\partials\svg\icons.html&rdquo;中，模仿着之前的逻辑加个判断即可。</p>
+
+<p>到此为止所有的搭建告一段落，不出意外以上的内容不需要再进行调整啦🆒</p>
+
+<h1 id="hugo的日常使用">Hugo的日常使用</h1>
+
+<ul>
+<li>中文显示</li>
+</ul>
+
+<p>为了博客对中文的显示更加友好，在第一步我在config.toml中加入了一行命令来适配：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">hasCJKLanguage</span> = <span style="color:#66d9ef">true</span></code></pre></div></p>
+
+<ul>
+<li>设置文章默认模板</li>
+</ul>
+
+<p>在根目录archetypes文件夹中添加default.md文件，设置一些信息等重复的内容，比如作者名字等等。</p>
+
+<h2 id="新建文章">新建文章</h2>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">hugo</span> <span style="color:#a6e22e">new</span> <span style="color:#a6e22e">new_category</span><span style="color:#f92672">/</span><span style="color:#a6e22e">_index</span>.<span style="color:#a6e22e">md</span>
+<span style="color:#960050;background-color:#1e0010">👆</span><span style="color:#a6e22e">可在_index中加入父关系和新分类的介绍文字</span><span style="color:#960050;background-color:#1e0010">。（</span><span style="color:#a6e22e">博客规范</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">可以不添加</span><span style="color:#960050;background-color:#1e0010">）</span>
+<span style="color:#a6e22e">hugo</span> <span style="color:#a6e22e">new</span> <span style="color:#a6e22e">new_category</span><span style="color:#f92672">/</span><span style="color:#a6e22e">new_blog</span>.<span style="color:#a6e22e">md</span>
+<span style="color:#960050;background-color:#1e0010">👆</span><span style="color:#a6e22e">正文</span></code></pre></div>
+
+<p><em>_index.md</em> 的作用：定义与menu的关系，创建新分类（具体分类其实跟文件夹是妹有关系的，父子层只靠parent标签决定，归属分类只靠menu决定）</p>
+
+<h2 id="保存生成上传">保存生成上传</h2>
+
+<p>（待完善）由于每次更新博客需要在源程序中使用hugo命令，之后将自动生成的public文件上传到Git Pages上。而程序和博客两个文件夹需要分开在GitHub备份，所以熟练之后可以写一个shell脚本进行更新（大概妹太大必要）</p>
+
+<h2 id="添加图片">添加图片</h2>
+
+<p>我将图片和视频放在media文件夹中，在Hugo的设定里，只需要把文件放在根目录中static文件夹中就可以在博客内容中引用到。引用方法：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">{<span style="color:#a6e22e">去掉</span>{<span style="color:#f92672">%</span> <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;/media/example.png&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;example&#34;</span> 
+<span style="color:#a6e22e">title</span>=<span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">link</span>=<span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">attr</span>=<span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">attrlink</span>=<span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">%</span>}}</code></pre></div></p>
+
+<p>关于添加图片网上居然有很多版本，而我在实际过程中发现都不能用，踩了一些坑之后发现有的地方要注意 ：</p>
+
+<ul>
+<li>属性只能用<strong>figure</strong>，不能用img（至少我这边是这样）</li>
+<li>src位置必须是右上到左下的正斜杠“/”，不能使用反斜杠“\”
+必须使用%%作为模板替换文本，不能使用&lt;&gt;</li>
+</ul>
+
+<h2 id="添加高亮代码">添加高亮代码</h2>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">{{<span style="color:#a6e22e">去掉</span>&lt; <span style="color:#a6e22e">highlight</span> <span style="color:#66d9ef">go</span>&gt;}}
+<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">code</span><span style="color:#f92672">...</span>
+{{<span style="color:#a6e22e">去掉</span>&lt; <span style="color:#f92672">/</span> <span style="color:#a6e22e">highlight</span> &gt;}}</code></pre></div>
+
+<h1 id="预览">预览</h1>
+
+<p>在根目录输入指令：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">hugo</span> <span style="color:#a6e22e">server</span></code></pre></div></p>
+
+<p>模板渲染成功之后会提示：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">Web</span> <span style="color:#a6e22e">Server</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">available</span> <span style="color:#a6e22e">at</span> <span style="color:#a6e22e">http</span>:<span style="color:#f92672">//</span><span style="color:#a6e22e">localhost</span>:<span style="color:#ae81ff">1313</span><span style="color:#f92672">/</span> (<span style="color:#a6e22e">bind</span> <span style="color:#a6e22e">address</span> <span style="color:#ae81ff">127.0.0.1</span>)</code></pre></div>
+即可在本地localhost调试页面布局和内容，完全不需要markdown预览插件的辅助。</p>
+
+<h2 id="隐藏关卡-social图标的添加">隐藏关卡：Social图标的添加</h2>
+
+<p>大多数国外制作的主题，在社交选项中有大部分主流<del>被墙</del>链接可以选择，但是对于国内的一些社交网站没有跳转的途径。比如我想在社交栏中加入知乎的地址（如下图），需要在<strong>主题、插件、图标</strong>位置加入自定义的信息。
+<figure>
+    <img src="/media/Other/Hugo/screenshot_social_zhihu.png"
+         alt="页面数据统计示意图"/>
+</figure></p>
+
+<ul>
+<li><strong>主题</strong>：在themes\minimo\data\theme.toml中加入知乎的主页链接前缀
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">[<span style="color:#a6e22e">social</span>.<span style="color:#a6e22e">base</span>]
+<span style="color:#a6e22e">zhihu</span> = <span style="color:#e6db74">&#34;https://www.zhihu.com/people/&#34;</span></code></pre></div></li>
+<li><strong>插件</strong>：在data\config\default\widgets.toml中加入知乎的主页链接前缀
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">[<span style="color:#a6e22e">social_menu</span>]
+<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#a6e22e">platforms</span> = [<span style="color:#e6db74">&#34;github&#34;</span>,<span style="color:#e6db74">&#34;twitter&#34;</span>,<span style="color:#e6db74">&#34;instagram&#34;</span>,<span style="color:#e6db74">&#34;email&#34;</span>,<span style="color:#e6db74">&#34;codepen&#34;</span>,<span style="color:#e6db74">&#34;gitlab&#34;</span>,<span style="color:#e6db74">&#34;linkedin&#34;</span>,<span style="color:#e6db74">&#34;telegram&#34;</span>,<span style="color:#e6db74">&#34;google_scholar&#34;</span>,<span style="color:#e6db74">&#34;youtube&#34;</span>,<span style="color:#e6db74">&#34;zhihu&#34;</span>,<span style="color:#e6db74">&#34;facebook&#34;</span>]
+<span style="color:#f92672">//</span> <span style="color:#a6e22e">Hugo会根据这里的排列顺序逐个显示</span>(<span style="color:#a6e22e">由于自带Facebook的图标长得太奇怪我把它扔到了最后</span>)</code></pre></div></li>
+<li><strong>图标</strong>：在layouts\partials\svg\icons.html中加入知乎logo的矢量图，在一些矢量图网站中搜索相应的svg图片，适当更改size和color后将svg信息按照逻辑加入到html文件中即可（和之前写到的页面数据统计功能中添加图标方法一样）
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">[<span style="color:#a6e22e">social</span>.<span style="color:#a6e22e">base</span>]
+{{ <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">eq</span> <span style="color:#e6db74">&#34;zhihu&#34;</span> . }}
+  &lt;<span style="color:#a6e22e">svg</span> <span style="color:#a6e22e">t</span>=<span style="color:#e6db74">&#34;1567847682896&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;icon&#34;</span> <span style="color:#a6e22e">viewBox</span>=<span style="color:#e6db74">&#34;0 0 1077 1024&#34;</span> <span style="color:#a6e22e">version</span>=<span style="color:#e6db74">&#34;1.1&#34;</span> <span style="color:#a6e22e">xmlns</span>=<span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#a6e22e">p</span><span style="color:#f92672">-</span><span style="color:#a6e22e">id</span>=<span style="color:#e6db74">&#34;1129&#34;</span> <span style="color:#a6e22e">width</span>=<span style="color:#e6db74">&#34;23&#34;</span> <span style="color:#a6e22e">height</span>=<span style="color:#e6db74">&#34;23&#34;</span>&gt;&lt;<span style="color:#a6e22e">path</span> <span style="color:#a6e22e">d</span>=<span style="color:#e6db74">&#34;M313.825419 708.611652l22.527739-17.461693c7.060129-5.4972 14.012469-11.102187 21.126492-16.707175l4.85047-3.503117c2.155765 2.047976 4.203741 3.772588 5.982247 5.76667 18.539575 20.587551 37.294726 41.01342 55.56483 61.870442 21.665433 24.737398 42.791926 49.959843 64.349571 74.751134 7.545176 8.623058 12.395646 18.431787 15.46761 29.264503 3.01807 10.778823 4.419317 21.827116 4.742682 32.983197a298.788961 298.788961 0 0 1-9.916517 80.625593c-0.269471 1.023988-0.862306 1.940188-1.616823 3.503117-1.778506-1.8324-3.341435-3.233647-4.634894-4.796576L422.422056 870.94072l-110.482931-132.902883c-1.616823-2.047976-2.964176-4.473211-5.389411-5.551093-2.155765 0.862306-1.724612 2.7486-2.317447 4.149847-0.485047 1.293459-0.754518 2.640812-1.077882 3.93427-8.730846 31.743632-19.401881 62.786641-32.49815 92.967344a528.108411 528.108411 0 0 1-66.397547 114.686672c-2.856388 3.610906-5.874458 7.114023-8.676953 10.778823-16.707175 21.395963-38.588185 35.677903-63.595053 45.324949a209.486416 209.486416 0 0 1-123.255836 9.593152c-2.802494-0.592835-5.551094-1.616823-8.730846-2.533023 1.509035-3.179753 4.042058-4.419317 6.036141-5.982247 23.443939-18.647363 45.809996-38.480397 66.8287-59.714677a622.207532 622.207532 0 0 0 116.734648-160.981715c24.521821-49.151431 41.821832-100.781991 51.63056-154.837786 3.125859-17.084434 5.227729-34.33055 7.706858-51.576666 0.431153-3.179753 0.431153-6.467294 0.646729-9.970411-2.047976-0.323365-3.610906-0.700623-5.173834-0.808411-2.425235-0.107788-4.85047 0-7.3296 0l-209.54031-0.053895c-3.179753 0-6.467294 0.646729-9.700941-0.916199 0.107788-1.401247 0-2.802494 0.269471-4.095953 3.233647-14.928669 7.275705-29.587868 14.012469-43.276973 3.125859-6.305611 6.898446-12.341752 10.778823-18.21621a41.28289 41.28289 0 0 1 11.53334-11.371658 30.288491 30.288491 0 0 1 17.569481-5.76667h175.263655c3.233647 0 6.467294 0.377259 9.916516-0.646729 0.323365-1.347353 0.754518-2.640812 0.808412-3.93427 0.323365-4.042058 0.646729-8.084117 0.754518-12.18007 0.700623-28.024939 1.509035-55.995983 2.10187-83.967027 1.077882-46.995666 1.994082-93.991333 2.856388-140.987 0.161682-5.928352 0.538941-11.856705-0.215576-18.162316-1.616823-0.269471-2.910282-0.646729-4.149847-0.646729H164.754303c-0.808412 0-1.616823 0.215576-2.856388 0.431153-0.754518 1.778506-1.670717 3.6648-2.371341 5.658882l-14.551411 40.636161a51.684454 51.684454 0 0 1-3.664799 8.191905c-22.958892 39.881643-57.12776 63.864524-102.398815 72.056429-7.167917 1.293459-14.55141 1.940188-21.773221 2.856388-1.077882 0.161682-2.155765-0.107788-3.6648-0.215577 0.808412-2.155765 1.293459-3.880376 2.155765-5.551093 36.109056-73.51157 65.211876-149.825634 91.027156-227.48705l12.934587-38.588185C132.256153 44.420606 157.586386 20.49162 193.911018 7.718715c11.048293-3.880376 22.473845-6.251717 34.114973-7.545176 2.155765-0.269471 4.311529-0.053894 6.4134-0.053894 1.077882 3.503117-0.862306 6.090035-1.778506 8.78474-6.143929 17.677269-12.772905 35.24675-18.485681 53.085701-7.86854 24.575715-15.090352 49.367007-22.473845 74.050511-0.592835 2.047976-0.9162 4.149847-1.509035 6.790659 1.8324 0.377259 3.287541 0.9162 4.796576 0.970094 2.964176 0.161682 5.928352 0.053894 8.946423 0.053894h291.028209c3.233647 0 6.521188 0 9.808729 0.107788 7.545176 0.323365 13.742999 3.610906 17.785057 9.970411 2.694706 4.311529 5.227729 9.000317 6.68287 13.850787 5.119941 17.138328 6.036141 34.707809 4.85047 52.438972-0.053894 0.754518-0.538941 1.509035-0.970094 2.479129-6.68287 1.023988-13.473528 0.323365-20.210292 0.485047-6.521188 0.107788-13.042375 0-19.563563 0H373.432308c-6.736764 0.053894-13.473528-0.269471-20.641446 0.377259-0.215576 2.856388-0.485047 5.227729-0.538941 7.545175-0.215576 27.216527-0.107788 54.37916-0.700623 81.541793-0.754518 34.492232-1.940188 68.984464-3.233647 103.476697-0.754518 20.102504-2.155765 40.151114-3.179753 60.253618-0.107788 2.10187 0 4.203741 0 6.143929 3.233647 1.940188 6.305611 1.18567 9.215894 1.18567 23.390045 0.107788 46.726196 0.053894 70.11624 0.053894h98.626227c1.940188 0 3.826482 0.107788 5.712776 0a14.012469 14.012469 0 0 1 13.042375 6.898447 49.582584 49.582584 0 0 1 5.928353 11.53334c2.155765 6.68287 3.772588 13.581316 5.281623 20.479763 2.694706 12.772905 3.179753 25.869174 4.042058 38.857655 0.053894 1.616823-0.161682 3.179753-0.26947 5.227729-1.8324 0.269471-3.395329 0.538941-4.904365 0.646729-2.479129 0.107788-4.904364 0-7.383493 0h-195.63563c-3.233647 0-6.467294-0.538941-10.024305 0.862306-0.377259 1.994082-0.9162 4.095953-1.077882 6.197823-3.233647 43.276973-11.964493 85.476063-24.198457 127.028424-0.538941 1.8324-0.754518 3.718694-1.077882 5.551094l-0.538941 1.886294 1.8324-0.323365M950.153209 818.501748c0.107788-4.311529 0.269471-7.545176 0.26947-10.778823v-582.056418-5.712776c-0.107788-1.616823-0.431153-3.125859-0.754517-5.173835-3.503117-0.107788-6.736764-0.215576-9.916517-0.215576H697.605396c-1.562929 0.107788-3.071964 0.431153-4.527105 0.592835-1.293459 8.623058-1.940188 556.672291-0.754518 597.901287 0 1.509035 0.323365 3.071964 0.538941 5.012153 13.796893 1.077882 27.378209-0.161682 41.175102 0.9162 0.9162 2.694706 1.886294 5.173835 2.640812 7.706858l13.419634 46.187255c0.646729 2.209659 0.970094 4.688788 3.01807 7.006234 2.694706-1.616823 5.281623-3.071964 7.760753-4.634893 28.078833-17.569481 56.21156-35.138962 84.182604-52.924019a24.090668 24.090668 0 0 1 13.742999-3.880376c27.162633 0.161682 54.325266 0.053894 81.487898 0.053894h9.916517zM603.560169 131.513492c1.724612-0.538941 2.479129-0.970094 3.233647-0.970094l428.781562-0.053894c0.754518 0 1.509035 0.377259 2.586917 0.700623 0.215576 0.970094 0.646729 1.994082 0.646729 3.018071v766.535966c-2.533023 2.371341-5.066047 1.724612-7.437387 1.724612h-52.115607c-36.16295 0-72.325899 0.107788-108.434955 0-5.389411-0.053894-9.916517 1.293459-14.497517 4.149846-44.570431 28.132727-89.194757 56.049877-133.872976 84.074816-2.425235 1.562929-4.742682 3.449223-8.138011 4.311529-3.988164-10.132093-6.305611-20.479763-9.377576-30.504068-3.125859-10.132093-5.928352-20.318081-8.892528-30.504067l-9.000317-30.288492c-3.125859-1.724612-6.143929-1.131776-9.054211-1.18567h-64.403465c-2.964176 0-5.928352-0.161682-9.323681-0.215577-0.269471-1.994082-0.592835-3.503117-0.700624-5.066046-0.107788-2.155765 0-4.311529 0-6.467294V131.513492z&#34;</span> <span style="color:#a6e22e">fill</span>=<span style="color:#e6db74">&#34;#455a64&#34;</span> <span style="color:#a6e22e">p</span><span style="color:#f92672">-</span><span style="color:#a6e22e">id</span>=<span style="color:#e6db74">&#34;1130&#34;</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">path</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">svg</span>&gt;  </code></pre></div></li>
+</ul>
+
+<h1 id="后记">后记</h1>
+
+<p>总的来说，Hugo是一个稳定好用的静态博客搭建小帮手，它提供的渲染模板功能齐全，并且插件也有（不算多但是实用的都有），而且有一个活跃的主题社区提供和维护超级多的好看的主题，并且绝大多数Hexo等平台的主题也可以移植到Hugo中。最重要的是，搭建简单！便捷！<em># 对于后端程序员来说可太方便聊</em> 😊 <em>#</em></p>
+
+<p>当然，如果需要按照自己需求更改网页布局时，还是或多或少需要些前端知识（大概</p>
+
+<p>（善用重写 以后换主题时可以省很多事🙋‍）</p>
 
 </div>
 
@@ -278,7 +442,7 @@ emoji</p>
   <line x1="7" y1="7" x2="7" y2="7"/>
   
 </svg>
-<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/hugo/'>hugo</a></div>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/hugo/'>Hugo</a>, <a class='tag' href='/tags/blog/'>Blog</a></div>
 
   </div>
 </footer>
@@ -298,14 +462,6 @@ emoji</p>
           <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-  
-</svg>
-</a>
-      </li><li>
-        <a href='https://facebook.com/tiggerpeng' target='_blank' rel='noopener'>
-          <span class='screen-reader-text'>Open Facebook account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>  
   
 </svg>
 </a>
@@ -334,19 +490,29 @@ emoji</p>
   
 </svg>
 </a>
+      </li><li>
+        <a href='https://facebook.com/tiggerpeng' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Facebook account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>  
+  
+</svg>
+</a>
       </li></ul>
   </nav>
 </section></div>
           
+          <br>&nbsp&nbsp&nbsp
           <span id="busuanzi_container_site_uv">
-              本站访客数(site PV)：<span id="busuanzi_value_site_uv"></span>人次
+              站点总访客数(Sites Page View)：<span id="busuanzi_value_site_uv"></span>人次
           </span>
+          <br>&nbsp&nbsp&nbsp
           <span id="busuanzi_container_site_pv">
-            , 总访问量(site UV)：<span id="busuanzi_value_site_pv"></span>次
+              站点总访问量(Sites User View)：<span id="busuanzi_value_site_pv"></span>次
           </span>
           
           <div class='copyright'>
-  <p> &copy; 2017-2019 Amuro Peng </p>
+  <p>&ensp; &copy; 2017-2019 Amuro Peng </p>
 </div>
 
         </div>

@@ -11,12 +11,12 @@
     
     
     <item>
-      <title>Hugo的搭建</title>
+      <title>Hugo的搭建与使用</title>
       <link>http://www.amuro.top/other/hugo/</link>
       <pubDate>Tue, 03 Sep 2019 00:04:34 +0800</pubDate>
       
       <guid>http://www.amuro.top/other/hugo/</guid>
-      <description>hugo的搭建、使用、插件与技巧 搭建 参考文章 使用主题 插件 谷歌分析 不蒜子 初始化数量 Pv:13319922次 Uv:805087次 本文总阅读量48</description>
+      <description>Hugo是一个用Go语言编写的静态网站生成器，是一个非常适合搭建静态博客的工具。相似的生成器还有Hexo，Github自家生成器Jekyll</description>
     </item>
     
   </channel>
