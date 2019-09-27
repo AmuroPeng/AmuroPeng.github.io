@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>reading on Amuro Peng</title>
+    <link>http://www.amuro.top/tags/reading/</link>
+    <description>Recent content in reading on Amuro Peng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 19 Sep 2019 20:37:51 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.amuro.top/tags/reading/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reading</title>
+      <link>http://www.amuro.top/other/ielts/reading/</link>
+      <pubDate>Thu, 19 Sep 2019 20:37:51 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/other/ielts/reading/</guid>
+      <description>阅读部分事到如今我才明白，不能太依靠做题技巧，虽然各种老师所说的同义替换固然重要，但是读懂真的很重要😭 导航 复习分为两个阶段 第一阶段是前期学习</description>
+    </item>
+    
+  </channel>
+</rss>

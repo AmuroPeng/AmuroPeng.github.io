@@ -9,7 +9,7 @@
 <meta property='og:description' content='在 Github Pages上搭建基于 Hugo的 Blog'>
 <meta property='og:url' content='http://www.amuro.top/other/hugo/'>
 <meta property='og:site_name' content='Amuro Peng'>
-<meta property='og:type' content='article'><meta property='og:image' content='http://www.amuro.top/media/Other/Hugo/Hugo_logo.png'><meta property='article:section' content='Other'><meta property='article:tag' content='Hugo'><meta property='article:tag' content='Blog'><meta property='article:published_time' content='2019-09-03T00:04:34&#43;08:00'/><meta property='article:modified_time' content='2019-09-03T00:04:34&#43;08:00'/><meta name='twitter:card' content='summary_large_image'><meta property='twitter:image' content='http://www.amuro.top/media/Other/Hugo/Hugo_logo.png'>
+<meta property='og:type' content='article'><meta property='og:image' content='http://www.amuro.top/media/Other/Hugo/Hugo_logo.png'><meta property='article:section' content='Other'><meta property='article:tag' content='Hugo'><meta property='article:tag' content='blog'><meta property='article:published_time' content='2019-09-03T00:04:34&#43;08:00'/><meta property='article:modified_time' content='2019-09-03T00:04:34&#43;08:00'/><meta name='twitter:card' content='summary_large_image'><meta property='twitter:image' content='http://www.amuro.top/media/Other/Hugo/Hugo_logo.png'>
 
 <meta name="generator" content="Hugo 0.55.1" />
 
@@ -79,8 +79,14 @@ if (!doNotTrack) {
   <a href='/'>Home</a></li><li class='item'>
   <a href='/computer/'>Computer</a></li><li class='item'>
   <a href='/reading_notes/'>Reading_Notes</a></li><li class='item'>
-  <a href='/recipes/'>Recipes</a></li><li class='item'>
-  <a href='/other/'>Other</a></li></ul>
+  <a href='/recipes/'>Recipes</a></li><li class='item has-children'>
+  <a href='/other/'>Other</a><button class='sub-menu-toggler'>
+    <span class='screen-reader-text'>expand sub menu</span>
+    <span class='sign'></span>
+  </button>
+
+  <ul class='sub-menu'><li class='item'>
+  <a href='/other/ielts/'>ielts</a></li></ul></li></ul>
     </div>
   </nav>
 
@@ -91,9 +97,21 @@ if (!doNotTrack) {
 
   <div class='container list-container'>
   <ul class='list taxonomy-cloud'><li>
-        <a href='/tags/blog/' style='font-size:1em'>Blog</a>
+        <a href='/tags/blog/' style='font-size:1em'>blog</a>
       </li><li>
         <a href='/tags/hugo/' style='font-size:1em'>Hugo</a>
+      </li><li>
+        <a href='/tags/ielts/' style='font-size:2em'>ielts</a>
+      </li><li>
+        <a href='/tags/listening/' style='font-size:1em'>listening</a>
+      </li><li>
+        <a href='/tags/reading/' style='font-size:1em'>reading</a>
+      </li><li>
+        <a href='/tags/speaking/' style='font-size:1em'>speaking</a>
+      </li><li>
+        <a href='/tags/writing/' style='font-size:1em'>writing</a>
+      </li><li>
+        <a href='/tags/%E9%9B%85%E6%80%9D/' style='font-size:1.8em'>雅思</a>
       </li></ul>
 </div>
 
@@ -208,7 +226,7 @@ if (!doNotTrack) {
   <polyline points="12 6 12 12 15 15"/>
   
 </svg>
-7 mins read
+6 mins read
 </span>
 
 
@@ -421,7 +439,7 @@ if (!doNotTrack) {
 <li><strong>图标</strong>：在layouts\partials\svg\icons.html中加入知乎logo的矢量图，在一些矢量图网站中搜索相应的svg图片，适当更改size和color后将svg信息按照逻辑加入到html文件中即可（和之前写到的页面数据统计功能中添加图标方法一样）
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">[<span style="color:#a6e22e">social</span>.<span style="color:#a6e22e">base</span>]
 {{ <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">eq</span> <span style="color:#e6db74">&#34;zhihu&#34;</span> . }}
-  &lt;<span style="color:#a6e22e">svg</span> <span style="color:#a6e22e">t</span>=<span style="color:#e6db74">&#34;1567847682896&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;icon&#34;</span> <span style="color:#a6e22e">viewBox</span>=<span style="color:#e6db74">&#34;0 0 1077 1024&#34;</span> <span style="color:#a6e22e">version</span>=<span style="color:#e6db74">&#34;1.1&#34;</span> <span style="color:#a6e22e">xmlns</span>=<span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#a6e22e">p</span><span style="color:#f92672">-</span><span style="color:#a6e22e">id</span>=<span style="color:#e6db74">&#34;1129&#34;</span> <span style="color:#a6e22e">width</span>=<span style="color:#e6db74">&#34;23&#34;</span> <span style="color:#a6e22e">height</span>=<span style="color:#e6db74">&#34;23&#34;</span>&gt;&lt;<span style="color:#a6e22e">path</span> <span style="color:#a6e22e">d</span>=<span style="color:#e6db74">&#34;M313.825419 708.611652l22.527739-17.461693c7.060129-5.4972 14.012469-11.102187 21.126492-16.707175l4.85047-3.503117c2.155765 2.047976 4.203741 3.772588 5.982247 5.76667 18.539575 20.587551 37.294726 41.01342 55.56483 61.870442 21.665433 24.737398 42.791926 49.959843 64.349571 74.751134 7.545176 8.623058 12.395646 18.431787 15.46761 29.264503 3.01807 10.778823 4.419317 21.827116 4.742682 32.983197a298.788961 298.788961 0 0 1-9.916517 80.625593c-0.269471 1.023988-0.862306 1.940188-1.616823 3.503117-1.778506-1.8324-3.341435-3.233647-4.634894-4.796576L422.422056 870.94072l-110.482931-132.902883c-1.616823-2.047976-2.964176-4.473211-5.389411-5.551093-2.155765 0.862306-1.724612 2.7486-2.317447 4.149847-0.485047 1.293459-0.754518 2.640812-1.077882 3.93427-8.730846 31.743632-19.401881 62.786641-32.49815 92.967344a528.108411 528.108411 0 0 1-66.397547 114.686672c-2.856388 3.610906-5.874458 7.114023-8.676953 10.778823-16.707175 21.395963-38.588185 35.677903-63.595053 45.324949a209.486416 209.486416 0 0 1-123.255836 9.593152c-2.802494-0.592835-5.551094-1.616823-8.730846-2.533023 1.509035-3.179753 4.042058-4.419317 6.036141-5.982247 23.443939-18.647363 45.809996-38.480397 66.8287-59.714677a622.207532 622.207532 0 0 0 116.734648-160.981715c24.521821-49.151431 41.821832-100.781991 51.63056-154.837786 3.125859-17.084434 5.227729-34.33055 7.706858-51.576666 0.431153-3.179753 0.431153-6.467294 0.646729-9.970411-2.047976-0.323365-3.610906-0.700623-5.173834-0.808411-2.425235-0.107788-4.85047 0-7.3296 0l-209.54031-0.053895c-3.179753 0-6.467294 0.646729-9.700941-0.916199 0.107788-1.401247 0-2.802494 0.269471-4.095953 3.233647-14.928669 7.275705-29.587868 14.012469-43.276973 3.125859-6.305611 6.898446-12.341752 10.778823-18.21621a41.28289 41.28289 0 0 1 11.53334-11.371658 30.288491 30.288491 0 0 1 17.569481-5.76667h175.263655c3.233647 0 6.467294 0.377259 9.916516-0.646729 0.323365-1.347353 0.754518-2.640812 0.808412-3.93427 0.323365-4.042058 0.646729-8.084117 0.754518-12.18007 0.700623-28.024939 1.509035-55.995983 2.10187-83.967027 1.077882-46.995666 1.994082-93.991333 2.856388-140.987 0.161682-5.928352 0.538941-11.856705-0.215576-18.162316-1.616823-0.269471-2.910282-0.646729-4.149847-0.646729H164.754303c-0.808412 0-1.616823 0.215576-2.856388 0.431153-0.754518 1.778506-1.670717 3.6648-2.371341 5.658882l-14.551411 40.636161a51.684454 51.684454 0 0 1-3.664799 8.191905c-22.958892 39.881643-57.12776 63.864524-102.398815 72.056429-7.167917 1.293459-14.55141 1.940188-21.773221 2.856388-1.077882 0.161682-2.155765-0.107788-3.6648-0.215577 0.808412-2.155765 1.293459-3.880376 2.155765-5.551093 36.109056-73.51157 65.211876-149.825634 91.027156-227.48705l12.934587-38.588185C132.256153 44.420606 157.586386 20.49162 193.911018 7.718715c11.048293-3.880376 22.473845-6.251717 34.114973-7.545176 2.155765-0.269471 4.311529-0.053894 6.4134-0.053894 1.077882 3.503117-0.862306 6.090035-1.778506 8.78474-6.143929 17.677269-12.772905 35.24675-18.485681 53.085701-7.86854 24.575715-15.090352 49.367007-22.473845 74.050511-0.592835 2.047976-0.9162 4.149847-1.509035 6.790659 1.8324 0.377259 3.287541 0.9162 4.796576 0.970094 2.964176 0.161682 5.928352 0.053894 8.946423 0.053894h291.028209c3.233647 0 6.521188 0 9.808729 0.107788 7.545176 0.323365 13.742999 3.610906 17.785057 9.970411 2.694706 4.311529 5.227729 9.000317 6.68287 13.850787 5.119941 17.138328 6.036141 34.707809 4.85047 52.438972-0.053894 0.754518-0.538941 1.509035-0.970094 2.479129-6.68287 1.023988-13.473528 0.323365-20.210292 0.485047-6.521188 0.107788-13.042375 0-19.563563 0H373.432308c-6.736764 0.053894-13.473528-0.269471-20.641446 0.377259-0.215576 2.856388-0.485047 5.227729-0.538941 7.545175-0.215576 27.216527-0.107788 54.37916-0.700623 81.541793-0.754518 34.492232-1.940188 68.984464-3.233647 103.476697-0.754518 20.102504-2.155765 40.151114-3.179753 60.253618-0.107788 2.10187 0 4.203741 0 6.143929 3.233647 1.940188 6.305611 1.18567 9.215894 1.18567 23.390045 0.107788 46.726196 0.053894 70.11624 0.053894h98.626227c1.940188 0 3.826482 0.107788 5.712776 0a14.012469 14.012469 0 0 1 13.042375 6.898447 49.582584 49.582584 0 0 1 5.928353 11.53334c2.155765 6.68287 3.772588 13.581316 5.281623 20.479763 2.694706 12.772905 3.179753 25.869174 4.042058 38.857655 0.053894 1.616823-0.161682 3.179753-0.26947 5.227729-1.8324 0.269471-3.395329 0.538941-4.904365 0.646729-2.479129 0.107788-4.904364 0-7.383493 0h-195.63563c-3.233647 0-6.467294-0.538941-10.024305 0.862306-0.377259 1.994082-0.9162 4.095953-1.077882 6.197823-3.233647 43.276973-11.964493 85.476063-24.198457 127.028424-0.538941 1.8324-0.754518 3.718694-1.077882 5.551094l-0.538941 1.886294 1.8324-0.323365M950.153209 818.501748c0.107788-4.311529 0.269471-7.545176 0.26947-10.778823v-582.056418-5.712776c-0.107788-1.616823-0.431153-3.125859-0.754517-5.173835-3.503117-0.107788-6.736764-0.215576-9.916517-0.215576H697.605396c-1.562929 0.107788-3.071964 0.431153-4.527105 0.592835-1.293459 8.623058-1.940188 556.672291-0.754518 597.901287 0 1.509035 0.323365 3.071964 0.538941 5.012153 13.796893 1.077882 27.378209-0.161682 41.175102 0.9162 0.9162 2.694706 1.886294 5.173835 2.640812 7.706858l13.419634 46.187255c0.646729 2.209659 0.970094 4.688788 3.01807 7.006234 2.694706-1.616823 5.281623-3.071964 7.760753-4.634893 28.078833-17.569481 56.21156-35.138962 84.182604-52.924019a24.090668 24.090668 0 0 1 13.742999-3.880376c27.162633 0.161682 54.325266 0.053894 81.487898 0.053894h9.916517zM603.560169 131.513492c1.724612-0.538941 2.479129-0.970094 3.233647-0.970094l428.781562-0.053894c0.754518 0 1.509035 0.377259 2.586917 0.700623 0.215576 0.970094 0.646729 1.994082 0.646729 3.018071v766.535966c-2.533023 2.371341-5.066047 1.724612-7.437387 1.724612h-52.115607c-36.16295 0-72.325899 0.107788-108.434955 0-5.389411-0.053894-9.916517 1.293459-14.497517 4.149846-44.570431 28.132727-89.194757 56.049877-133.872976 84.074816-2.425235 1.562929-4.742682 3.449223-8.138011 4.311529-3.988164-10.132093-6.305611-20.479763-9.377576-30.504068-3.125859-10.132093-5.928352-20.318081-8.892528-30.504067l-9.000317-30.288492c-3.125859-1.724612-6.143929-1.131776-9.054211-1.18567h-64.403465c-2.964176 0-5.928352-0.161682-9.323681-0.215577-0.269471-1.994082-0.592835-3.503117-0.700624-5.066046-0.107788-2.155765 0-4.311529 0-6.467294V131.513492z&#34;</span> <span style="color:#a6e22e">fill</span>=<span style="color:#e6db74">&#34;#455a64&#34;</span> <span style="color:#a6e22e">p</span><span style="color:#f92672">-</span><span style="color:#a6e22e">id</span>=<span style="color:#e6db74">&#34;1130&#34;</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">path</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">svg</span>&gt;  </code></pre></div></li>
+  &lt;<span style="color:#a6e22e">svg</span> <span style="color:#a6e22e">t</span>=<span style="color:#e6db74">&#34;1567847682896&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;icon&#34;</span> <span style="color:#a6e22e">viewBox</span>=<span style="color:#e6db74">&#34;0 0 1077 1024&#34;</span> <span style="color:#a6e22e">version</span>=<span style="color:#e6db74">&#34;1.1&#34;</span> <span style="color:#a6e22e">xmlns</span>=<span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#a6e22e">p</span><span style="color:#f92672">-</span><span style="color:#a6e22e">id</span>=<span style="color:#e6db74">&#34;1129&#34;</span> <span style="color:#a6e22e">width</span>=<span style="color:#e6db74">&#34;23&#34;</span> <span style="color:#a6e22e">height</span>=<span style="color:#e6db74">&#34;23&#34;</span>&gt;&lt;<span style="color:#a6e22e">path</span> <span style="color:#a6e22e">d</span>=<span style="color:#e6db74">&#34;M313.825419 708.611652l22.527739-17.461693c7.060129-5.4972 14.012469-11.102187 21.126492-16.707175l4.85047-3.503117c2.155765 2.047976 4.203741 3.772588 5.982247 5.76667 18.539575 20.587551 37.294726 41.01342 55.56483 61.870442 21.665433 xxxxxxx&#34;</span> <span style="color:#a6e22e">fill</span>=<span style="color:#e6db74">&#34;#455a64&#34;</span> <span style="color:#a6e22e">p</span><span style="color:#f92672">-</span><span style="color:#a6e22e">id</span>=<span style="color:#e6db74">&#34;1130&#34;</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">path</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">svg</span>&gt;  </code></pre></div></li>
 </ul>
 
 <h1 id="后记">后记</h1>
@@ -442,13 +460,17 @@ if (!doNotTrack) {
   <line x1="7" y1="7" x2="7" y2="7"/>
   
 </svg>
-<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/hugo/'>Hugo</a>, <a class='tag' href='/tags/blog/'>Blog</a></div>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/hugo/'>Hugo</a>, <a class='tag' href='/tags/blog/'>blog</a></div>
 
   </div>
 </footer>
 
 
 </article>
+
+<nav class='entry-nav'>
+  <div class='container'></div>
+</nav>
 
 
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>writing on Amuro Peng</title>
+    <link>http://www.amuro.top/tags/writing/</link>
+    <description>Recent content in writing on Amuro Peng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 21 Sep 2019 21:31:51 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.amuro.top/tags/writing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Writing</title>
+      <link>http://www.amuro.top/other/ielts/writing/</link>
+      <pubDate>Sat, 21 Sep 2019 21:31:51 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/other/ielts/writing/</guid>
+      <description>写作我几乎没有完整写过几篇作文，但是只要按照套路做，是稳定能到6分的。刘洪波的《雅思写作真经总纲》是我踏踏实实放心写作部分，去花时间在其他几</description>
+    </item>
+    
+  </channel>
+</rss>
