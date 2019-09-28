@@ -5,7 +5,7 @@
     <link>http://www.amuro.top/</link>
     <description>Recent content in Home on Amuro Peng</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 21 Sep 2019 21:31:51 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Sep 2019 16:08:03 +0800</lastBuildDate>
     
 	<atom:link href="http://www.amuro.top/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,6 +17,15 @@
       
       <guid>http://www.amuro.top/about/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>python虚拟环境与依赖文件</title>
+      <link>http://www.amuro.top/other/virtualenv/</link>
+      <pubDate>Sat, 28 Sep 2019 16:08:03 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/other/virtualenv/</guid>
+      <description>虚拟环境Virtualenv 安装 pip install virtualenv // pip install virtualenvwrapper 检测是否安装好 virtualenv --version // 16.7.5 创建虚拟环境 virtualenv --no-site-packages venv_yourname // –no-site-packeages参数:不使用系统</description>
     </item>
     
     <item>

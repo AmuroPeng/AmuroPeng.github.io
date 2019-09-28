@@ -5,10 +5,19 @@
     <link>http://www.amuro.top/tags/</link>
     <description>Recent content in Tags on Amuro Peng</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 21 Sep 2019 21:31:51 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Sep 2019 16:08:03 +0800</lastBuildDate>
     
 	<atom:link href="http://www.amuro.top/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>python</title>
+      <link>http://www.amuro.top/tags/python/</link>
+      <pubDate>Sat, 28 Sep 2019 16:08:03 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ielts</title>
