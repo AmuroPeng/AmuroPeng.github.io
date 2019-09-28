@@ -2,19 +2,19 @@
 <html lang='en'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content=''>
+<meta name='description' content='screen会话命令'>
 <meta name='theme-color' content='#ffcd00'>
 
-<meta property='og:title' content='About • Amuro Peng'>
-<meta property='og:description' content=''>
-<meta property='og:url' content='http://www.amuro.top/about/'>
+<meta property='og:title' content='Linux：screen操作 • Amuro Peng'>
+<meta property='og:description' content='screen会话命令'>
+<meta property='og:url' content='http://www.amuro.top/other/linux_screen/'>
 <meta property='og:site_name' content='Amuro Peng'>
-<meta property='og:type' content='article'><meta property='article:section' content=''><meta property='article:published_time' content='2019-08-31T18:16:39&#43;08:00'/><meta property='article:modified_time' content='2019-08-31T18:16:39&#43;08:00'/><meta name='twitter:card' content='summary'>
+<meta property='og:type' content='article'><meta property='article:section' content='Other'><meta property='article:tag' content='Linux'><meta property='article:published_time' content='2019-09-28T22:30:57&#43;08:00'/><meta property='article:modified_time' content='2019-09-28T22:30:57&#43;08:00'/><meta name='twitter:card' content='summary'>
 
 <meta name="generator" content="Hugo 0.55.1" />
 
-  <title>About • Amuro Peng</title>
-  <link rel='canonical' href='http://www.amuro.top/about/'>
+  <title>Linux：screen操作 • Amuro Peng</title>
+  <link rel='canonical' href='http://www.amuro.top/other/linux_screen/'>
   
   
   <link rel='icon' href='/favicon.ico'>
@@ -36,7 +36,7 @@ if (!doNotTrack) {
   
 
 </head>
-<body class='page type-page layout-about has-sidebar'>
+<body class='page type-Other has-sidebar'>
 
   <div class='site'><div id='sidebar' class='sidebar'>
   <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
@@ -156,20 +156,21 @@ if (!doNotTrack) {
         <a href='/recipes/'>Recipes</a>
       </li><li class='item'>
         <a href='/other/'>Other</a>
-      </li><li class='item current'>
-        <a aria-current='page' href='/about/'>About</a>
       </li><li class='item'>
-        <a href='/other/linux_screen/'>Linux：screen操作</a>
+        <a href='/about/'>About</a>
+      </li><li class='item current'>
+        <a aria-current='page' href='/other/linux_screen/'>Linux：screen操作</a>
       </li><li class='item'>
         <a href='/other/virtualenv/'>python虚拟环境与依赖文件</a>
       </li></ul>
   </div>
 </nav><div class='header-widgets'>
         <div class='container'>
+    
     <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
   <section class='widget widget-breadcrumbs sep-after'>
     <nav id='breadcrumbs'>
-      <ol><li><a href='/'>Home</a></li><li><span>About</span></li></ol>
+      <ol><li><a href='/'>Home</a></li><li><a href='/other/'>Other</a></li><li><span>Linux：screen操作</span></li></ol>
     </nav>
   </section></div>
       </div>
@@ -206,8 +207,10 @@ if (!doNotTrack) {
   <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>About</h1>
+      <h1 class='title'>Linux：screen操作</h1>
       
+<p class='desc'>screen会话命令</p>
+
 
     </div>
     <div class='entry-meta'>
@@ -220,7 +223,7 @@ if (!doNotTrack) {
   
 </svg>
 <span class='screen-reader-text'>Posted on </span>
-  <time class='entry-date' datetime='2019-08-31T18:16:39&#43;08:00'>2019, Aug 31</time>
+  <time class='entry-date' datetime='2019-09-28T22:30:57&#43;08:00'>2019, Sep 28</time>
 </span>
 
   
@@ -231,7 +234,7 @@ if (!doNotTrack) {
   <polyline points="12 6 12 12 15 15"/>
   
 </svg>
-0 mins read
+One min read
 </span>
 
 
@@ -258,17 +261,71 @@ if (!doNotTrack) {
   
 
   <div class='container entry-content'>
-  
+  <p>screen 会话命令可以保持本地和服务器断开后，程序继续在服务器上运行</p>
+
+<p><strong>创建</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">screen</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">S</span> <span style="color:#a6e22e">session_name</span></code></pre></div></p>
+
+<p><strong>切出去</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">Ctrl</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">D</span></code></pre></div></p>
+
+<p><strong>列出所有</strong>的session
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">screen</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">ls</span> (<span style="color:#a6e22e">或screen</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">list</span>)</code></pre></div></p>
+
+<p><strong>恢复</strong>session（返回session）
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">screen</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">r</span> <span style="color:#a6e22e">session_name</span> </code></pre></div></p>
+
+<p><strong>销毁</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">Ctrl</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">K</span></code></pre></div></p>
+
+<hr />
+
+<p>有可能出现的错误：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">There</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">screen</span> <span style="color:#a6e22e">on</span>:
+    <span style="color:#ae81ff">27863.</span><span style="color:#a6e22e">session_name</span>     (<span style="color:#a6e22e">Attached</span>)
+<span style="color:#a6e22e">There</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">no</span> <span style="color:#a6e22e">screen</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">be</span> <span style="color:#a6e22e">resumed</span>.</code></pre></div></p>
+
+<p>解决办法：先d再r
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">screen</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#a6e22e">session_name</span>
+<span style="color:#a6e22e">screen</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">r</span> <span style="color:#a6e22e">session_name</span></code></pre></div></p>
+
 </div>
 
   
 <footer class='entry-footer'>
-  <div class='container sep-before'>
+  <div class='container sep-before'><div class='categories'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"/>
+  
+</svg>
+<span class='screen-reader-text'>Categories: </span><a class='category' href='/categories/command/'>command</a></div>
+<div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/linux/'>Linux</a></div>
+
   </div>
 </footer>
 
 
 </article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/other/virtualenv/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>python虚拟环境与依赖文件</a>
+    </div></div>
+</nav>
 
 
 
