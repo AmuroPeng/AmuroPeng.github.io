@@ -70,12 +70,17 @@
   </url>
   
   <url>
-    <loc>http://www.amuro.top/other/ielts/speaking/</loc>
+    <loc>http://www.amuro.top/details/ielts/</loc>
     <lastmod>2019-09-21T21:31:51+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.amuro.top/other/ielts/writing/</loc>
+    <loc>http://www.amuro.top/details/ielts/speaking/</loc>
+    <lastmod>2019-09-21T21:31:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/details/ielts/writing/</loc>
     <lastmod>2019-09-21T21:31:51+08:00</lastmod>
   </url>
   
@@ -110,12 +115,7 @@
   </url>
   
   <url>
-    <loc>http://www.amuro.top/other/ielts/</loc>
-    <lastmod>2019-09-21T21:31:51+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.amuro.top/other/ielts/reading/</loc>
+    <loc>http://www.amuro.top/details/ielts/reading/</loc>
     <lastmod>2019-09-19T20:37:51+08:00</lastmod>
   </url>
   
@@ -126,7 +126,7 @@
   </url>
   
   <url>
-    <loc>http://www.amuro.top/other/ielts/listening/</loc>
+    <loc>http://www.amuro.top/details/ielts/listening/</loc>
     <lastmod>2019-09-17T20:37:06+08:00</lastmod>
   </url>
   
@@ -137,7 +137,12 @@
   </url>
   
   <url>
-    <loc>http://www.amuro.top/other/ielts/plan/</loc>
+    <loc>http://www.amuro.top/other/index_ielts/</loc>
+    <lastmod>2019-09-15T21:41:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/details/ielts/plan/</loc>
     <lastmod>2019-09-15T20:37:06+08:00</lastmod>
   </url>
   
@@ -160,6 +165,11 @@
   
   <url>
     <loc>http://www.amuro.top/authors/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/details/</loc>
     <priority>0</priority>
   </url>
   
