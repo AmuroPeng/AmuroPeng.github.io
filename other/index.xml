@@ -5,37 +5,10 @@
     <link>http://www.amuro.top/other/</link>
     <description>Recent content in Other on Amuro Peng</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 28 Sep 2019 22:30:57 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Sep 2019 00:04:34 +0800</lastBuildDate>
     
 	<atom:link href="http://www.amuro.top/other/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Linux：screen操作</title>
-      <link>http://www.amuro.top/other/linux_screen/</link>
-      <pubDate>Sat, 28 Sep 2019 22:30:57 +0800</pubDate>
-      
-      <guid>http://www.amuro.top/other/linux_screen/</guid>
-      <description>screen 会话命令可以保持本地和服务器断开后，程序继续在服务器上运行 创建 screen -S session_name 切出去 Ctrl + A + D 列出所有的session screen -ls (或screen -list) 恢复se</description>
-    </item>
-    
-    <item>
-      <title>python虚拟环境与依赖文件</title>
-      <link>http://www.amuro.top/other/virtualenv/</link>
-      <pubDate>Sat, 28 Sep 2019 16:08:03 +0800</pubDate>
-      
-      <guid>http://www.amuro.top/other/virtualenv/</guid>
-      <description>虚拟环境Virtualenv 安装 pip install virtualenv // pip install virtualenvwrapper 检测是否安装好 virtualenv --version // 16.7.5 创建虚拟环境 virtualenv --no-site-packages venv_yourname // --no-site-packeages参数:不使用系</description>
-    </item>
-    
-    <item>
-      <title>雅思复习笔记</title>
-      <link>http://www.amuro.top/other/index_ielts/</link>
-      <pubDate>Sun, 15 Sep 2019 21:41:35 +0800</pubDate>
-      
-      <guid>http://www.amuro.top/other/index_ielts/</guid>
-      <description>差0.5小分到7😔终于屠了鸭，我把这段时间写下的做题方法、笔记和错题重新整理了一下，打算把走过的弯路和教训也一块记录一下 所有资料整理： 链接：</description>
-    </item>
     
     <item>
       <title>Hugo的搭建与使用</title>

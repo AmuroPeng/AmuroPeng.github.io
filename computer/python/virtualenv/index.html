@@ -2,19 +2,19 @@
 <html lang='en'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='希望这篇记录可以对快速冲总分 6.5的朋友有一些帮助🙂'>
+<meta name='description' content='虚拟环境Virtualenv和依赖文件requirements.txt'>
 <meta name='theme-color' content='#ffcd00'>
 
-<meta property='og:title' content='Reading • Amuro Peng'>
-<meta property='og:description' content='希望这篇记录可以对快速冲总分 6.5的朋友有一些帮助🙂'>
-<meta property='og:url' content='http://www.amuro.top/details/ielts/reading/'>
+<meta property='og:title' content='env&amp;requirements 虚拟环境与依赖文件 • Amuro Peng'>
+<meta property='og:description' content='虚拟环境Virtualenv和依赖文件requirements.txt'>
+<meta property='og:url' content='http://www.amuro.top/computer/python/virtualenv/'>
 <meta property='og:site_name' content='Amuro Peng'>
-<meta property='og:type' content='article'><meta property='article:section' content='Details'><meta property='article:tag' content='ielts'><meta property='article:tag' content='雅思'><meta property='article:tag' content='reading'><meta property='article:published_time' content='2019-09-19T20:37:51&#43;08:00'/><meta property='article:modified_time' content='2019-09-19T20:37:51&#43;08:00'/><meta name='twitter:card' content='summary'>
+<meta property='og:type' content='article'><meta property='article:section' content='Computer'><meta property='article:tag' content='python'><meta property='article:published_time' content='2019-09-28T16:08:03&#43;08:00'/><meta property='article:modified_time' content='2019-09-28T16:08:03&#43;08:00'/><meta name='twitter:card' content='summary'>
 
 <meta name="generator" content="Hugo 0.55.1" />
 
-  <title>Reading • Amuro Peng</title>
-  <link rel='canonical' href='http://www.amuro.top/details/ielts/reading/'>
+  <title>env&amp;requirements 虚拟环境与依赖文件 • Amuro Peng</title>
+  <link rel='canonical' href='http://www.amuro.top/computer/python/virtualenv/'>
   
   
   <link rel='icon' href='/favicon.ico'>
@@ -36,7 +36,7 @@ if (!doNotTrack) {
   
 
 </head>
-<body class='page type-Details has-sidebar'>
+<body class='page type-Computer has-sidebar'>
 
   <div class='site'><div id='sidebar' class='sidebar'>
   <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
@@ -86,7 +86,7 @@ if (!doNotTrack) {
   </button>
 
   <ul class='sub-menu'><li class='item'>
-  <a href='/other/index_ielts/'>ielts</a></li></ul></li></ul>
+  <a href='/other/ielts/'>ielts</a></li></ul></li></ul>
     </div>
   </nav>
 
@@ -158,12 +158,6 @@ if (!doNotTrack) {
         <a href='/other/'>Other</a>
       </li><li class='item'>
         <a href='/about/'>About</a>
-      </li><li class='item'>
-        <a href='/details/ielts/'>Ielts</a>
-      </li><li class='item'>
-        <a href='/other/linux_screen/'>Linux：screen操作</a>
-      </li><li class='item'>
-        <a href='/other/virtualenv/'>python虚拟环境与依赖文件</a>
       </li></ul>
   </div>
 </nav><div class='header-widgets'>
@@ -173,7 +167,7 @@ if (!doNotTrack) {
     <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
   <section class='widget widget-breadcrumbs sep-after'>
     <nav id='breadcrumbs'>
-      <ol><li><a href='/'>Home</a></li><li><a href='/details/'>Details</a></li><li><a href='/details/ielts/'>Ielts</a></li><li><span>Reading</span></li></ol>
+      <ol><li><a href='/'>Home</a></li><li><a href='/computer/'>Computer</a></li><li><a href='/computer/python/'>Python</a></li><li><span>env&amp;requirements 虚拟环境与依赖文件</span></li></ol>
     </nav>
   </section></div>
       </div>
@@ -210,9 +204,9 @@ if (!doNotTrack) {
   <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>Reading</h1>
+      <h1 class='title'>env&amp;requirements 虚拟环境与依赖文件</h1>
       
-<p class='desc'>希望这篇记录可以对快速冲总分 6.5的朋友有一些帮助🙂</p>
+<p class='desc'>虚拟环境Virtualenv和依赖文件requirements.txt</p>
 
 
     </div>
@@ -226,7 +220,7 @@ if (!doNotTrack) {
   
 </svg>
 <span class='screen-reader-text'>Posted on </span>
-  <time class='entry-date' datetime='2019-09-19T20:37:51&#43;08:00'>2019, Sep 19</time>
+  <time class='entry-date' datetime='2019-09-28T16:08:03&#43;08:00'>2019, Sep 28</time>
 </span>
 
   
@@ -237,7 +231,7 @@ if (!doNotTrack) {
   <polyline points="12 6 12 12 15 15"/>
   
 </svg>
-4 mins read
+One min read
 </span>
 
 
@@ -266,174 +260,40 @@ if (!doNotTrack) {
   <div class='container entry-content'>
   
 
-<p>阅读部分事到如今我才明白，不能太依靠做题技巧，虽然各种老师所说的同义替换固然重要，但是读懂真的很重要😭</p>
+<h1 id="虚拟环境virtualenv">虚拟环境Virtualenv</h1>
 
-<hr />
+<p>安装
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">pip</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">virtualenv</span>
+<span style="color:#f92672">//</span> <span style="color:#a6e22e">pip</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">virtualenvwrapper</span>  </code></pre></div></p>
 
-<h1 id="导航">导航</h1>
+<p>检测是否安装好
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">virtualenv</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">version</span>
+<span style="color:#f92672">//</span> <span style="color:#ae81ff">16.7.5</span></code></pre></div></p>
 
-<ul>
-<li>复习分为两个阶段
+<p>创建虚拟环境
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">virtualenv</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">no</span><span style="color:#f92672">-</span><span style="color:#a6e22e">site</span><span style="color:#f92672">-</span><span style="color:#a6e22e">packages</span> <span style="color:#a6e22e">venv_yourname</span>
+<span style="color:#f92672">//</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">no</span><span style="color:#f92672">-</span><span style="color:#a6e22e">site</span><span style="color:#f92672">-</span><span style="color:#a6e22e">packeages参数</span>:<span style="color:#a6e22e">不使用系统已经安装的第三方包</span></code></pre></div></p>
 
-<ul>
-<li>第一阶段是<a href="#qianqi">前期学习&amp;了解</a></li>
-<li>第二阶段是每天<a href="#lianxi">刷题</a></li>
-</ul></li>
-<li><a href="#ziyuanzhengli">资源整理</a></li>
-<li><a href="#jiqiaozongjie">知识点与技巧总结</a>
-<br /></li>
-</ul>
+<p>激活虚拟环境
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Mac &amp; Linux
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">cd</span> <span style="color:#a6e22e">venv_yourname</span>
+<span style="color:#a6e22e">source</span> .<span style="color:#f92672">/</span><span style="color:#a6e22e">bin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">activate</span>
 
-<hr />
+<span style="color:#75715e">//Windows
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">cd</span> <span style="color:#a6e22e">venv_yourname</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Scripts</span><span style="color:#f92672">/</span>
+.<span style="color:#f92672">/</span><span style="color:#a6e22e">activate</span>
+.<span style="color:#f92672">/</span><span style="color:#a6e22e">deactivate</span></code></pre></div></p>
 
-<p><span id="zhunbeisucai"></span></p>
+<h1 id="依赖文件requirements-txt">依赖文件requirements.txt</h1>
 
-<h1 id="前期学习-了解">前期学习&amp;了解</h1>
+<p><strong>导出</strong>依赖文件：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">pip</span> <span style="color:#a6e22e">freeze</span> &gt; <span style="color:#a6e22e">requirements</span>.<span style="color:#a6e22e">txt</span></code></pre></div></p>
 
-<p>准备过程中，我主要使用了教主刘洪波的<strong>阅读真经总纲</strong>以及他本人在学为贵的<strong>阅读真经9分班</strong>网课，平时还有背刘洪波的<strong>538考点词</strong>。</p>
+<p><strong>安装</strong>依赖文件：（先启动虚拟环境）
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">(<span style="color:#a6e22e">venv</span>) <span style="color:#a6e22e">pip</span> <span style="color:#a6e22e">install</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">r</span> <span style="color:#a6e22e">requirements</span>.<span style="color:#a6e22e">txt</span></code></pre></div></p>
 
-<p>这本书真的很好，虽然里面有很多统(玄)计(学)成分的经验分享，不过大部分都是实打实的干货。我还是想吹一波刘洪波老师的阅读全家桶（下图），太经典了无法超越，连之后刷题也先刷了配套的真经5的真题。
-<figure>
-    <img src="/media/Other/ielts/liuhongbo.jpg"
-         alt="刘洪波阅读三件套"/>
-</figure></p>
-
-<p>真经5可以买来刷题，剩下的总纲看pdf就行，考点词去找doc资源打印出来反复背即可。</p>
-
-<p>用<strong>墨墨背单词</strong>来补充词汇也挺关键的，我一直就是没背单词，给自己徒增了很多难度，相当于纯靠技巧做题很多时候还是不那么稳的。</p>
-
-<p><span id="lianxi"></span></p>
-
-<h1 id="二-巩固-复述练习">二、巩固&amp;复述练习</h1>
-
-<p>真经总纲是技巧和题目配套练习，书中所有的题目和解析都很好，可以先用三五天把总纲完整刷一遍。之后如果发现自己哪个类型的题8太行，可以考虑用真经5做一些专项练习（难度大的题型一般像matching和heading这样可以专精）。</p>
-
-<p>之后可以把剑桥雅思原题从后往前刷，一天一套卡时间做，刚刷时超过时间没关系。精读是很多大佬推荐的学习方式，我试过不少但最终没有坚持下来，感觉精读不适合自己，不过还是强推!😊
-在我看来精读主要是作用是：</p>
-
-<ul>
-<li>补充专业词汇</li>
-<li>了解一般雅思题的行文结构和出题位置分布
-<br /></li>
-</ul>
-
-<p>详细的精读方法可以参考Bellona小姐姐在b站的的20分钟精读教学视频: <a href="https://www.bilibili.com/video/av42548036" target="_blank">《雅思阅读满分神器，一次性搞定雅思阅读精读 | 英语阅读精读时，到底在读什么》</a> ，很详细很有用。</p>
-
-<p><span id="ziyuanzhengli"></span></p>
-
-<h1 id="资源整理">资源整理</h1>
-
-<ol>
-<li>【15绝版】刘洪波阅读真经9分班（15年之后刘洪波教主没有再出过新的真经班）</li>
-<li>【2019-4-16期】郭佳荣阅读技巧班（讲的不错，用刘洪波的思路讲近些年的题）</li>
-<li>剑桥雅思听力音频1-14</li>
-<li>538考点词（pdf,doc,自测题）</li>
-<li>刘洪波雅思阅读真经5（官方&amp;app的答案解析）</li>
-<li>雅思阅读真经总纲.pdf</li>
-<li>雅思长难句分析100.pdf</li>
-</ol>
-
-<p><span id="jiqiaozongjie"></span></p>
-
-<h1 id="一些小技巧">一些小技巧</h1>
-
-<ul>
-<li>多注意每句话的结构，并列关系就标出来</li>
-<li>多预测</li>
-<li>关注<strong>长难句</strong>：标出来位置因为基本上会有考点。然后只看主谓宾，把意思先顺下去，做题时之后再回来做</li>
-<li>画 定位词（大多数画名词）&amp;解锁关键词 （大多数画动词）</li>
-<li>不认识的词如果文章经常出现，去开头找找有没有它的定义</li>
-<li>尤其是文章重要介绍的主题，要把它的定义读明白</li>
-<li>并列结构也是定位词</li>
-<li>几乎每段都会有题，而且不同题 很少出现交替出 一般最多也就是劈两半</li>
-</ul>
-
-<h2 id="做题总流程">做题总流程</h2>
-
-<ul>
-<li>读标题理解大意</li>
-<li>所有题型都 只划<strong>定位词</strong>和<strong>考点</strong>（e.g. 关系than/most，考点词-即同义替换词）</li>
-<li>如果题型多，先在文章中定位一下大概的段落，防止读完一段没的填之后</li>
-<li>细节题是按顺序来的，所以记前两个定位词中心题没办法，都记吧</li>
-<li>首二末精读，中间部分看情况跳过</li>
-<li>每一段都先做细节题，读完这一段后选中心题</li>
-</ul>
-
-<h2 id="定位词">定位词</h2>
-
-<figure>
-    <img src="/media/Other/ielts/reading_loc1.png"
-         alt="loc1"/> 
-</figure>
-
-<p>看句子 找主要名词
-- 定位词 -&gt; 定位
-- 考点词 -&gt; 验证定的位是否正确，顺便排除这些词
-- 看句子结构，找名词-&gt;找答案</p>
-
-<figure>
-    <img src="/media/Other/ielts/reading_loc2.png"
-         alt="loc2"/> 
-</figure>
-
-<p>看句子结构 找 词是谁的修饰</p>
-
-<figure>
-    <img src="/media/Other/ielts/reading_loc3.png"
-         alt="loc3"/> 
-</figure>
-
-<h2 id="summary填空">Summary填空</h2>
-
-<ul>
-<li>Summary的第一句话非常重要，可能直接暗示原信息位置所在。因此，我们在做题时，一定要阅读第一句话，不能因为Summary的第一句话没有挖空就不看了</li>
-<li>不能看到空就急着停下来去找原文，因为这样得到的信息可能是不完整的。</li>
-<li>给选项的时候，有可能是经过同义替换的，所以不要死命找原词</li>
-<li>填空可以上一句找完再画下一句的关键词，因为这些是必出的。TFNG不行因为有NG的存在</li>
-<li>预测答案（地点/专业名词）</li>
-
-<li><p>看清主被动
-<figure>
-<img src="/media/Other/ielts/reading_summary.png"
-     alt="loc3"/>
-</figure></p></li>
-
-<li><p>列表决定是否要做（列表内单词70%以上能秒反应意思</p></li>
-
-<li><p>标题判断范围大小（是针对某段还说全篇</p></li>
-
-<li><p>逻辑决定复杂程度（句子之间的关系决定是否会乱序</p></li>
-</ul>
-
-<h1 id="部分同义替换总结和错题整理">部分同义替换总结和错题整理</h1>
-
-<p><strong>同义替换</strong>：</p>
-
-<figure>
-    <img src="/media/Other/ielts/reading_paraphrase.png"
-         alt="同义替换"/> 
-</figure>
-
-<p><strong>错题整理</strong>：</p>
-
-<figure>
-    <img src="/media/Other/ielts/reading_mistakes.png"
-         alt="错题"/> 
-</figure>
-
-<p>大概也是这个形式的，然后每隔两三天过一遍吧（如果想得起来</p>
-
-<hr />
-
-<p>👇其他科目的复习方法和技巧👇</p>
-
-<ul>
-<li><a href="/details/ielts/plan/">复习计划</a></li>
-<li><a href="/details/ielts/listening/">听力 👂 listening</a></li>
-<li><a href="/details/ielts/reading/">阅读 📕 reading</a></li>
-<li><a href="/details/ielts/speaking/">口语 💬 speaking</a></li>
-<li><a href="/details/ielts/writing/">写作 ✍ writing</a></li>
-</ul>
+<p>参考：<a href="https://www.jianshu.com/p/0ae5f4c20a2e" target="_blank">https://www.jianshu.com/p/0ae5f4c20a2e</a><br />
+待补充：virtualenvwrapper</p>
 
 </div>
 
@@ -444,14 +304,14 @@ if (!doNotTrack) {
   <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"/>
   
 </svg>
-<span class='screen-reader-text'>Categories: </span><a class='category' href='/categories/ielts/'>ielts</a></div>
+<span class='screen-reader-text'>Categories: </span><a class='category' href='/categories/command/'>command</a></div>
 <div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
   <line x1="7" y1="7" x2="7" y2="7"/>
   
 </svg>
-<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/ielts/'>ielts</a>, <a class='tag' href='/tags/%E9%9B%85%E6%80%9D/'>雅思</a>, <a class='tag' href='/tags/reading/'>reading</a></div>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/python/'>python</a></div>
 
   </div>
 </footer>

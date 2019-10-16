@@ -20,74 +20,65 @@
     </item>
     
     <item>
-      <title>Linux：screen操作</title>
-      <link>http://www.amuro.top/other/linux_screen/</link>
+      <title>Screen 会话</title>
+      <link>http://www.amuro.top/computer/linux/screen/</link>
       <pubDate>Sat, 28 Sep 2019 22:30:57 +0800</pubDate>
       
-      <guid>http://www.amuro.top/other/linux_screen/</guid>
+      <guid>http://www.amuro.top/computer/linux/screen/</guid>
       <description>screen 会话命令可以保持本地和服务器断开后，程序继续在服务器上运行 创建 screen -S session_name 切出去 Ctrl + A + D 列出所有的session screen -ls (或screen -list) 恢复se</description>
     </item>
     
     <item>
-      <title>python虚拟环境与依赖文件</title>
-      <link>http://www.amuro.top/other/virtualenv/</link>
+      <title>env&amp;requirements 虚拟环境与依赖文件</title>
+      <link>http://www.amuro.top/computer/python/virtualenv/</link>
       <pubDate>Sat, 28 Sep 2019 16:08:03 +0800</pubDate>
       
-      <guid>http://www.amuro.top/other/virtualenv/</guid>
+      <guid>http://www.amuro.top/computer/python/virtualenv/</guid>
       <description>虚拟环境Virtualenv 安装 pip install virtualenv // pip install virtualenvwrapper 检测是否安装好 virtualenv --version // 16.7.5 创建虚拟环境 virtualenv --no-site-packages venv_yourname // --no-site-packeages参数:不使用系</description>
     </item>
     
     <item>
       <title>Speaking</title>
-      <link>http://www.amuro.top/details/ielts/speaking/</link>
+      <link>http://www.amuro.top/other/ielts/speaking/</link>
       <pubDate>Sat, 21 Sep 2019 21:31:51 +0800</pubDate>
       
-      <guid>http://www.amuro.top/details/ielts/speaking/</guid>
+      <guid>http://www.amuro.top/other/ielts/speaking/</guid>
       <description>都说大陆口语压分，据统计说大陆的同学平均考试口语成绩&amp;gt;6分的人数比例大概是25%，每个考点差距不大，那些所谓二三线城市给分高的其实也是</description>
     </item>
     
     <item>
       <title>Writing</title>
-      <link>http://www.amuro.top/details/ielts/writing/</link>
+      <link>http://www.amuro.top/other/ielts/writing/</link>
       <pubDate>Sat, 21 Sep 2019 21:31:51 +0800</pubDate>
       
-      <guid>http://www.amuro.top/details/ielts/writing/</guid>
+      <guid>http://www.amuro.top/other/ielts/writing/</guid>
       <description>写作我几乎没有完整写过几篇作文，但是只要按照套路做，是稳定能到6分的。刘洪波的《雅思写作真经总纲》是我踏踏实实放心写作部分，去花时间在其他几</description>
     </item>
     
     <item>
       <title>Reading</title>
-      <link>http://www.amuro.top/details/ielts/reading/</link>
+      <link>http://www.amuro.top/other/ielts/reading/</link>
       <pubDate>Thu, 19 Sep 2019 20:37:51 +0800</pubDate>
       
-      <guid>http://www.amuro.top/details/ielts/reading/</guid>
+      <guid>http://www.amuro.top/other/ielts/reading/</guid>
       <description>阅读部分事到如今我才明白，不能太依靠做题技巧，虽然各种老师所说的同义替换固然重要，但是读懂真的很重要😭 导航 复习分为两个阶段 第一阶段是前期学习</description>
     </item>
     
     <item>
       <title>Listening</title>
-      <link>http://www.amuro.top/details/ielts/listening/</link>
+      <link>http://www.amuro.top/other/ielts/listening/</link>
       <pubDate>Tue, 17 Sep 2019 20:37:06 +0800</pubDate>
       
-      <guid>http://www.amuro.top/details/ielts/listening/</guid>
+      <guid>http://www.amuro.top/other/ielts/listening/</guid>
       <description>每一年的听力侧重点不一样，题型也会有变化，但基本上都与最新的剑桥雅思官方真题类似。例如目前最新的剑14，听力中大多数填空题都会要求只填写一个</description>
     </item>
     
     <item>
-      <title>雅思复习笔记</title>
-      <link>http://www.amuro.top/other/index_ielts/</link>
-      <pubDate>Sun, 15 Sep 2019 21:41:35 +0800</pubDate>
-      
-      <guid>http://www.amuro.top/other/index_ielts/</guid>
-      <description>差0.5小分到7😔终于屠了鸭，我把这段时间写下的做题方法、笔记和错题重新整理了一下，打算把走过的弯路和教训也一块记录一下 所有资料整理： 链接：</description>
-    </item>
-    
-    <item>
       <title>复习计划</title>
-      <link>http://www.amuro.top/details/ielts/plan/</link>
+      <link>http://www.amuro.top/other/ielts/plan/</link>
       <pubDate>Sun, 15 Sep 2019 20:37:06 +0800</pubDate>
       
-      <guid>http://www.amuro.top/details/ielts/plan/</guid>
+      <guid>http://www.amuro.top/other/ielts/plan/</guid>
       <description>关于报名：纸笔or机考 因人而异，我比较推荐机考。如果是打字速度或者听力审题速度非常慢的同学可以考虑笔试。（其中口语考查方式 两种考试是一模一样</description>
     </item>
     
