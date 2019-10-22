@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Usage on Amuro Peng</title>
+    <link>http://www.amuro.top/categories/usage/</link>
+    <description>Recent content in Usage on Amuro Peng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 17 Oct 2019 16:10:37 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.amuro.top/categories/usage/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Homebrew</title>
+      <link>http://www.amuro.top/computer/macos/homebrew/</link>
+      <pubDate>Thu, 17 Oct 2019 16:10:37 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/macos/homebrew/</guid>
+      <description>Installation Search the location of xxx: $ brew search xxx Install xxx according to the location: $ brew install xxx $ brew cask install xxx Search the information such as version: $ brew info xxx Update Update Homebrew itself: brew update List newer versions of all the apps: $ brew outdated Upgrade // upgrade all $ brew upgrade // upgrade xxx $ brew upgrade xxx Cleanup clean up the old</description>
+    </item>
+    
+  </channel>
+</rss>

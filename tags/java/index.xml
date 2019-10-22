@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Amuro Peng</title>
+    <link>http://www.amuro.top/tags/java/</link>
+    <description>Recent content in Java on Amuro Peng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 20 Oct 2019 20:55:56 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.amuro.top/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java_installation</title>
+      <link>http://www.amuro.top/computer/macos/java_installation/</link>
+      <pubDate>Sun, 20 Oct 2019 20:55:56 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/macos/java_installation/</guid>
+      <description> Use Homebrew to install: // install the latest version $ brew cask install java // for the certain version e.g. java8 $ brew cask install java8
+ Set the environment variable:
+ check the Installation directory in Finder. e.g. /Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home vim ~./zshrc export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar export PATH=$JAVA_HOME/bin:$PATH: source ~./zshrc   </description>
+    </item>
+    
+  </channel>
+</rss>

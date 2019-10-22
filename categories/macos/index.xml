@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MacOS on Amuro Peng</title>
+    <link>http://www.amuro.top/categories/macos/</link>
+    <description>Recent content in MacOS on Amuro Peng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 20 Oct 2019 20:55:56 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.amuro.top/categories/macos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java_installation</title>
+      <link>http://www.amuro.top/computer/macos/java_installation/</link>
+      <pubDate>Sun, 20 Oct 2019 20:55:56 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/macos/java_installation/</guid>
+      <description> Use Homebrew to install: // install the latest version $ brew cask install java // for the certain version e.g. java8 $ brew cask install java8
+ Set the environment variable:
+ check the Installation directory in Finder. e.g. /Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home vim ~./zshrc export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar export PATH=$JAVA_HOME/bin:$PATH: source ~./zshrc   </description>
+    </item>
+    
+    <item>
+      <title>New terminal: iterm2</title>
+      <link>http://www.amuro.top/computer/macos/iterm2/</link>
+      <pubDate>Wed, 16 Oct 2019 22:23:20 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/macos/iterm2/</guid>
+      <description>I&amp;rsquo;m writing to introduce two lovely apps to make our terminal more convenient and comfortable. Here are the leading roles: iTerm2 - macOS Terminal Replacement Oh My Zsh - a delightful &amp;amp; open source framework for Zsh Xcode The iterm2 need to be installed by homebrew, and before that we have to install the Xcode or Xcode command line tools first. For installing Xcode command line tools run: $ xcode-select</description>
+    </item>
+    
+    <item>
+      <title>My first Mac</title>
+      <link>http://www.amuro.top/computer/macos/my_first_mac/</link>
+      <pubDate>Wed, 16 Oct 2019 20:23:05 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/macos/my_first_mac/</guid>
+      <description>少一张mac的cover！！！！！！！！！！！！！！！！！！！ After having a permission of my parents to buy a new laptop, I was entangled with two types: Lenovo Ideapad Legion Y540-15 and A2159 Macbook-Pro 2019. Finally I chose my dreaming mpb for the convenience of building coding environments</description>
+    </item>
+    
+  </channel>
+</rss>

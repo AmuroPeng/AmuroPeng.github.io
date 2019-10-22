@@ -4,7 +4,7 @@
   
   <url>
     <loc>http://www.amuro.top/</loc>
-    <lastmod>2019-09-28T22:30:57+08:00</lastmod>
+    <lastmod>2019-10-20T20:55:56+08:00</lastmod>
   </url>
   
   <url>
@@ -31,7 +31,150 @@
   
   <url>
     <loc>http://www.amuro.top/categories/</loc>
-    <lastmod>2019-09-28T22:30:57+08:00</lastmod>
+    <lastmod>2019-10-20T20:55:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/categories/installation/</loc>
+    <lastmod>2019-10-20T20:55:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/tags/java/</loc>
+    <lastmod>2019-10-20T20:55:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/computer/macos/java_installation/</loc>
+    <lastmod>2019-10-20T20:55:56+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/computer/macos/</loc>
+    <lastmod>2019-10-20T20:55:56+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/categories/macos/</loc>
+    <lastmod>2019-10-20T20:55:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/tags/</loc>
+    <lastmod>2019-10-20T20:55:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/tags/environment-variable/</loc>
+    <lastmod>2019-10-20T20:55:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/tags/homebrew/</loc>
+    <lastmod>2019-10-17T16:10:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/computer/macos/homebrew/</loc>
+    <lastmod>2019-10-17T16:10:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/categories/usage/</loc>
+    <lastmod>2019-10-17T16:10:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/tags/software/</loc>
+    <lastmod>2019-10-17T16:10:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/computer/macos/shortcuts/</loc>
+    <lastmod>2019-10-17T09:43:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/computer/macos/anaconda/</loc>
+    <lastmod>2019-10-16T23:57:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/tags/anacondapython/</loc>
+    <lastmod>2019-10-16T23:57:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/computer/macos/iterm2/</loc>
+    <lastmod>2019-10-16T22:23:20+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/tags/brew/</loc>
+    <lastmod>2019-10-16T22:23:20+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/categories/decoration/</loc>
+    <lastmod>2019-10-16T22:23:20+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/tags/iterm2/</loc>
+    <lastmod>2019-10-16T22:23:20+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/tags/terminal/</loc>
+    <lastmod>2019-10-16T22:23:20+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/tags/zsh/</loc>
+    <lastmod>2019-10-16T22:23:20+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/tags/mac/</loc>
+    <lastmod>2019-10-16T20:23:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/tags/macbook-pro/</loc>
+    <lastmod>2019-10-16T20:23:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/computer/macos/my_first_mac/</loc>
+    <lastmod>2019-10-16T20:23:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/categories/os/</loc>
+    <lastmod>2019-10-16T20:23:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.amuro.top/tags/installation/</loc>
+    <lastmod>2019-10-16T20:23:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -49,12 +192,6 @@
   <url>
     <loc>http://www.amuro.top/computer/linux/screen/</loc>
     <lastmod>2019-09-28T22:30:57+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.amuro.top/tags/</loc>
-    <lastmod>2019-09-28T22:30:57+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -90,13 +227,13 @@
   </url>
   
   <url>
-    <loc>http://www.amuro.top/tags/ielts/</loc>
+    <loc>http://www.amuro.top/categories/ielts/</loc>
     <lastmod>2019-09-21T21:31:51+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.amuro.top/categories/ielts/</loc>
+    <loc>http://www.amuro.top/tags/ielts/</loc>
     <lastmod>2019-09-21T21:31:51+08:00</lastmod>
     <priority>0</priority>
   </url>

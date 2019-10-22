@@ -5,10 +5,118 @@
     <link>http://www.amuro.top/tags/</link>
     <description>Recent content in Tags on Amuro Peng</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 28 Sep 2019 22:30:57 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Oct 2019 20:55:56 +0800</lastBuildDate>
     
 	<atom:link href="http://www.amuro.top/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java</title>
+      <link>http://www.amuro.top/tags/java/</link>
+      <pubDate>Sun, 20 Oct 2019 20:55:56 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>environment variable</title>
+      <link>http://www.amuro.top/tags/environment-variable/</link>
+      <pubDate>Sun, 20 Oct 2019 20:55:56 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/environment-variable/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Homebrew</title>
+      <link>http://www.amuro.top/tags/homebrew/</link>
+      <pubDate>Thu, 17 Oct 2019 16:10:37 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/homebrew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software</title>
+      <link>http://www.amuro.top/tags/software/</link>
+      <pubDate>Thu, 17 Oct 2019 16:10:37 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Anaconda，Python</title>
+      <link>http://www.amuro.top/tags/anacondapython/</link>
+      <pubDate>Wed, 16 Oct 2019 23:57:13 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/anacondapython/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>brew</title>
+      <link>http://www.amuro.top/tags/brew/</link>
+      <pubDate>Wed, 16 Oct 2019 22:23:20 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/brew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iterm2</title>
+      <link>http://www.amuro.top/tags/iterm2/</link>
+      <pubDate>Wed, 16 Oct 2019 22:23:20 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/iterm2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terminal</title>
+      <link>http://www.amuro.top/tags/terminal/</link>
+      <pubDate>Wed, 16 Oct 2019 22:23:20 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/terminal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zsh</title>
+      <link>http://www.amuro.top/tags/zsh/</link>
+      <pubDate>Wed, 16 Oct 2019 22:23:20 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/zsh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>http://www.amuro.top/tags/mac/</link>
+      <pubDate>Wed, 16 Oct 2019 20:23:05 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Macbook-Pro</title>
+      <link>http://www.amuro.top/tags/macbook-pro/</link>
+      <pubDate>Wed, 16 Oct 2019 20:23:05 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/macbook-pro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>installation</title>
+      <link>http://www.amuro.top/tags/installation/</link>
+      <pubDate>Wed, 16 Oct 2019 20:23:05 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/installation/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Linux</title>

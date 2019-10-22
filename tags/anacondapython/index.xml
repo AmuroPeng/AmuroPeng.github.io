@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anaconda，Python on Amuro Peng</title>
+    <link>http://www.amuro.top/tags/anacondapython/</link>
+    <description>Recent content in Anaconda，Python on Amuro Peng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 16 Oct 2019 23:57:13 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.amuro.top/tags/anacondapython/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Anaconda</title>
+      <link>http://www.amuro.top/computer/macos/anaconda/</link>
+      <pubDate>Wed, 16 Oct 2019 23:57:13 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/macos/anaconda/</guid>
+      <description>Search the package: $ brew search anaconda and find it is in cask. Then install it: $ brew cask install anaconda Then export the environment variable: //zsh $ echo &amp;#39;export PATH=/usr/local/anaconda3/bin:$PATH&amp;#39; &amp;gt;&amp;gt; ~/.zshrc $ source ~/.zshrc //bash $ echo &amp;#39;export PATH=/usr/local/anaconda3/bin:$PATH&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile $ source ~/.bash_profile and confirm the installation: $ conda –-version Finally set the default Python version: $ which python3.7</description>
+    </item>
+    
+  </channel>
+</rss>

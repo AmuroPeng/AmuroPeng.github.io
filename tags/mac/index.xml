@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on Amuro Peng</title>
+    <link>http://www.amuro.top/tags/mac/</link>
+    <description>Recent content in Mac on Amuro Peng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 16 Oct 2019 20:23:05 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.amuro.top/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My first Mac</title>
+      <link>http://www.amuro.top/computer/macos/my_first_mac/</link>
+      <pubDate>Wed, 16 Oct 2019 20:23:05 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/macos/my_first_mac/</guid>
+      <description>少一张mac的cover！！！！！！！！！！！！！！！！！！！ After having a permission of my parents to buy a new laptop, I was entangled with two types: Lenovo Ideapad Legion Y540-15 and A2159 Macbook-Pro 2019. Finally I chose my dreaming mpb for the convenience of building coding environments</description>
+    </item>
+    
+  </channel>
+</rss>
