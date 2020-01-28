@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graphics on Amuro Peng</title>
+    <link>http://www.amuro.top/tags/graphics/</link>
+    <description>Recent content in Graphics on Amuro Peng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 28 Jan 2020 01:32:47 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.amuro.top/tags/graphics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>06 Edge and feature detection 特征的检测提取与描述</title>
+      <link>http://www.amuro.top/computer/graphics/06-edge-and-feature-detection/</link>
+      <pubDate>Tue, 28 Jan 2020 01:32:47 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/graphics/06-edge-and-feature-detection/</guid>
+      <description>摘要： 1. 之前都是图到图的转换，这章是需要从图中提去到信息 Images → symbols 2. 低通滤波-&amp;gt;只允许低频通过-&amp;gt;剩下高频-&amp;gt;用于边缘提取（边</description>
+    </item>
+    
+    <item>
+      <title>05 image processing 图像处理</title>
+      <link>http://www.amuro.top/computer/graphics/05-image-processing/</link>
+      <pubDate>Tue, 28 Jan 2020 00:32:47 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/graphics/05-image-processing/</guid>
+      <description>摘要： 1. 图像的处理有两种方式，时域（空间域）处理（比如卷积，降噪因子）和频域处理（傅里叶，低通Low pass高通High pass滤波） 2. A common</description>
+    </item>
+    
+    <item>
+      <title>04 image formation 成像过程</title>
+      <link>http://www.amuro.top/computer/graphics/04-image-formation/</link>
+      <pubDate>Tue, 28 Jan 2020 00:09:47 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/graphics/04-image-formation/</guid>
+      <description>visible light images 可见光信息 Image formation components for visible light images 形成可见光图像的成分 Light source / illumination 光源/照明 Surface geometry 表面几何 Surface reflectance 表面反射 Imaging geometry / optics 成像几何/光学 Sensor characteristics 传感器特性 What is light? Electromagnetic radiation (EMR)</description>
+    </item>
+    
+    <item>
+      <title>03 imaging sensors 成像传感器</title>
+      <link>http://www.amuro.top/computer/graphics/03-imaging-sensors/</link>
+      <pubDate>Mon, 27 Jan 2020 23:47:47 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/graphics/03-imaging-sensors/</guid>
+      <description>摘要： 1. 人眼结构：杆状细胞感觉强度(夜视)，锥状细胞感觉颜色(白天视力) CCD Camera CCD: Charge-coupled device (semiconductor) 电荷耦合器件(半导体) Single IC sensor device 单集成电路传感器装置 Consists of an</description>
+    </item>
+    
+    <item>
+      <title>02 mathematical preliminaries 基础数学知识</title>
+      <link>http://www.amuro.top/computer/graphics/02-mathematical-preliminaries/</link>
+      <pubDate>Mon, 27 Jan 2020 22:35:47 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/graphics/02-mathematical-preliminaries/</guid>
+      <description>摘要： 1. 图像处理第一步是sampling采样，目的：将模拟图像转化为数字图像 Analog to Digital 2. 采样用到的方法是傅里叶级数、傅里叶变换：从空域或时域到频</description>
+    </item>
+    
+    <item>
+      <title>01 Introduction 简介</title>
+      <link>http://www.amuro.top/computer/graphics/01-introduction/</link>
+      <pubDate>Mon, 27 Jan 2020 22:15:47 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/graphics/01-introduction/</guid>
+      <description>01 Introduction 简介 1) What is biological vision? 生物视觉 Definitions: It is one of the senses that animals use to survive in their environment. 定义： 它是动物在环境中生存的一种感觉。 Vision in biological systems consists of two parts: 生物系统的视觉包括两部分: 1. Sensor/eye</description>
+    </item>
+    
+  </channel>
+</rss>

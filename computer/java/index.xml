@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Amuro Peng</title>
+    <link>http://www.amuro.top/computer/java/</link>
+    <description>Recent content in Java on Amuro Peng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 08 Dec 2019 22:41:01 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.amuro.top/computer/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java Skills</title>
+      <link>http://www.amuro.top/computer/java/java/</link>
+      <pubDate>Sun, 08 Dec 2019 22:41:01 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/java/java/</guid>
+      <description>基础知识 介绍 javaSE EE ME Java SE：Standard Edition Java EE：Enterprise Edition Java ME：Micro Edition ┌──────────────────────</description>
+    </item>
+    
+  </channel>
+</rss>

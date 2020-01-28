@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='image formation 成像过程'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='04 image formation 成像过程 • Amuro Peng'>
+<meta property='og:description' content='image formation 成像过程'>
+<meta property='og:url' content='http://www.amuro.top/computer/graphics/04-image-formation/'>
+<meta property='og:site_name' content='Amuro Peng'>
+<meta property='og:type' content='article'><meta property='article:section' content='Computer'><meta property='article:tag' content='Graphics'><meta property='article:published_time' content='2020-01-28T00:09:47&#43;08:00'/><meta property='article:modified_time' content='2020-01-28T00:09:47&#43;08:00'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.55.1" />
+
+  <title>04 image formation 成像过程 • Amuro Peng</title>
+  <link rel='canonical' href='http://www.amuro.top/computer/graphics/04-image-formation/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.6a060eb7.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-146891427-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+
+</head>
+<body class='page type-Computer has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/media/1.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+      Amuro Peng
+      </a>
+    </h2>
+    <div class='desc'>
+    Hiding is to be found
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/'>Home</a></li><li class='item'>
+  <a href='/computer/'>Computer</a></li><li class='item'>
+  <a href='/reading_notes/'>Reading_Notes</a></li><li class='item'>
+  <a href='/recipes/'>Recipes</a></li><li class='item has-children'>
+  <a href='/other/'>Other</a><button class='sub-menu-toggler'>
+    <span class='screen-reader-text'>expand sub menu</span>
+    <span class='sign'></span>
+  </button>
+
+  <ul class='sub-menu'><li class='item'>
+  <a href='/other/ielts/'>ielts</a></li></ul></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/anacondapython/' style='font-size:1em'>Anaconda，Python</a>
+      </li><li>
+        <a href='/tags/blog/' style='font-size:1em'>blog</a>
+      </li><li>
+        <a href='/tags/brew/' style='font-size:1em'>brew</a>
+      </li><li>
+        <a href='/tags/environment-variable/' style='font-size:1em'>environment variable</a>
+      </li><li>
+        <a href='/tags/graphics/' style='font-size:2em'>Graphics</a>
+      </li><li>
+        <a href='/tags/homebrew/' style='font-size:1em'>Homebrew</a>
+      </li><li>
+        <a href='/tags/hugo/' style='font-size:1em'>Hugo</a>
+      </li><li>
+        <a href='/tags/ielts/' style='font-size:2em'>ielts</a>
+      </li><li>
+        <a href='/tags/installation/' style='font-size:1em'>installation</a>
+      </li><li>
+        <a href='/tags/iterm2/' style='font-size:1em'>iterm2</a>
+      </li><li>
+        <a href='/tags/java/' style='font-size:1.2em'>Java</a>
+      </li><li>
+        <a href='/tags/linux/' style='font-size:1em'>Linux</a>
+      </li><li>
+        <a href='/tags/listening/' style='font-size:1em'>listening</a>
+      </li><li>
+        <a href='/tags/mac/' style='font-size:1em'>Mac</a>
+      </li><li>
+        <a href='/tags/macbook-pro/' style='font-size:1em'>Macbook-Pro</a>
+      </li><li>
+        <a href='/tags/python/' style='font-size:1em'>python</a>
+      </li><li>
+        <a href='/tags/reading/' style='font-size:1em'>reading</a>
+      </li><li>
+        <a href='/tags/software/' style='font-size:1em'>software</a>
+      </li><li>
+        <a href='/tags/speaking/' style='font-size:1em'>speaking</a>
+      </li><li>
+        <a href='/tags/terminal/' style='font-size:1em'>terminal</a>
+      </li><li>
+        <a href='/tags/writing/' style='font-size:1em'>writing</a>
+      </li><li>
+        <a href='/tags/zsh/' style='font-size:1em'>zsh</a>
+      </li><li>
+        <a href='/tags/%E9%9B%85%E6%80%9D/' style='font-size:1.8em'>雅思</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/computer/'>Computer</a>
+      </li><li class='item'>
+        <a href='/reading_notes/'>Reading_Notes</a>
+      </li><li class='item'>
+        <a href='/recipes/'>Recipes</a>
+      </li><li class='item'>
+        <a href='/other/'>Other</a>
+      </li><li class='item'>
+        <a href='/about/'>About</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'>
+    
+    
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+      <ol><li><a href='/'>Home</a></li><li><a href='/computer/'>Computer</a></li><li><a href='/computer/graphics/'>Graphics</a></li><li><span>04 image formation 成像过程</span></li></ol>
+    </nav>
+  </section></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Amuro Peng</p><p class='desc site-desc'>Hiding is to be found</p>
+          </div>
+        </div>
+        
+        
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-146891427-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+        
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+        </script>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>04 image formation 成像过程</h1>
+      
+<p class='desc'>image formation 成像过程</p>
+
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2020-01-28T00:09:47&#43;08:00'>2020, Jan 28</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+6 mins read
+</span>
+
+
+  
+<span class='PageView'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <svg t="1567849128246" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2000" width="26" height="26"><path d="M512 641c-71.245 0-129-57.755-129-129s57.755-129 129-129 129 57.755 129 129-57.755 129-129 129z m0-64c35.899 0 65-29.101 65-65s-29.101-65-65-65-65 29.101-65 65 29.101 65 65 65z m448.178-65c-87.175 157.987-255.385 265-448.589 265S150.175 669.987 63 512h0.411C150.586 354.013 318.796 247 512 247s361.414 107.013 448.589 265h-0.411z m-74.361 0C805.624 390.878 668.14 311 512 311c-156.14 0-293.624 79.878-373.817 201h-0.41c80.192 121.122 217.676 201 373.816 201s293.624-79.878 373.817-201h0.41z" p-id="2001" fill="#37474f"></path></svg>
+  
+  
+</svg>
+<span id="busuanzi_container_page_pv">
+    View <span id="busuanzi_value_page_pv"></span>times
+  </span>
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  
+
+<h1 id="visible-light-images-可见光信息">visible light images 可见光信息</h1>
+
+<h2 id="image-formation-components-for-visible-light-images-形成可见光图像的成分">Image formation components for visible light images 形成可见光图像的成分</h2>
+
+<ol>
+<li>Light source / illumination 光源/照明</li>
+<li>Surface geometry 表面几何</li>
+<li>Surface reflectance 表面反射</li>
+<li>Imaging geometry / optics 成像几何/光学</li>
+
+<li><p>Sensor characteristics 传感器特性</p>
+
+<h2 id="what-is-light">What is light?</h2>
+
+<p>Electromagnetic radiation (EMR) moving along rays in space 空间中沿射线运动的电磁辐射</p>
+
+<h2 id="the-visible-light-spectrum-视觉光谱">The visible light spectrum 视觉光谱</h2>
+
+<p>We “see” electromagnetic radiation in a range of wavelengths 人眼可见光范围 400-700nm</p></li>
+</ol>
+
+<hr />
+
+<h1 id="图-ppt4-8">图 ppt4-8！！！！！！！！！！！！！！！！！！！！！！！！！！！！</h1>
+
+<hr />
+
+<h2 id="light-spectrum-光谱">Light spectrum 光谱</h2>
+
+<p>The appearance of light depends on its power spectrum 光的出现取决于它的功率谱<br />
+How much power (or energy) at each   wavelength 每个波长有多少功率(或能量)<br />
+Our visual system converts a light   spectrum into “color” 我们的视觉系统将光谱转换成“颜色”<br />
+This is a rather complex transformation 这是一个相当复杂的变换</p>
+
+<h2 id="the-human-visual-system">The human visual system</h2>
+
+<p><strong>Color perception</strong>
+Light hits the retina, which contains photosensitive cells 光线照射到视网膜上，视网膜上有感光细胞<br />
+These cells convert the spectrum into a few discrete values 这些细胞将光谱转换成几个离散的值</p>
+
+<h2 id="two-types-of-light-sensitive-receptors">Two types of light-sensitive receptors</h2>
+
+<p><code>Cones 锥状细胞</code>
+1. cone-shaped
+1. less sensitive
+1. operate in high light
+1. <strong>color vision</strong><br />
+<code>Rods 杆状细胞</code>
+1. rod-shaped
+1. highly sensitive
+1. operate at night
+1. <strong>gray-scale vision</strong></p>
+
+<p><strong>Density</strong> of rods and cones:<br />
+Rods and cones are non-uniformly distributed on the retina 视杆细胞和视锥细胞在视网膜上呈非均匀分布<br />
+Rods responsible for intensity, cones responsible for color 杆状体负责强度，锥状体负责颜色<br />
+Fovea - Small region (1 or 2°) at the center of the visual field containing the highest density of cones (and no rods). 中央凹-视野中心的一个小区域(1或2°)，含有最高密度的视锥细胞(没有视杆细胞)。
+Less visual acuity in the periphery—many rods wired to the same neuron 其他区域的视敏度较低——许多杆状体连接到同一个神经元</p>
+
+<h2 id="brightness-contrast-and-constancy-亮度对比度和稳定性">Brightness contrast and constancy 亮度对比度和稳定性</h2>
+
+<p>The <code>apparent brightness</code> depends on the surrounding region <code>视亮度</code>取决于周围的区域<br />
+<strong>brightness contrast 亮度对比</strong>: a constant colored region seem lighter or darker depending on the surround 一个固定颜色的区域根据周围环境的不同会看起来更亮或更暗<br />
+<strong>brightness constancy 稳定性</strong>:  a surface looks the same under widely varying lighting conditions.在大范围变化的光照条件下，表面看起来是一样的</p>
+
+<h2 id="light-response-is-nonlinear-光的响应是非线性的">Light response is nonlinear 光的响应是非线性的</h2>
+
+<p>Our visual system has a large dynamic range 我们的视觉系统有很大的动态范围<br />
+We can resolve both light and dark things at the same time 我们可以同时解决光明和黑暗的问题<br />
+One mechanism for achieving this is that we sense light intensity on a <strong>logarithmic scale</strong> 一种方法是，我们在对数标度上感知光强<br />
+an exponential intensity ramp will be seen as a linear ramp 指数强度斜坡将被视为线性下降<br />
+Another mechanism is adaptation 另一种机制是适应<br />
+rods and cones adapt to be more sensitive in low light, less sensitive in bright light. 杆状体和锥状体在弱光下更敏感，在强光下更不敏感</p>
+
+<h2 id="color-perception-颜色感知">Color perception 颜色感知</h2>
+
+<p>Three types of cones 三种锥状细胞
+Each is sensitive in a different region of the spectrum 每一个在光谱的不同区域都是敏感的<br />
+but regions overlap<br />
+<strong>Short (S)</strong> corresponds to <strong>blue</strong><br />
+<strong>Medium (M)</strong> corresponds to <strong>green</strong><br />
+<strong>Long (L)</strong> corresponds to <strong>red</strong><br />
+Different sensitivities:  we are more sensitive to green than red 不同的敏感度:我们对绿色比红色更敏感<br />
+varies from person to person (and with age)<br />
+Colorblindness 色盲 —deficiency in at least one type of cone 至少有一种锥体色盲<br />
+Rods and cones act as filters on the spectrum 杆状体和锥状体在光谱上起过滤作用<br />
+To get the output of a filter, multiply its response curve by the spectrum, integrate over all wavelengths 要得到滤波器的输出的话，要将其响应曲线乘以光谱，然后对所有波长积分<br />
+Q:  How can we represent an entire spectrum with 3 numbers? 我们如何用3个数字表示整个频谱?<br />
+A:  We can’t!  Most of the information is lost. 不能 大部分信息都丢失了</p>
+
+<h2 id="practical-color-sensing-bayer-grid">Practical Color Sensing: Bayer Grid</h2>
+
+<p>Each pixel senses light in one color band only 每个像素只能感知一个色带中的光<br />
+The highest sampling is in the green channel 绿色通道的采样率最高<br />
+There is close proximity of each pixel color to the other two colors (due to the arrangement of the color filters) 每个像素的颜色与其他两种颜色非常接近(由于颜色过滤器的安排)</p>
+
+<hr />
+
+<h1 id="digital-camera">Digital camera</h1>
+
+<p>The sensor array elements sense the amount of light hitting them, and they only sense the amount of light in only one color.
+But we need to produce the light contribution of all three colors for each pixel.<br />
+This is called the process of “<strong>demosaicing</strong>”<code>去马赛克</code></p>
+
+<h2 id="color-representation-and-color-spaces-颜色空间">Color representation and color spaces 颜色空间</h2>
+
+<h3 id="color-spaces-rgb">Color spaces: RGB</h3>
+
+<p><strong>Some drawbacks</strong>
+1. Strongly correlated channels 相关性很强，不方便调整
+1. Non-perceptual</p>
+
+<h3 id="color-spaces-hsv">Color spaces: HSV</h3>
+
+<p>Intuitive color space 直观的彩色空间<br />
+1. 色调(Hue)：角度<br />
+1. 饱和度(Saturation)：中心轴到外部的距离表示饱和度。半径越长（越靠外），饱和度越高，看上去颜色更浓<br />
+1. 明度(Value)：从底下到最上面，颜色从最暗到最亮</p>
+
+<p>图 ppt4-30!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+
+<h3 id="color-spaces-ycbcr">Color spaces: YCbCr</h3>
+
+<p>亮度和色差信号<br />
+1. Fast to compute 快速计算<br />
+2. good for compression 有利于压缩<br />
+3. used by analog TV (component colors) 用于模拟电视(组件颜色)<br />
+Y&rsquo;为颜色的亮度(luma)成分、而CB和CR则为蓝色和红色的浓度偏移量成份<br />
+Y分量最重要，除了只有灰度颜色，其他信息是完整的
+CB和CR是色差信息</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">&gt;<span style="color:#a6e22e">Y</span><span style="color:#960050;background-color:#1e0010">&#39;</span> = <span style="color:#a6e22e">Kr</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">R</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">+</span> <span style="color:#960050;background-color:#1e0010">（</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Kr</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Kb</span>) <span style="color:#f92672">*</span> <span style="color:#a6e22e">G</span><span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">Kb</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">B</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+&gt;<span style="color:#a6e22e">Pb</span> = <span style="color:#ae81ff">0.5</span> <span style="color:#f92672">*</span> (<span style="color:#a6e22e">B</span><span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Y</span><span style="color:#960050;background-color:#1e0010">&#39;</span>) <span style="color:#f92672">/</span> <span style="color:#960050;background-color:#1e0010">（</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Kb</span>)
+&gt;<span style="color:#a6e22e">Pr</span> = <span style="color:#ae81ff">0.5</span> <span style="color:#f92672">*</span> (<span style="color:#a6e22e">R</span><span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Y</span><span style="color:#960050;background-color:#1e0010">&#39;</span>) <span style="color:#f92672">/</span> <span style="color:#960050;background-color:#1e0010">（</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Kr</span>) </code></pre></div>
+
+<p>彩色度变灰度图：之前用公式求Y分量就好</p>
+
+<h3 id="color-spaces-l-a-b">Color spaces: L* a* b*</h3>
+
+<p>不同频率不同幅度的正弦波的叠加，得到的频谱是用来组成这个频率信号的每一个分量的幅度。<br />
+L：明度（Luminosity），值域0~100，L=50相当于50%的黑<br />
+A：洋红~绿色 +127~-128<br />
+B：黄色~蓝色 +127~-128<br />
+特点：色域宽阔，能表现RGB，CMYK不能表现的色彩。人的肉眼能感知的色  彩，都能通过Lab模型表现出来。<br />
+弥补了RGB色彩模型色彩分布不均的不足，RGB模型在蓝色到绿色之间的过渡色彩过多，而在绿色到红色之间又缺少黄色和其他色彩。</p>
+
+<h1 id="light-sources-光源">Light sources 光源</h1>
+
+<ol>
+<li>Point light source (nearby) 点光源<br /></li>
+<li>（默认）Directional light sources: 定向光源<br />
+a point source “infinitely” far away (sun): only the light direction matters 一个“无限”远的点源(太阳):只有光的方向是重要的<br /></li>
+<li>Extended light sources 扩展光源:<br />
+Union of point or directional light sources (fluorescent lamps) 点光源或方向光源的组合(荧光灯)<br /></li>
+</ol>
+
+<h2 id="surface-types-表面种类">Surface types 表面种类</h2>
+
+<p>How the light that hits a surface gets reflected determines what we see 光线照射到表面时如何反射决定了我们所看到的东西<br />
+There are many different types of surfaces</p>
+
+<h2 id="the-interaction-of-light-and-matter-光与物质的相互作用">The interaction of light and matter 光与物质的相互作用</h2>
+
+<p>What happens when a light ray hits a point on an object?  当光线照射到物体上的一点时会发生什么？<br />
+1. Some of the light gets absorbed 有些光被吸收了<br />
+converted to other forms of energy (e.g., heat) 转化为其他形式的能量(如热)<br />
+1. Some gets transmitted through the object 有些通过物质传输<br />
+possibly bent, through “refraction” 可能弯曲，通过“折射”<br />
+1. Some gets reflected 一些被反射<br />
+it could be reflected in multiple directions at once 它可以同时多个方向反射</p>
+
+<h2 id="a-photon-s-life-choices-光子-选择">A photon’s life choices 光子 选择</h2>
+
+<ol>
+<li>Absorption 吸收<br /></li>
+<li>Diffusion 扩散<br />
+Effect is that light is reflected equally in all directions
+Lambertian surface.（均匀漫反射面）
+Diffuse reflection governed by Lambert’s law 漫反射受朗伯定律支配
+Viewed brightness does not depend on viewing direction  观看的亮度跟方向无关，都一样
+Brightness does depend on direction of illumination 亮度跟入射方向有关，角度不同反射的能量不同，越垂直能量越高亮度越大
+This is the model most often used in computer vision</li>
+</ol>
+
+<p>图 ppt4-52！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！</p>
+
+<ol>
+<li>Reflection 反射<br /></li>
+<li>Transparency 透明度<br /></li>
+<li>Refraction 折射<br /></li>
+<li>Fluorescence 荧光<br /></li>
+</ol>
+
+<h2 id="三种光照方式">三种光照方式</h2>
+
+<ol>
+<li>环境光照(Ambient Lighting)：即使在黑暗的情况下，世界上通常也仍然有一些光亮（月亮、远处的光），所以物体几乎永远不会是完全黑暗的。为了模拟这个，我们会使用一个环境光照常量，它永远会给物体一些颜色。</li>
+<li>漫反射光照(Diffuse Lighting)：模拟光源对物体的方向性影响(Directional Impact)。它是冯氏光照模型中视觉上最显著的分量。物体的某一部分越是正对着光源，它就会越亮。</li>
+<li>镜面光照(Specular Lighting)：模拟有光泽物体上面出现的亮点。镜面光照的颜色相比于物体的颜色会更倾向于光的颜色。</li>
+</ol>
+
+<h1 id="modeling-perspective-projection-透视成像">Modeling perspective projection 透视成像</h1>
+
+<h2 id="projective-geometry-投影几何">Projective Geometry 投影几何</h2>
+
+<p>Straight lines are still straight 角度长度平行性垂直性都不保留，只有直线变换后还是直线</p>
+
+<h2 id="pinhole-camera-model-basics">Pinhole camera model basics</h2>
+
+<p>Normally, the image plane is behind the center of projection (pinhole) and the real image formed is upside down. 通常情况下，成像平面位于投影中心(针孔)后方，形成的真实图像是上下颠倒的。<br />
+Computer Vision cameras are modeled as the image plane in front of center of projection 将计算机视觉摄像机建模为投影中心前的像平面<br />
+so images are not upside down. 所以图像不是颠倒的。</p>
+
+<h1 id="camera-calibration-for-pinhole-camera-model-小孔成像的相机标定">Camera calibration for pinhole camera model 小孔成像的相机标定</h1>
+
+<p>Given a camera, how do we estimate its specific parameters?<br />
+1. Intrinsic parameters: focal length, scale factor, image center, etc. 内部：焦距、比例因子、图像中心等<br />
+1. Extrinsic parameters: pose (rotation and translation) 外部：形态(旋转、平移)</p>
+
+<hr />
+
+<p>实验1！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！</p>
+
+<hr />
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='categories'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"/>
+  
+</svg>
+<span class='screen-reader-text'>Categories: </span><a class='category' href='/categories/graphics/'>Graphics</a></div>
+<div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/graphics/'>Graphics</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/AmuroPeng' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://twitter.com/AmuroPeng' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Twitter account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:tiggerpeng1997@gmail.com' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://www.zhihu.com/people/an-shi-51-85' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Zhihu account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <svg t="1567847682896" class="icon" viewBox="0 0 1077 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1129" width="23" height="23"><path d="M313.825419 708.611652l22.527739-17.461693c7.060129-5.4972 14.012469-11.102187 21.126492-16.707175l4.85047-3.503117c2.155765 2.047976 4.203741 3.772588 5.982247 5.76667 18.539575 20.587551 37.294726 41.01342 55.56483 61.870442 21.665433 24.737398 42.791926 49.959843 64.349571 74.751134 7.545176 8.623058 12.395646 18.431787 15.46761 29.264503 3.01807 10.778823 4.419317 21.827116 4.742682 32.983197a298.788961 298.788961 0 0 1-9.916517 80.625593c-0.269471 1.023988-0.862306 1.940188-1.616823 3.503117-1.778506-1.8324-3.341435-3.233647-4.634894-4.796576L422.422056 870.94072l-110.482931-132.902883c-1.616823-2.047976-2.964176-4.473211-5.389411-5.551093-2.155765 0.862306-1.724612 2.7486-2.317447 4.149847-0.485047 1.293459-0.754518 2.640812-1.077882 3.93427-8.730846 31.743632-19.401881 62.786641-32.49815 92.967344a528.108411 528.108411 0 0 1-66.397547 114.686672c-2.856388 3.610906-5.874458 7.114023-8.676953 10.778823-16.707175 21.395963-38.588185 35.677903-63.595053 45.324949a209.486416 209.486416 0 0 1-123.255836 9.593152c-2.802494-0.592835-5.551094-1.616823-8.730846-2.533023 1.509035-3.179753 4.042058-4.419317 6.036141-5.982247 23.443939-18.647363 45.809996-38.480397 66.8287-59.714677a622.207532 622.207532 0 0 0 116.734648-160.981715c24.521821-49.151431 41.821832-100.781991 51.63056-154.837786 3.125859-17.084434 5.227729-34.33055 7.706858-51.576666 0.431153-3.179753 0.431153-6.467294 0.646729-9.970411-2.047976-0.323365-3.610906-0.700623-5.173834-0.808411-2.425235-0.107788-4.85047 0-7.3296 0l-209.54031-0.053895c-3.179753 0-6.467294 0.646729-9.700941-0.916199 0.107788-1.401247 0-2.802494 0.269471-4.095953 3.233647-14.928669 7.275705-29.587868 14.012469-43.276973 3.125859-6.305611 6.898446-12.341752 10.778823-18.21621a41.28289 41.28289 0 0 1 11.53334-11.371658 30.288491 30.288491 0 0 1 17.569481-5.76667h175.263655c3.233647 0 6.467294 0.377259 9.916516-0.646729 0.323365-1.347353 0.754518-2.640812 0.808412-3.93427 0.323365-4.042058 0.646729-8.084117 0.754518-12.18007 0.700623-28.024939 1.509035-55.995983 2.10187-83.967027 1.077882-46.995666 1.994082-93.991333 2.856388-140.987 0.161682-5.928352 0.538941-11.856705-0.215576-18.162316-1.616823-0.269471-2.910282-0.646729-4.149847-0.646729H164.754303c-0.808412 0-1.616823 0.215576-2.856388 0.431153-0.754518 1.778506-1.670717 3.6648-2.371341 5.658882l-14.551411 40.636161a51.684454 51.684454 0 0 1-3.664799 8.191905c-22.958892 39.881643-57.12776 63.864524-102.398815 72.056429-7.167917 1.293459-14.55141 1.940188-21.773221 2.856388-1.077882 0.161682-2.155765-0.107788-3.6648-0.215577 0.808412-2.155765 1.293459-3.880376 2.155765-5.551093 36.109056-73.51157 65.211876-149.825634 91.027156-227.48705l12.934587-38.588185C132.256153 44.420606 157.586386 20.49162 193.911018 7.718715c11.048293-3.880376 22.473845-6.251717 34.114973-7.545176 2.155765-0.269471 4.311529-0.053894 6.4134-0.053894 1.077882 3.503117-0.862306 6.090035-1.778506 8.78474-6.143929 17.677269-12.772905 35.24675-18.485681 53.085701-7.86854 24.575715-15.090352 49.367007-22.473845 74.050511-0.592835 2.047976-0.9162 4.149847-1.509035 6.790659 1.8324 0.377259 3.287541 0.9162 4.796576 0.970094 2.964176 0.161682 5.928352 0.053894 8.946423 0.053894h291.028209c3.233647 0 6.521188 0 9.808729 0.107788 7.545176 0.323365 13.742999 3.610906 17.785057 9.970411 2.694706 4.311529 5.227729 9.000317 6.68287 13.850787 5.119941 17.138328 6.036141 34.707809 4.85047 52.438972-0.053894 0.754518-0.538941 1.509035-0.970094 2.479129-6.68287 1.023988-13.473528 0.323365-20.210292 0.485047-6.521188 0.107788-13.042375 0-19.563563 0H373.432308c-6.736764 0.053894-13.473528-0.269471-20.641446 0.377259-0.215576 2.856388-0.485047 5.227729-0.538941 7.545175-0.215576 27.216527-0.107788 54.37916-0.700623 81.541793-0.754518 34.492232-1.940188 68.984464-3.233647 103.476697-0.754518 20.102504-2.155765 40.151114-3.179753 60.253618-0.107788 2.10187 0 4.203741 0 6.143929 3.233647 1.940188 6.305611 1.18567 9.215894 1.18567 23.390045 0.107788 46.726196 0.053894 70.11624 0.053894h98.626227c1.940188 0 3.826482 0.107788 5.712776 0a14.012469 14.012469 0 0 1 13.042375 6.898447 49.582584 49.582584 0 0 1 5.928353 11.53334c2.155765 6.68287 3.772588 13.581316 5.281623 20.479763 2.694706 12.772905 3.179753 25.869174 4.042058 38.857655 0.053894 1.616823-0.161682 3.179753-0.26947 5.227729-1.8324 0.269471-3.395329 0.538941-4.904365 0.646729-2.479129 0.107788-4.904364 0-7.383493 0h-195.63563c-3.233647 0-6.467294-0.538941-10.024305 0.862306-0.377259 1.994082-0.9162 4.095953-1.077882 6.197823-3.233647 43.276973-11.964493 85.476063-24.198457 127.028424-0.538941 1.8324-0.754518 3.718694-1.077882 5.551094l-0.538941 1.886294 1.8324-0.323365M950.153209 818.501748c0.107788-4.311529 0.269471-7.545176 0.26947-10.778823v-582.056418-5.712776c-0.107788-1.616823-0.431153-3.125859-0.754517-5.173835-3.503117-0.107788-6.736764-0.215576-9.916517-0.215576H697.605396c-1.562929 0.107788-3.071964 0.431153-4.527105 0.592835-1.293459 8.623058-1.940188 556.672291-0.754518 597.901287 0 1.509035 0.323365 3.071964 0.538941 5.012153 13.796893 1.077882 27.378209-0.161682 41.175102 0.9162 0.9162 2.694706 1.886294 5.173835 2.640812 7.706858l13.419634 46.187255c0.646729 2.209659 0.970094 4.688788 3.01807 7.006234 2.694706-1.616823 5.281623-3.071964 7.760753-4.634893 28.078833-17.569481 56.21156-35.138962 84.182604-52.924019a24.090668 24.090668 0 0 1 13.742999-3.880376c27.162633 0.161682 54.325266 0.053894 81.487898 0.053894h9.916517zM603.560169 131.513492c1.724612-0.538941 2.479129-0.970094 3.233647-0.970094l428.781562-0.053894c0.754518 0 1.509035 0.377259 2.586917 0.700623 0.215576 0.970094 0.646729 1.994082 0.646729 3.018071v766.535966c-2.533023 2.371341-5.066047 1.724612-7.437387 1.724612h-52.115607c-36.16295 0-72.325899 0.107788-108.434955 0-5.389411-0.053894-9.916517 1.293459-14.497517 4.149846-44.570431 28.132727-89.194757 56.049877-133.872976 84.074816-2.425235 1.562929-4.742682 3.449223-8.138011 4.311529-3.988164-10.132093-6.305611-20.479763-9.377576-30.504068-3.125859-10.132093-5.928352-20.318081-8.892528-30.504067l-9.000317-30.288492c-3.125859-1.724612-6.143929-1.131776-9.054211-1.18567h-64.403465c-2.964176 0-5.928352-0.161682-9.323681-0.215577-0.269471-1.994082-0.592835-3.503117-0.700624-5.066046-0.107788-2.155765 0-4.311529 0-6.467294V131.513492z" fill="#455a64" p-id="1130"></path></svg>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://facebook.com/tiggerpeng' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Facebook account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>  
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section></div>
+          
+          <br>&nbsp&nbsp&nbsp
+          <span id="busuanzi_container_site_uv">
+              站点总访客数(Sites Page View)：<span id="busuanzi_value_site_uv"></span>人次
+          </span>
+          <br>&nbsp&nbsp&nbsp
+          <span id="busuanzi_container_site_pv">
+              站点总访问量(Sites User View)：<span id="busuanzi_value_site_pv"></span>次
+          </span>
+          
+          <div class='copyright'>
+  <p>&ensp; &copy; 2017-2020 Amuro Peng </p>
+</div>
+
+        </div>
+      </footer>
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.67d669ac.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+
