@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithm-剑指Offer on Amuro Peng</title>
+    <link>http://www.amuro.top/computer/algorithm-%E5%89%91%E6%8C%87offer/</link>
+    <description>Recent content in Algorithm-剑指Offer on Amuro Peng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 08 Dec 2019 22:41:01 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.amuro.top/computer/algorithm-%E5%89%91%E6%8C%87offer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Array</title>
+      <link>http://www.amuro.top/computer/algorithm-%E5%89%91%E6%8C%87offer/array/</link>
+      <pubDate>Sun, 08 Dec 2019 22:41:01 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/algorithm-%E5%89%91%E6%8C%87offer/array/</guid>
+      <description>基础知识 介绍 javaSE EE ME Java SE：Standard Edition Java EE：Enterprise Edition Java ME：Micro Edition ┌──────────────────────</description>
+    </item>
+    
+  </channel>
+</rss>
