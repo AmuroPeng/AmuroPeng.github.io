@@ -11,7 +11,7 @@
 <meta property='og:site_name' content='Amuro Peng'>
 <meta property='og:type' content='article'><meta property='article:section' content='Computer'><meta property='article:tag' content='Graphics'><meta property='article:published_time' content='2020-01-27T22:15:47&#43;08:00'/><meta property='article:modified_time' content='2020-01-27T22:15:47&#43;08:00'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.55.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
   <title>01 Introduction 简介 • Amuro Peng</title>
   <link rel='canonical' href='http://www.amuro.top/computer/graphics/01-introduction/'>
@@ -103,6 +103,8 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/brew/' style='font-size:1em'>brew</a>
       </li><li>
+        <a href='/tags/crontab/' style='font-size:1em'>crontab</a>
+      </li><li>
         <a href='/tags/environment-variable/' style='font-size:1em'>environment variable</a>
       </li><li>
         <a href='/tags/graphics/' style='font-size:2em'>Graphics</a>
@@ -111,7 +113,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/hugo/' style='font-size:1em'>Hugo</a>
       </li><li>
-        <a href='/tags/ielts/' style='font-size:2em'>ielts</a>
+        <a href='/tags/ielts/' style='font-size:1.8em'>ielts</a>
       </li><li>
         <a href='/tags/installation/' style='font-size:1em'>installation</a>
       </li><li>
@@ -119,7 +121,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/java/' style='font-size:1.4em'>Java</a>
       </li><li>
-        <a href='/tags/linux/' style='font-size:1em'>Linux</a>
+        <a href='/tags/linux/' style='font-size:1.2em'>Linux</a>
       </li><li>
         <a href='/tags/listening/' style='font-size:1em'>listening</a>
       </li><li>
@@ -127,7 +129,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/macbook-pro/' style='font-size:1em'>Macbook-Pro</a>
       </li><li>
-        <a href='/tags/python/' style='font-size:1em'>python</a>
+        <a href='/tags/python/' style='font-size:1.2em'>python</a>
       </li><li>
         <a href='/tags/reading/' style='font-size:1em'>reading</a>
       </li><li>
@@ -286,72 +288,58 @@ One min read
   
 
   <div class='container entry-content'>
-  
-
-<h1 id="01-introduction-简介">01 Introduction 简介</h1>
-
+  <h1 id="01-introduction-简介">01 Introduction 简介</h1>
 <h2 id="1-what-is-biological-vision-生物视觉">1) What is biological vision? 生物视觉</h2>
-
-<p><strong>Definitions:</strong> It is one of the senses that animals use to survive in their environment.<br />
+<p><strong>Definitions:</strong> It is one of the senses that animals use to survive in their environment.<br>
 定义： 它是动物在环境中生存的一种感觉。</p>
-
-<p><code>Vision in biological systems</code> consists of <strong>two parts</strong>:<br />
-生物系统的视觉包括两部分:<br />
-1. <strong>Sensor/eye</strong> – collecting the light/imaging information<br />
-传感器/眼睛-收集光/成像信息<br />
-2. <strong>Nervous system/brain</strong> – interpreting the collected light information.<br />
-神经系统/大脑-解释收集到的光信息</p>
-
-<p><code>Sensors</code> can take many forms, from simple to more advanced<br />
+<p><code>Vision in biological systems</code> consists of <strong>two parts</strong>:<br>
+生物系统的视觉包括两部分:</p>
+<ol>
+<li><strong>Sensor/eye</strong> – collecting the light/imaging information<br>
+传感器/眼睛-收集光/成像信息</li>
+<li><strong>Nervous system/brain</strong> – interpreting the collected light information.<br>
+神经系统/大脑-解释收集到的光信息</li>
+</ol>
+<p><code>Sensors</code> can take many forms, from simple to more advanced<br>
 传感器可以有多种形式，从简单到高级</p>
-
-<p><code>Human visual system 人的视觉系统</code><br />
-Stereopsis<br />
-立体观测<br />
-Motion interpretation<br />
-对物体运动的解释<br />
-High precision<br />
-高精度<br />
-Color perception<br />
+<p><code>Human visual system 人的视觉系统 </code><br>
+Stereopsis<br>
+立体观测<br>
+Motion interpretation<br>
+对物体运动的解释<br>
+High precision<br>
+高精度<br>
+Color perception<br>
 色觉</p>
-
-<h2 id="2-what-is-computer-vision-计算机视觉">2) What is Computer Vision?计算机视觉</h2>
-
-<p><strong>Definitions:</strong> Using man made sensors and algorithms to sense the environment and make inferences about it.<br />
+<h2 id="2-what-is-computer-vision计算机视觉">2) What is Computer Vision?计算机视觉</h2>
+<p><strong>Definitions:</strong> Using man made sensors and algorithms to sense the environment and make inferences about it.<br>
 利用人工传感器和算法来感知环境并对其进行推断。</p>
-
 <p><code>Sensors</code> include
-传感器包括:<br />
-Visible light cameras (gray or color)<br />
-可见光摄影机(灰色或彩色)<br />
-Infrared cameras<br />
-红外摄像机<br />
-Depth sensors<br />
+传感器包括:<br>
+Visible light cameras (gray or color)<br>
+可见光摄影机(灰色或彩色)<br>
+Infrared cameras<br>
+红外摄像机<br>
+Depth sensors<br>
 深度传感器</p>
-
 <h2 id="3-related-fields">3) Related Fields</h2>
-
-<p><strong>Definitions：</strong> Make computers understand images and video.<br />
+<p><strong>Definitions：</strong> Make computers understand images and video.<br>
 使计算机理解图像和视频。</p>
-
-<p>Safety, Health, Security, Comfort, Fun, Access, Industrial Inspection, Forensics, Robot navigation<br />
+<p>Safety, Health, Security, Comfort, Fun, Access, Industrial Inspection, Forensics, Robot navigation<br>
 安全，健康，安全，休闲，娱乐，通行证（人脸指纹识别等），工业检查，取证（犯罪取证），机器人导航</p>
-
 <p><strong>History:</strong> In 1966, Marvin Minsky at MIT asked his undergraduate student Gerald Jay Sussman to “Spend the summer linking a camera to a computer and getting the computer to describe what it saw”</p>
-
 <h2 id="4-practical-applications">4) Practical Applications</h2>
-
-<p>Examples of state-of-the-art  目前先进技术举例：<br />
-Optical character recognition (OCR)<br />
-Face detection<br />
-Smile detection<br />
-3D from thousands of images<br />
-Object recognition (in supermarkets) 收银<br />
-Vision-based biometrics 生物识别技术<br />
-Login without a password<br />
-Object recognition (in mobile phones) 识图<br />
-Special effects:  shape capture 电影特效<br />
-Special effects:  motion capture<br />
+<p>Examples of state-of-the-art  目前先进技术举例：<br>
+Optical character recognition (OCR)<br>
+Face detection<br>
+Smile detection<br>
+3D from thousands of images<br>
+Object recognition (in supermarkets) 收银<br>
+Vision-based biometrics 生物识别技术<br>
+Login without a password<br>
+Object recognition (in mobile phones) 识图<br>
+Special effects:  shape capture 电影特效<br>
+Special effects:  motion capture<br>
 Sports 判定是否出界</p>
 
 </div>
@@ -379,7 +367,17 @@ Sports 判定是否出界</p>
 </article>
 
 <nav class='entry-nav'>
-  <div class='container'></div>
+  <div class='container'><div class='next-entry sep-before'>
+      <a href='/computer/graphics/02-mathematical-preliminaries/'>
+        <span class='screen-reader-text'>Next post: </span>02 mathematical preliminaries 基础数学知识<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
 </nav>
 
 
@@ -444,7 +442,7 @@ Sports 判定是否出界</p>
           </span>
           
           <div class='copyright'>
-  <p>&ensp; &copy; 2017-2020 Amuro Peng </p>
+  <p> &copy; 2017-2020 Amuro Peng </p>
 </div>
 
         </div>

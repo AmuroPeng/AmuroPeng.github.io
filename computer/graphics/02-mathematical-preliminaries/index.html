@@ -11,7 +11,7 @@
 <meta property='og:site_name' content='Amuro Peng'>
 <meta property='og:type' content='article'><meta property='article:section' content='Computer'><meta property='article:tag' content='Graphics'><meta property='article:published_time' content='2020-01-27T22:35:47&#43;08:00'/><meta property='article:modified_time' content='2020-01-27T22:35:47&#43;08:00'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.55.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
   <title>02 mathematical preliminaries 基础数学知识 • Amuro Peng</title>
   <link rel='canonical' href='http://www.amuro.top/computer/graphics/02-mathematical-preliminaries/'>
@@ -103,6 +103,8 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/brew/' style='font-size:1em'>brew</a>
       </li><li>
+        <a href='/tags/crontab/' style='font-size:1em'>crontab</a>
+      </li><li>
         <a href='/tags/environment-variable/' style='font-size:1em'>environment variable</a>
       </li><li>
         <a href='/tags/graphics/' style='font-size:2em'>Graphics</a>
@@ -111,7 +113,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/hugo/' style='font-size:1em'>Hugo</a>
       </li><li>
-        <a href='/tags/ielts/' style='font-size:2em'>ielts</a>
+        <a href='/tags/ielts/' style='font-size:1.8em'>ielts</a>
       </li><li>
         <a href='/tags/installation/' style='font-size:1em'>installation</a>
       </li><li>
@@ -119,7 +121,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/java/' style='font-size:1.4em'>Java</a>
       </li><li>
-        <a href='/tags/linux/' style='font-size:1em'>Linux</a>
+        <a href='/tags/linux/' style='font-size:1.2em'>Linux</a>
       </li><li>
         <a href='/tags/listening/' style='font-size:1em'>listening</a>
       </li><li>
@@ -127,7 +129,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/macbook-pro/' style='font-size:1em'>Macbook-Pro</a>
       </li><li>
-        <a href='/tags/python/' style='font-size:1em'>python</a>
+        <a href='/tags/python/' style='font-size:1.2em'>python</a>
       </li><li>
         <a href='/tags/reading/' style='font-size:1em'>reading</a>
       </li><li>
@@ -286,103 +288,84 @@ if (!doNotTrack) {
   
 
   <div class='container entry-content'>
-  
-
-<p>摘要：
-1. 图像处理第一步是sampling采样，目的：将模拟图像转化为数字图像 Analog to Digital
-2. 采样用到的方法是傅里叶级数、傅里叶变换：从空域或时域到频域转化
-3. 采样定理（Nyquist）：采样频率要大于等于信号最高频率分量的2倍
-4. (不是这章主要篇幅)卷积的应用：filter map在图上扫（算卷积），用于找边缘，去噪等</p>
-
-<h1 id="02-mathematical-preliminaries-基础数学知识">02 mathematical preliminaries 基础数学知识</h1>
-
-<h1 id="1-analog-image-模拟图像">1. Analog image 模拟图像</h1>
-
-<p><strong>Definitions:</strong>  a 2D image 𝑓(𝑥,𝑦) which has <em>infinite precision</em> in spatial parameters 𝑥 and 𝑦 and infinite precision in intensity at each spatial point (𝑥,𝑦). 无限精度<br />
-- 直接通过感光设备记录成像目标所反射的光强，通常以胶片形式保存</p>
-
-<h1 id="2-digital-image-数字图像">2. Digital image 数字图像:</h1>
-
-<h2 id="definitions">Definitions:</h2>
-
-<p>a 2D image 𝐼(𝑟,𝑐) represented by a discrete 2D array of intensity samples, each of which is represented using a <em>limited precision</em>. 有限精度<br />
-- 用一个m×n的像素矩阵来表达一幅图像,m与n称为图像的分辨率<br />
-- 把图像按行与列分割成m*n个网格,每个网格的图像用该网格内颜色的平均值表示（空间量化）<br />
-- 灰度（颜色）值量化（8位 256）</p>
-
-<h2 id="types">Types</h2>
-
+  <p>摘要：</p>
 <ol>
-<li><strong>A gray scale image 灰度图像:</strong>  a monochrome digital image 𝐼(𝑟,𝑐) with one intensity value per pixel.<br /></li>
-<li><strong>A multispectral image 多光谱图像/RGB image:</strong>  a 2D image 𝑀(𝑥,𝑦) which has a vector of values at each spatial point or pixel.<br />
-Example: a color image has a vector of 3 values at each pixel, Red, Green, and Blue components.</li>
-<li><strong>A binary image 二值图像</strong> : is a digital image where all pixel values are 0 or 1.<br />
-Example: an image obtained by a process of foreground/background segmentation, 1: foreground, 0: background.<br /></li>
-<li><strong>A labeled image 标注图像</strong> : is a digital image 𝐿(𝑟,𝑐) whose pixel values are symbols from a finite alphabet (e.g., class labels).<br />
-Example: the result of identifying connected regions and assigning an ID to each region.<br /></li>
+<li>图像处理第一步是sampling采样，目的：将模拟图像转化为数字图像 Analog to Digital</li>
+<li>采样用到的方法是傅里叶级数、傅里叶变换：从空域或时域到频域转化</li>
+<li>采样定理（Nyquist）：采样频率要大于等于信号最高频率分量的2倍</li>
+<li>(不是这章主要篇幅)卷积的应用：filter map在图上扫（算卷积），用于找边缘，去噪等</li>
 </ol>
-
+<h1 id="02-mathematical-preliminaries-基础数学知识">02 mathematical preliminaries 基础数学知识</h1>
+<h1 id="1-analog-image-模拟图像">1. Analog image 模拟图像</h1>
+<p><strong>Definitions:</strong>  a 2D image 𝑓(𝑥,𝑦) which has <em>infinite precision</em> in spatial parameters 𝑥 and 𝑦 and infinite precision in intensity at each spatial point (𝑥,𝑦). 无限精度</p>
+<ul>
+<li>直接通过感光设备记录成像目标所反射的光强，通常以胶片形式保存</li>
+</ul>
+<h1 id="2-digital-image-数字图像">2. Digital image 数字图像:</h1>
+<h2 id="definitions">Definitions:</h2>
+<p>a 2D image 𝐼(𝑟,𝑐) represented by a discrete 2D array of intensity samples, each of which is represented using a <em>limited precision</em>. 有限精度</p>
+<ul>
+<li>用一个m×n的像素矩阵来表达一幅图像,m与n称为图像的分辨率</li>
+<li>把图像按行与列分割成m*n个网格,每个网格的图像用该网格内颜色的平均值表示（空间量化）</li>
+<li>灰度（颜色）值量化（8位 256）</li>
+</ul>
+<h2 id="types">Types</h2>
+<ol>
+<li><strong>A gray scale image 灰度图像:</strong>  a monochrome digital image 𝐼(𝑟,𝑐) with one intensity value per pixel.</li>
+<li><strong>A multispectral image 多光谱图像/RGB image:</strong>  a 2D image 𝑀(𝑥,𝑦) which has a vector of values at each spatial point or pixel.<br>
+Example: a color image has a vector of 3 values at each pixel, Red, Green, and Blue components.</li>
+<li><strong>A binary image 二值图像</strong> : is a digital image where all pixel values are 0 or 1.<br>
+Example: an image obtained by a process of foreground/background segmentation, 1: foreground, 0: background.</li>
+<li><strong>A labeled image 标注图像</strong> : is a digital image 𝐿(𝑟,𝑐) whose pixel values are symbols from a finite alphabet (e.g., class labels).<br>
+Example: the result of identifying connected regions and assigning an ID to each region.</li>
+</ol>
 <h1 id="3-a-picture-image-function-图像的数字化">3. A picture (image) function 图像的数字化</h1>
-
 <h2 id="definitions-1">Definitions:</h2>
-
-<p>a mathematical representation 𝑓(𝑥,𝑦) of a picture as a function of two spatial variables 𝑥 and 𝑦.<br />
-- 图像数字化即将图像转化为数字图像，就是把图像分割成称为像素的小区域，每个图像的亮度或灰度值用一个整数来表示。</p>
-
+<p>a mathematical representation 𝑓(𝑥,𝑦) of a picture as a function of two spatial variables 𝑥 and 𝑦.</p>
+<ul>
+<li>图像数字化即将图像转化为数字图像，就是把图像分割成称为像素的小区域，每个图像的亮度或灰度值用一个整数来表示。</li>
+</ul>
 <h2 id="image-function">Image Function</h2>
-
-<p>A mathematical abstraction of an image.<br />
+<p>A mathematical abstraction of an image.<br>
 In general, a vector valued function (e.g., color, or multi-spectral satellite images) of a small number of arguments:
 𝐟(𝐱): 𝐟 is vector valued and 𝐱 is a vector</p>
-
 <h2 id="digital-image-function">Digital image function</h2>
-
-<p>Usually integer coordinates (pixel coordinates; row and column) and integer value (quantized).
-1. Values could be 8 bits (0-255), or 16 bits, etc.
-1. Color images would have 3 channels (R,G,B) of 8 bits each.</p>
-
+<p>Usually integer coordinates (pixel coordinates; row and column) and integer value (quantized).</p>
+<ol>
+<li>Values could be 8 bits (0-255), or 16 bits, etc.</li>
+<li>Color images would have 3 channels (R,G,B) of 8 bits each.</li>
+</ol>
 <h1 id="signal-processing-信号处理知识">Signal processing 信号处理知识</h1>
-
-<p>Linear systems and Signal Processing concepts<br />
+<p>Linear systems and Signal Processing concepts<br>
 线性系统和信号处理概念</p>
-
 <h2 id="signals-信号">Signals 信号</h2>
-
 <h2 id="definitions-2">Definitions:</h2>
-
 <p>Signals for us are real or complex functions of some independent variables. 信号是一些自变量的实值函数或复合函数。</p>
-
-<p><code>Signals</code> can be<br />
-1. 1-dimensional (almost always the independent variable is time) or multi-dimensional (e.g., images of spatial dimensions x and y). 一维或多维<br />
-2. Continuous  time (CT) or discrete time (DT) 连续时间或离散时间<br />
-3. Deterministic or stochastic (i.e., random or probabilistic) 确定的或随机的</p>
-
-<hr />
-
+<p><code>Signals</code> can be</p>
+<ol>
+<li>1-dimensional (almost always the independent variable is time) or multi-dimensional (e.g., images of spatial dimensions x and y). 一维或多维</li>
+<li>Continuous  time (CT) or discrete time (DT) 连续时间或离散时间</li>
+<li>Deterministic or stochastic (i.e., random or probabilistic) 确定的或随机的</li>
+</ol>
+<hr>
 <p>##Dirac delta function 𝛿(𝑥) 狄拉克函数
 ppt 1-17
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
-
-<hr />
-
+<hr>
 <h2 id="frequency-domain-representation-and-fourier-transform-频域表示和傅里叶变换">Frequency domain representation and Fourier transform 频域表示和傅里叶变换</h2>
-
 <ol>
-<li>Typically 1D signals are in the time domain (a function of time, as in e.g., audio) and 2D signals are in the spatial domain (a function of (x,y) as in images).<br />
+<li>Typically 1D signals are in the time domain (a function of time, as in e.g., audio) and 2D signals are in the spatial domain (a function of (x,y) as in images).<br>
 通常一维信号在时域(时间的函数，如音频)，二维信号在空间域(x,y的函数，如图像)。</li>
-<li>Signals (images being an example in which we are interested) can be converted (without losing any information) to other representations.<br />
+<li>Signals (images being an example in which we are interested) can be converted (without losing any information) to other representations.<br>
 信号(比如图像)可以转换成其他表示形式(不丢失任何信息)。</li>
-<li>So called, frequency domain representation is one such example.<br />
+<li>So called, frequency domain representation is one such example.<br>
 比如频域的表示方法</li>
 </ol>
-
-<p><code>Fourier series</code> is defined for <code>periodic functions</code>.<br />
+<p><code>Fourier series</code> is defined for <code>periodic functions</code>.<br>
 <code>傅里叶级数</code>：将<code>周期函数</code>信号表示成复正选信号的叠加
-For aperiodic functions, we have the <strong>Fourier transform</strong>.<br />
+For aperiodic functions, we have the <strong>Fourier transform</strong>.<br>
 <code>傅里叶变换</code>：将<code>非周期函数</code>信号表示成复正选信号的叠加</p>
-
 <h2 id="fourier-transform-傅里叶变换">Fourier transform 傅里叶变换</h2>
-
 <p>Consider a <strong>1D signal</strong>, e.g., a complicated sound such as the noise of a car horn:
 考虑<strong>一维信号</strong>，例如复杂的声音，例如汽车喇叭的声音:
 We can describe this sound in two related ways:
@@ -395,95 +378,67 @@ Each of these frequency values is referred to as a frequency component.
 这些频率值中的每一个都被称为频率分量。
 <strong>The mathematical tool used to analyze signals and convert representations from time (in 1D) or spatial domain (in 2D) to frequency domain is the Fourier transform.</strong>
 <strong>傅里叶变换是用来分析信号并将信号从时间(一维)或空间域(二维)转换为频域的数学工具</strong>。</p>
-
-<hr />
-
+<hr>
 <p>公式：ppt18-19</p>
-
-<hr />
-
+<hr>
 <h2 id="frequencies-in-images">Frequencies in images</h2>
-
-<p>What do frequencies mean in an image?<br />
+<p>What do frequencies mean in an image?<br>
 频谱反应的是不同频率分量的幅度</p>
-
 <ul>
-<li>If an image has large values at <code>high frequency components</code> then the data is <strong>changing rapidly on a short distance scale</strong>. e.g. a page of text.<br />
+<li>If an image has large values at <code>high frequency components</code> then the data is <strong>changing rapidly on a short distance scale</strong>. e.g. a page of text.<br>
 <code>高频信息</code>代表的是变化快的信息，也就是图像里的<strong>细节和纹理</strong></li>
 <li>If the image has large <code>low frequency components</code>, then the <strong>large scale features</strong> (i.e., slowly varying values) of the picture are more important. e.g. a single fairly simple object which occupies most of the image.
 <code>低频信息</code>代表的是<strong>平缓的区域</strong>，也就是图像里比较平滑的灰度信息，沿不同方向的频率成分代表该方向变化的情况</li>
 </ul>
-
-<hr />
-
+<hr>
 <p>公式 20!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
-
-<hr />
-
-<h2 id="时域-时间域-频域-频率域-空域-空间域">时域(时间域) &amp; 频域(频率域) &amp; 空域(空间域)</h2>
-
+<hr>
+<h2 id="时域时间域--频域频率域--空域空间域">时域(时间域) &amp; 频域(频率域) &amp; 空域(空间域)</h2>
 <ol>
 <li><code>空间域（spatial domain）</code>也叫空域，即所说的像素域，在空域的处理就是在像素级的处理，如在像素级的图像叠加。通过傅立叶变换后，得到的是图像的频谱。表示图像的能量梯度。</li>
 <li><code>频率域（frequency domain。）</code>任何一个波形都可以分解成多个正弦波之和。每个正弦波都有自己的频率和振幅。所以任意一个波形信号有自己的频率和振幅的集合。频率域就是空间域经过傅立叶变换的信号</li>
 <li><code>时域（时间域）</code>——自变量是时间,即横轴是时间,纵轴是信号的变化。其动态信号x（t）是描述信号在不同时刻取值的函数。</li>
 <li><code>频域（频率域）</code>——自变量是频率,即横轴是频率,纵轴是该频率信号的幅度,也就是通常说的频谱图。频谱图描述了信号的频率结构及频率与该频率信号幅度的关系。</li>
 </ol>
-
 <p>最后：傅里叶变换是实现从空域或时域到频域的转换工具。</p>
-
 <h2 id="convolution-theorem-卷积定理">convolution theorem 卷积定理</h2>
-
-<p>𝐹[𝑓∗𝑔]=𝐹[𝑓]𝐹[𝑔]<br />
+<p>𝐹[𝑓∗𝑔]=𝐹[𝑓]𝐹[𝑔]<br>
 F[𝑓⋅𝑔]=𝐹[𝑓]∗𝐹[𝑔]</p>
-
 <ul>
-<li>That is, the convolution in the time/spatial domain is the same as pointwise multiplication in the frequency domain, and vice versa.<br />
-时域和空域的卷积和频域的点乘是一样的<br /></li>
-<li>If we want to filter a signal, we can convolve it with the filter in the spatial domain, or<br />
-如果我们想对一个信号进行滤波，我们可以在空间域中将它与滤波器进行卷积<br />
-Take their FTs, multiply them pointwise, and take the inverse FT of the result.<br />
+<li>That is, the convolution in the time/spatial domain is the same as pointwise multiplication in the frequency domain, and vice versa.<br>
+时域和空域的卷积和频域的点乘是一样的</li>
+<li>If we want to filter a signal, we can convolve it with the filter in the spatial domain, or<br>
+如果我们想对一个信号进行滤波，我们可以在空间域中将它与滤波器进行卷积<br>
+Take their FTs, multiply them pointwise, and take the inverse FT of the result.<br>
 取它们的傅里叶变换，逐点相乘，然后取结果的傅里叶变换倒数</li>
 </ul>
-
 <h2 id="2d-fourier-transform-傅里叶变换">2D Fourier transform 傅里叶变换</h2>
-
-<h2 id="幅度谱-相位谱">幅度谱 &amp; 相位谱</h2>
-
-<p><code>幅度谱</code>：反应了<strong>能量信息</strong><br />
+<h2 id="幅度谱--相位谱">幅度谱 &amp; 相位谱</h2>
+<p><code>幅度谱</code>：反应了<strong>能量信息</strong><br>
 <code>相位谱</code>：反应了<strong>位置信息</strong></p>
-
-<hr />
-
+<hr>
 <p>公式 21!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
-
-<hr />
-
-<p>Example 图像去噪：<br />
-网纹噪声（有规律的噪声） 噪声会集中在某一频域点<br />
+<hr>
+<p>Example 图像去噪：<br>
+网纹噪声（有规律的噪声） 噪声会集中在某一频域点<br>
 做法：傅里叶变换后去除该频域的噪声，然后再反变换回来，就可以去除</p>
-
 <h2 id="sampling-theorem-采样定理">Sampling theorem 采样定理</h2>
-
 <p><strong>采样频率要大于等于信号最高频率分量的2倍</strong>
 如果达不到，拍出来的照片就会有<code>频率混叠（aliasing）</code>，生成网纹似的图像片段:
 If the sampling is done at intervals larger than <code>Nyquist frequency interval</code>, the signal cannot be recovered completely from the samples, and <code>aliasing</code> occurs.
 <code>频率混叠</code>：频率低于两倍<code>奈奎斯特频率间隔</code>后发生的现象</p>
-
 <h1 id="geometric-preliminaries-几何学知识">Geometric preliminaries 几何学知识</h1>
-
 <ul>
 <li><code>1D Transformations</code>
-Similarity (Metric): 平移（translation） and 缩放（scaling ）<br /></li>
+Similarity (Metric): 平移（translation） and 缩放（scaling ）</li>
 <li><code>2D Transformations</code>
 旋转（Rotation） 仿射变换（Affine Transformation）
 后面实验1是摄像机标定实验，就是这个部分的应用</li>
 <li>Coordinates (Euclidean and Homogeneous) 欧几里得齐次坐标</li>
 </ul>
-
 <h1 id="statistics-统计学知识">Statistics 统计学知识</h1>
-
-<p>Probability basics<br />
-贝叶斯公式<br />
+<p>Probability basics<br>
+贝叶斯公式<br>
 相关性：不相关矩阵（爱因斯坦的眼睛）</p>
 
 </div>
@@ -511,7 +466,27 @@ Similarity (Metric): 平移（translation） and 缩放（scaling ）<br /></li>
 </article>
 
 <nav class='entry-nav'>
-  <div class='container'></div>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/computer/graphics/01-introduction/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>01 Introduction 简介</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/computer/graphics/03-imaging-sensors/'>
+        <span class='screen-reader-text'>Next post: </span>03 imaging sensors 成像传感器<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
 </nav>
 
 
@@ -576,7 +551,7 @@ Similarity (Metric): 平移（translation） and 缩放（scaling ）<br /></li>
           </span>
           
           <div class='copyright'>
-  <p>&ensp; &copy; 2017-2020 Amuro Peng </p>
+  <p> &copy; 2017-2020 Amuro Peng </p>
 </div>
 
         </div>

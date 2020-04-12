@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Object-Oriented Design and Programming on Amuro Peng</title>
+    <link>http://www.amuro.top/computer/object-oriented-design-and-programming/</link>
+    <description>Recent content in Object-Oriented Design and Programming on Amuro Peng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 24 Feb 2020 17:15:42 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.amuro.top/computer/object-oriented-design-and-programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>03design_pattern_intro</title>
+      <link>http://www.amuro.top/computer/object-oriented-design-and-programming/03design_pattern_intro/</link>
+      <pubDate>Sat, 29 Feb 2020 17:20:25 -0500</pubDate>
+      
+      <guid>http://www.amuro.top/computer/object-oriented-design-and-programming/03design_pattern_intro/</guid>
+      <description>Design Pattern Overview Q:What does a pattern do? A:Documents a recurring重复出现的 problem/solution paring within a given context Essential elements Pattern name Used to provide a single and meaningful name to the pattern which defines a design problem and a solution for it. Naming a design pattern helps itself to be referred to others easily. Allows easy documentation</description>
+    </item>
+    
+    <item>
+      <title>Object Oriented</title>
+      <link>http://www.amuro.top/computer/object-oriented-design-and-programming/02object-oriented/</link>
+      <pubDate>Fri, 28 Feb 2020 17:36:12 -0500</pubDate>
+      
+      <guid>http://www.amuro.top/computer/object-oriented-design-and-programming/02object-oriented/</guid>
+      <description>Software is inherently固有的 complex Complexity of the problem domain Difficulty of managing the development process Flexibility possible through software Problems of characterizing描述xx特征 the behavior of discrete离散的 systems Five attributes</description>
+    </item>
+    
+    <item>
+      <title>1.Introduction</title>
+      <link>http://www.amuro.top/computer/object-oriented-design-and-programming/01introduction/</link>
+      <pubDate>Mon, 24 Feb 2020 16:36:26 -0500</pubDate>
+      
+      <guid>http://www.amuro.top/computer/object-oriented-design-and-programming/01introduction/</guid>
+      <description>Qualities of a well designed software Correctness 正确性 The degree with which software adheres to its specified requirements . At the start of the software life cycle, the requirements for the software are determined and formalized in the requirements specification document. Well designed software should meet all the stated requirements. While it might seem obvious that software should be correct, the reality is that this characteristic is one</description>
+    </item>
+    
+  </channel>
+</rss>

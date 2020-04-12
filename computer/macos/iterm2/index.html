@@ -11,7 +11,7 @@
 <meta property='og:site_name' content='Amuro Peng'>
 <meta property='og:type' content='article'><meta property='article:section' content='Computer'><meta property='article:tag' content='terminal'><meta property='article:tag' content='iterm2'><meta property='article:tag' content='zsh'><meta property='article:tag' content='brew'><meta property='article:published_time' content='2019-10-16T22:23:20&#43;08:00'/><meta property='article:modified_time' content='2019-10-16T22:23:20&#43;08:00'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.55.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
   <title>New terminal: iterm2 • Amuro Peng</title>
   <link rel='canonical' href='http://www.amuro.top/computer/macos/iterm2/'>
@@ -103,6 +103,8 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/brew/' style='font-size:1em'>brew</a>
       </li><li>
+        <a href='/tags/crontab/' style='font-size:1em'>crontab</a>
+      </li><li>
         <a href='/tags/environment-variable/' style='font-size:1em'>environment variable</a>
       </li><li>
         <a href='/tags/graphics/' style='font-size:2em'>Graphics</a>
@@ -111,7 +113,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/hugo/' style='font-size:1em'>Hugo</a>
       </li><li>
-        <a href='/tags/ielts/' style='font-size:2em'>ielts</a>
+        <a href='/tags/ielts/' style='font-size:1.8em'>ielts</a>
       </li><li>
         <a href='/tags/installation/' style='font-size:1em'>installation</a>
       </li><li>
@@ -119,7 +121,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/java/' style='font-size:1.4em'>Java</a>
       </li><li>
-        <a href='/tags/linux/' style='font-size:1em'>Linux</a>
+        <a href='/tags/linux/' style='font-size:1.2em'>Linux</a>
       </li><li>
         <a href='/tags/listening/' style='font-size:1em'>listening</a>
       </li><li>
@@ -127,7 +129,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/macbook-pro/' style='font-size:1em'>Macbook-Pro</a>
       </li><li>
-        <a href='/tags/python/' style='font-size:1em'>python</a>
+        <a href='/tags/python/' style='font-size:1.2em'>python</a>
       </li><li>
         <a href='/tags/reading/' style='font-size:1em'>reading</a>
       </li><li>
@@ -286,41 +288,28 @@ One min read
   
 
   <div class='container entry-content'>
-  
-
-<p>I&rsquo;m writing to introduce <code>two lovely apps</code> to make our terminal more convenient and comfortable.</p>
-
+  <p>I&rsquo;m writing to introduce <code>two lovely apps</code> to make our terminal more convenient and comfortable.</p>
 <p>Here are the leading roles:</p>
-
 <ul>
-<li><a href="https://www.iterm2.com/" target="_blank"><strong>iTerm2</strong> - macOS Terminal Replacement</a></li>
-<li><a href="https://ohmyz.sh/" target="_blank"><strong>Oh My Zsh</strong> - a delightful &amp; open source framework for Zsh</a></li>
+<li><a href="https://www.iterm2.com/"><strong>iTerm2</strong> - macOS Terminal Replacement</a></li>
+<li><a href="https://ohmyz.sh/"><strong>Oh My Zsh</strong> - a delightful &amp; open source framework for Zsh</a></li>
 </ul>
-
-<figure>
-    <img src="/media/Computer/MacOS/iterm2/cover.png"
-         alt="new terminal"/> 
-</figure>
-
+<!-- raw HTML omitted -->
 <h1 id="xcode">Xcode</h1>
-
 <p>The iterm2 need to be installed by <code>homebrew</code>, and before that we have to install the <code>Xcode</code> or <code>Xcode command line tools</code> first. For installing <code>Xcode command line tools</code> run:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">xcode</span><span style="color:#f92672">-</span><span style="color:#66d9ef">select</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">install</span></code></pre></div></p>
-
 <h1 id="homebrew">Homebrew</h1>
-
 <p><code>Homebrew</code> is a free and open-source software package management system. To know more commands please click another blog post <a href="/Computer/homebrew">Homebrew</a> of mine.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">usr</span><span style="color:#f92672">/</span><span style="color:#a6e22e">bin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">ruby</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">e</span> <span style="color:#e6db74">&#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&#34;</span></code></pre></div>
-If in China, we need to change the source URL to a mirror in <a href="http://mirrors.ustc.edu.cn/" target="_blank">ustc</a> :</p>
-
+If in China, we need to change the source URL to a mirror in <a href="http://mirrors.ustc.edu.cn/">ustc</a> :</p>
 <ul>
 <li>Homebrew
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// change to ustc
 </span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">cd</span> <span style="color:#e6db74">&#34;$(brew --repo)&#34;</span> 
 <span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">git</span> <span style="color:#a6e22e">remote</span> <span style="color:#a6e22e">set</span><span style="color:#f92672">-</span><span style="color:#a6e22e">url</span> <span style="color:#a6e22e">origin</span> <span style="color:#a6e22e">https</span>:<span style="color:#75715e">//mirrors.ustc.edu.cn/brew.git
-</span><span style="color:#75715e">// reset to origin
+</span><span style="color:#75715e"></span><span style="color:#75715e">// reset to origin
 </span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">cd</span> <span style="color:#e6db74">&#34;$(brew --repo)&#34;</span>
-<span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">git</span> <span style="color:#a6e22e">remote</span> <span style="color:#a6e22e">set</span><span style="color:#f92672">-</span><span style="color:#a6e22e">url</span> <span style="color:#a6e22e">origin</span> <span style="color:#a6e22e">https</span>:<span style="color:#f92672">//</span><span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Homebrew</span><span style="color:#f92672">/</span><span style="color:#a6e22e">brew</span>.<span style="color:#a6e22e">git</span></code></pre></div></li>
+<span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">git</span> <span style="color:#a6e22e">remote</span> <span style="color:#a6e22e">set</span><span style="color:#f92672">-</span><span style="color:#a6e22e">url</span> <span style="color:#a6e22e">origin</span> <span style="color:#a6e22e">https</span>:<span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Homebrew</span><span style="color:#f92672">/</span><span style="color:#a6e22e">brew</span>.<span style="color:#a6e22e">git</span></code></pre></div></li>
 <li>Homebrew Bottles
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// bash:
 </span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">echo</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">export</span> <span style="color:#a6e22e">HOMEBREW_BOTTLE_DOMAIN</span>=<span style="color:#a6e22e">https</span>:<span style="color:#75715e">//mirrors.ustc.edu.cn/homebrew-bottles&#39; &gt;&gt; ~/.bash_profile
@@ -332,25 +321,21 @@ If in China, we need to change the source URL to a mirror in <a href="http://mir
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// change to ustc
 </span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">cd</span> <span style="color:#e6db74">&#34;$(brew --repo)&#34;</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Library</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Taps</span><span style="color:#f92672">/</span><span style="color:#a6e22e">homebrew</span><span style="color:#f92672">/</span><span style="color:#a6e22e">homebrew</span><span style="color:#f92672">-</span><span style="color:#a6e22e">core</span>
 <span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">git</span> <span style="color:#a6e22e">remote</span> <span style="color:#a6e22e">set</span><span style="color:#f92672">-</span><span style="color:#a6e22e">url</span> <span style="color:#a6e22e">origin</span> <span style="color:#a6e22e">https</span>:<span style="color:#75715e">//mirrors.ustc.edu.cn/homebrew-core.git
-</span><span style="color:#75715e">// reset to origin
+</span><span style="color:#75715e"></span><span style="color:#75715e">// reset to origin
 </span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">cd</span> <span style="color:#e6db74">&#34;$(brew --repo)&#34;</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Library</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Taps</span><span style="color:#f92672">/</span><span style="color:#a6e22e">homebrew</span><span style="color:#f92672">/</span><span style="color:#a6e22e">homebrew</span><span style="color:#f92672">-</span><span style="color:#a6e22e">core</span>
-<span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">git</span> <span style="color:#a6e22e">remote</span> <span style="color:#a6e22e">set</span><span style="color:#f92672">-</span><span style="color:#a6e22e">url</span> <span style="color:#a6e22e">origin</span> <span style="color:#a6e22e">https</span>:<span style="color:#f92672">//</span><span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Homebrew</span><span style="color:#f92672">/</span><span style="color:#a6e22e">homebrew</span><span style="color:#f92672">-</span><span style="color:#a6e22e">core</span></code></pre></div></li>
+<span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">git</span> <span style="color:#a6e22e">remote</span> <span style="color:#a6e22e">set</span><span style="color:#f92672">-</span><span style="color:#a6e22e">url</span> <span style="color:#a6e22e">origin</span> <span style="color:#a6e22e">https</span>:<span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Homebrew</span><span style="color:#f92672">/</span><span style="color:#a6e22e">homebrew</span><span style="color:#f92672">-</span><span style="color:#a6e22e">core</span></code></pre></div></li>
 <li>Homebrew Cask
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// change to ustc
 </span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">cd</span> <span style="color:#e6db74">&#34;$(brew --repo)&#34;</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Library</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Taps</span><span style="color:#f92672">/</span><span style="color:#a6e22e">homebrew</span><span style="color:#f92672">/</span><span style="color:#a6e22e">homebrew</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cask</span>
 <span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">git</span> <span style="color:#a6e22e">remote</span> <span style="color:#a6e22e">set</span><span style="color:#f92672">-</span><span style="color:#a6e22e">url</span> <span style="color:#a6e22e">origin</span> <span style="color:#a6e22e">https</span>:<span style="color:#75715e">//mirrors.ustc.edu.cn/homebrew-cask.git
-</span><span style="color:#75715e">// reset to origin
+</span><span style="color:#75715e"></span><span style="color:#75715e">// reset to origin
 </span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">cd</span> <span style="color:#e6db74">&#34;$(brew --repo)&#34;</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Library</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Taps</span><span style="color:#f92672">/</span><span style="color:#a6e22e">homebrew</span><span style="color:#f92672">/</span><span style="color:#a6e22e">homebrew</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cask</span>
-<span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">git</span> <span style="color:#a6e22e">remote</span> <span style="color:#a6e22e">set</span><span style="color:#f92672">-</span><span style="color:#a6e22e">url</span> <span style="color:#a6e22e">origin</span> <span style="color:#a6e22e">https</span>:<span style="color:#f92672">//</span><span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Homebrew</span><span style="color:#f92672">/</span><span style="color:#a6e22e">homebrew</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cask</span></code></pre></div></li>
+<span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">git</span> <span style="color:#a6e22e">remote</span> <span style="color:#a6e22e">set</span><span style="color:#f92672">-</span><span style="color:#a6e22e">url</span> <span style="color:#a6e22e">origin</span> <span style="color:#a6e22e">https</span>:<span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Homebrew</span><span style="color:#f92672">/</span><span style="color:#a6e22e">homebrew</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cask</span></code></pre></div></li>
 </ul>
-
 <h1 id="iterm2">iTerm2</h1>
-
 <p><code>iTerm2</code> is an open source replacement for Apple&rsquo;s Terminal. It&rsquo;s highly customizable and comes with a lot of useful features.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">brew</span> <span style="color:#a6e22e">cask</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">iterm2</span></code></pre></div></p>
-
-<h1 id="zsh-oh-my-zsh">Zsh &amp; oh-my-zsh</h1>
-
+<h1 id="zsh--oh-my-zsh">Zsh &amp; oh-my-zsh</h1>
 <p>The <code>Z shell</code> (also known as zsh) is a Unix shell that is built on top of <code>bash</code> (the default shell for macOS) with additional features.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// install
 </span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">brew</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">zsh</span>
@@ -358,29 +343,26 @@ If in China, we need to change the source URL to a mirror in <a href="http://mir
 </span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">chsh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">bin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">zsh</span>
 <span style="color:#75715e">// install oh-my-zsh
 </span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">sh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">c</span> <span style="color:#e6db74">&#34;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&#34;</span></code></pre></div></p>
-
 <ul>
-<li><p>Two practical scripts: <code>syntax highlighting</code> &amp; <code>zsh-autosuggestions</code>
+<li>
+<p>Two practical scripts: <code>syntax highlighting</code> &amp; <code>zsh-autosuggestions</code>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// syntax highlighting
 </span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">git</span> <span style="color:#a6e22e">clone</span> <span style="color:#a6e22e">https</span>:<span style="color:#75715e">//github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 </span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">echo</span> <span style="color:#e6db74">&#34;source \$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&#34;</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#960050;background-color:#1e0010">$</span>{<span style="color:#a6e22e">ZDOTDIR</span>:<span style="color:#f92672">-</span><span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">HOME</span>}<span style="color:#f92672">/</span>.<span style="color:#a6e22e">zshrc</span>
 <span style="color:#75715e">// zsh-autosuggestions
-</span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">git</span> <span style="color:#a6e22e">clone</span> <span style="color:#a6e22e">git</span>:<span style="color:#f92672">//</span><span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">zsh</span><span style="color:#f92672">-</span><span style="color:#a6e22e">users</span><span style="color:#f92672">/</span><span style="color:#a6e22e">zsh</span><span style="color:#f92672">-</span><span style="color:#a6e22e">autosuggestions</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">ZSH_CUSTOM</span><span style="color:#f92672">/</span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">/</span><span style="color:#a6e22e">zsh</span><span style="color:#f92672">-</span><span style="color:#a6e22e">autosuggestions</span></code></pre></div></p></li>
-
-<li><p>Install a theme. For example,</p>
-
-<ul>
-<li>Find and download the theme <a href="https://github.com/fcamblor/oh-my-zsh-agnoster-fcamblor" target="_blank">agnoster</a> in Github</li>
-<li>Run <code>install</code> script to copy theme to your ~/.oh-my-zsh folder
-<figure>
-<img src="/media/Computer/MacOS/iterm2/agnoster.png"
- alt="agnoster"/> <figcaption>
-    <p>👆 the theme <code>agnoster</code></p>
-</figcaption>
-</figure></li>
-</ul></li>
+</span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">git</span> <span style="color:#a6e22e">clone</span> <span style="color:#a6e22e">git</span>:<span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">zsh</span><span style="color:#f92672">-</span><span style="color:#a6e22e">users</span><span style="color:#f92672">/</span><span style="color:#a6e22e">zsh</span><span style="color:#f92672">-</span><span style="color:#a6e22e">autosuggestions</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">ZSH_CUSTOM</span><span style="color:#f92672">/</span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">/</span><span style="color:#a6e22e">zsh</span><span style="color:#f92672">-</span><span style="color:#a6e22e">autosuggestions</span></code></pre></div></p>
+</li>
+<li>
+<p>Install a theme. For example,</p>
+</li>
+<li>
+<p>Find and download the theme <a href="https://github.com/fcamblor/oh-my-zsh-agnoster-fcamblor">agnoster</a> in Github</p>
+</li>
+<li>
+<p>Run <code>install</code> script to copy theme to your ~/.oh-my-zsh folder</p>
+</li>
 </ul>
-
+<!-- raw HTML omitted -->
 <p>Set parameter in <code>~/.zshrc</code>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">vim</span> <span style="color:#960050;background-color:#1e0010">~</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">zshrc</span></code></pre></div>
 and edit this configuration file
@@ -390,18 +372,14 @@ and edit this configuration file
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">plugins</span>=(<span style="color:#a6e22e">git</span> <span style="color:#a6e22e">pip</span> <span style="color:#a6e22e">python</span> <span style="color:#a6e22e">brew</span> <span style="color:#a6e22e">osx</span> <span style="color:#a6e22e">zsh</span><span style="color:#f92672">-</span><span style="color:#a6e22e">syntax</span><span style="color:#f92672">-</span><span style="color:#a6e22e">highlighting</span> <span style="color:#a6e22e">zsh</span><span style="color:#f92672">-</span><span style="color:#a6e22e">autosuggestions</span>)
 <span style="color:#75715e">// export ./bash_profile to merge together
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">source</span> <span style="color:#960050;background-color:#1e0010">~</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">bash_profile</span></code></pre></div></p>
-
 <p>Finally run <code>~/.zshrc</code> to reactive those changes
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">source</span> <span style="color:#960050;background-color:#1e0010">~</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">zshrc</span></code></pre></div></p>
-
 <p>The end 😊</p>
-
 <h1 id="reference">Reference</h1>
-
 <ol>
-<li><a href="https://wyydsb.xin/other/terminal.html" target="_blank">如何给码农👨‍💻‍的Mac开光</a> (some useful details <del>and some bugs</del>)</li>
-<li><a href="https://www.jianshu.com/p/7de00c73a2bb" target="_blank">iTerm 2 &amp;&amp; Oh My Zsh【DIY教程——亲身体验过程】</a> (some decorations)</li>
-<li><a href="https://www.cnblogs.com/zzhaolei/p/11068033.html" target="_blank">Mac上使用brew update会卡住的问题</a> (solved some source downloading problem in China)</li>
+<li><a href="https://wyydsb.xin/other/terminal.html">如何给码农👨‍💻‍的Mac开光</a> (some useful details <del>and some bugs</del>)</li>
+<li><a href="https://www.jianshu.com/p/7de00c73a2bb">iTerm 2 &amp;&amp; Oh My Zsh【DIY教程——亲身体验过程】</a> (some decorations)</li>
+<li><a href="https://www.cnblogs.com/zzhaolei/p/11068033.html">Mac上使用brew update会卡住的问题</a> (solved some source downloading problem in China)</li>
 </ol>
 
 </div>
@@ -429,7 +407,27 @@ and edit this configuration file
 </article>
 
 <nav class='entry-nav'>
-  <div class='container'></div>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/computer/macos/my_first_mac/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>My first Mac</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/computer/macos/anaconda/'>
+        <span class='screen-reader-text'>Next post: </span>Anaconda<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
 </nav>
 
 
@@ -494,7 +492,7 @@ and edit this configuration file
           </span>
           
           <div class='copyright'>
-  <p>&ensp; &copy; 2017-2020 Amuro Peng </p>
+  <p> &copy; 2017-2020 Amuro Peng </p>
 </div>
 
         </div>

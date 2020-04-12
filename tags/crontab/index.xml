@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>crontab on Amuro Peng</title>
+    <link>http://www.amuro.top/tags/crontab/</link>
+    <description>Recent content in crontab on Amuro Peng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 12 Apr 2020 16:50:21 -0400</lastBuildDate>
+    
+	<atom:link href="http://www.amuro.top/tags/crontab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Crontab</title>
+      <link>http://www.amuro.top/computer/linux/crontab/</link>
+      <pubDate>Sun, 12 Apr 2020 16:50:21 -0400</pubDate>
+      
+      <guid>http://www.amuro.top/computer/linux/crontab/</guid>
+      <description>cron是一个Linux定时执行工具，可以在无需人工干预的情况下运行作业。在Ubuntu server 下，cron是被默认安装并启动的。 edit crontab sudo crontab -e input script you</description>
+    </item>
+    
+  </channel>
+</rss>

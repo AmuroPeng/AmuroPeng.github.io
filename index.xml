@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Amuro Peng</title>
     <link>http://www.amuro.top/</link>
     <description>Recent content in Home on Amuro Peng</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 28 Jan 2020 01:32:47 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2020 16:50:21 -0400</lastBuildDate>
     
 	<atom:link href="http://www.amuro.top/index.xml" rel="self" type="application/rss+xml" />
     
@@ -20,12 +20,48 @@
     </item>
     
     <item>
+      <title>Crontab</title>
+      <link>http://www.amuro.top/computer/linux/crontab/</link>
+      <pubDate>Sun, 12 Apr 2020 16:50:21 -0400</pubDate>
+      
+      <guid>http://www.amuro.top/computer/linux/crontab/</guid>
+      <description>cron是一个Linux定时执行工具，可以在无需人工干预的情况下运行作业。在Ubuntu server 下，cron是被默认安装并启动的。 edit crontab sudo crontab -e input script you</description>
+    </item>
+    
+    <item>
+      <title>03design_pattern_intro</title>
+      <link>http://www.amuro.top/computer/object-oriented-design-and-programming/03design_pattern_intro/</link>
+      <pubDate>Sat, 29 Feb 2020 17:20:25 -0500</pubDate>
+      
+      <guid>http://www.amuro.top/computer/object-oriented-design-and-programming/03design_pattern_intro/</guid>
+      <description>Design Pattern Overview Q:What does a pattern do? A:Documents a recurring重复出现的 problem/solution paring within a given context Essential elements Pattern name Used to provide a single and meaningful name to the pattern which defines a design problem and a solution for it. Naming a design pattern helps itself to be referred to others easily. Allows easy documentation</description>
+    </item>
+    
+    <item>
+      <title>Object Oriented</title>
+      <link>http://www.amuro.top/computer/object-oriented-design-and-programming/02object-oriented/</link>
+      <pubDate>Fri, 28 Feb 2020 17:36:12 -0500</pubDate>
+      
+      <guid>http://www.amuro.top/computer/object-oriented-design-and-programming/02object-oriented/</guid>
+      <description>Software is inherently固有的 complex Complexity of the problem domain Difficulty of managing the development process Flexibility possible through software Problems of characterizing描述xx特征 the behavior of discrete离散的 systems Five attributes</description>
+    </item>
+    
+    <item>
+      <title>1.Introduction</title>
+      <link>http://www.amuro.top/computer/object-oriented-design-and-programming/01introduction/</link>
+      <pubDate>Mon, 24 Feb 2020 16:36:26 -0500</pubDate>
+      
+      <guid>http://www.amuro.top/computer/object-oriented-design-and-programming/01introduction/</guid>
+      <description>Qualities of a well designed software Correctness 正确性 The degree with which software adheres to its specified requirements . At the start of the software life cycle, the requirements for the software are determined and formalized in the requirements specification document. Well designed software should meet all the stated requirements. While it might seem obvious that software should be correct, the reality is that this characteristic is one</description>
+    </item>
+    
+    <item>
       <title>06 Edge and feature detection 特征的检测提取与描述</title>
       <link>http://www.amuro.top/computer/graphics/06-edge-and-feature-detection/</link>
       <pubDate>Tue, 28 Jan 2020 01:32:47 +0800</pubDate>
       
       <guid>http://www.amuro.top/computer/graphics/06-edge-and-feature-detection/</guid>
-      <description>摘要： 1. 之前都是图到图的转换，这章是需要从图中提去到信息 Images → symbols 2. 低通滤波-&amp;gt;只允许低频通过-&amp;gt;剩下高频-&amp;gt;用于边缘提取（边</description>
+      <description>摘要： 之前都是图到图的转换，这章是需要从图中提去到信息 Images → symbols 低通滤波-&amp;gt;只允许低频通过-&amp;gt;剩下高频-&amp;gt;用于边缘提取（边缘是</description>
     </item>
     
     <item>
@@ -34,7 +70,7 @@
       <pubDate>Tue, 28 Jan 2020 00:32:47 +0800</pubDate>
       
       <guid>http://www.amuro.top/computer/graphics/05-image-processing/</guid>
-      <description>摘要： 1. 图像的处理有两种方式，时域（空间域）处理（比如卷积，降噪因子）和频域处理（傅里叶，低通Low pass高通High pass滤波） 2. A common</description>
+      <description>摘要： 图像的处理有两种方式，时域（空间域）处理（比如卷积，降噪因子）和频域处理（傅里叶，低通Low pass高通High pass滤波） A common technique for</description>
     </item>
     
     <item>
@@ -52,7 +88,7 @@
       <pubDate>Mon, 27 Jan 2020 23:47:47 +0800</pubDate>
       
       <guid>http://www.amuro.top/computer/graphics/03-imaging-sensors/</guid>
-      <description>摘要： 1. 人眼结构：杆状细胞感觉强度(夜视)，锥状细胞感觉颜色(白天视力) CCD Camera CCD: Charge-coupled device (semiconductor) 电荷耦合器件(半导体) Single IC sensor device 单集成电路传感器装置 Consists of an</description>
+      <description>摘要： 人眼结构：杆状细胞感觉强度(夜视)，锥状细胞感觉颜色(白天视力) CCD Camera CCD: Charge-coupled device (semiconductor) 电荷耦合器件(半导体) Single IC sensor device 单集成电路传感器装置 Consists of an array</description>
     </item>
     
     <item>
@@ -61,7 +97,7 @@
       <pubDate>Mon, 27 Jan 2020 22:35:47 +0800</pubDate>
       
       <guid>http://www.amuro.top/computer/graphics/02-mathematical-preliminaries/</guid>
-      <description>摘要： 1. 图像处理第一步是sampling采样，目的：将模拟图像转化为数字图像 Analog to Digital 2. 采样用到的方法是傅里叶级数、傅里叶变换：从空域或时域到频</description>
+      <description>摘要： 图像处理第一步是sampling采样，目的：将模拟图像转化为数字图像 Analog to Digital 采样用到的方法是傅里叶级数、傅里叶变换：从空域或时域到频域转</description>
     </item>
     
     <item>
@@ -70,7 +106,7 @@
       <pubDate>Mon, 27 Jan 2020 22:15:47 +0800</pubDate>
       
       <guid>http://www.amuro.top/computer/graphics/01-introduction/</guid>
-      <description>01 Introduction 简介 1) What is biological vision? 生物视觉 Definitions: It is one of the senses that animals use to survive in their environment. 定义： 它是动物在环境中生存的一种感觉。 Vision in biological systems consists of two parts: 生物系统的视觉包括两部分: 1. Sensor/eye</description>
+      <description>01 Introduction 简介 1) What is biological vision? 生物视觉 Definitions: It is one of the senses that animals use to survive in their environment. 定义： 它是动物在环境中生存的一种感觉。 Vision in biological systems consists of two parts: 生物系统的视觉包括两部分: Sensor/eye –</description>
     </item>
     
     <item>
@@ -97,9 +133,9 @@
       <pubDate>Sun, 20 Oct 2019 20:55:56 +0800</pubDate>
       
       <guid>http://www.amuro.top/computer/macos/java_installation/</guid>
-      <description> Use Homebrew to install: // install the latest version $ brew cask install java // for the certain version e.g. java8 $ brew cask install java8
- Set the environment variable:
- check the Installation directory in Finder. e.g. /Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home vim ~./zshrc export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar export PATH=$JAVA_HOME/bin:$PATH: source ~./zshrc   </description>
+      <description>  Use Homebrew to install: // install the latest version $ brew cask install java // for the certain version e.g. java8 $ brew cask install java8
+  Set the environment variable:
+ check the Installation directory in Finder. e.g. /Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home vim ~./zshrc export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar export PATH=$JAVA_HOME/bin:$PATH: source ~./zshrc    </description>
     </item>
     
     <item>
@@ -154,6 +190,15 @@
       
       <guid>http://www.amuro.top/computer/linux/screen/</guid>
       <description>screen 会话命令可以保持本地和服务器断开后，程序继续在服务器上运行 创建 screen -S session_name 切出去 Ctrl + A + D 列出所有的session screen -ls (或screen -list) 恢复se</description>
+    </item>
+    
+    <item>
+      <title>Common Usages</title>
+      <link>http://www.amuro.top/computer/python/common-usages/</link>
+      <pubDate>Sat, 28 Sep 2019 16:08:03 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/computer/python/common-usages/</guid>
+      <description>Difference between &amp;lsquo;Null&amp;rsquo; and &amp;lsquo;None&amp;rsquo; There is no Null in Python, which means blank string str(&#39;&#39;) Difference between &amp;lsquo;is&amp;rsquo; and &amp;lsquo;==&amp;rsquo; == describes same value &amp;lsquo;is&amp;rsquo; represents same object, including same addresses, same value, same everything.</description>
     </item>
     
     <item>

@@ -11,7 +11,7 @@
 <meta property='og:site_name' content='Amuro Peng'>
 <meta property='og:type' content='article'><meta property='article:section' content='Computer'><meta property='article:tag' content='Graphics'><meta property='article:published_time' content='2020-01-28T00:32:47&#43;08:00'/><meta property='article:modified_time' content='2020-01-28T00:32:47&#43;08:00'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.55.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
   <title>05 image processing 图像处理 • Amuro Peng</title>
   <link rel='canonical' href='http://www.amuro.top/computer/graphics/05-image-processing/'>
@@ -103,6 +103,8 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/brew/' style='font-size:1em'>brew</a>
       </li><li>
+        <a href='/tags/crontab/' style='font-size:1em'>crontab</a>
+      </li><li>
         <a href='/tags/environment-variable/' style='font-size:1em'>environment variable</a>
       </li><li>
         <a href='/tags/graphics/' style='font-size:2em'>Graphics</a>
@@ -111,7 +113,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/hugo/' style='font-size:1em'>Hugo</a>
       </li><li>
-        <a href='/tags/ielts/' style='font-size:2em'>ielts</a>
+        <a href='/tags/ielts/' style='font-size:1.8em'>ielts</a>
       </li><li>
         <a href='/tags/installation/' style='font-size:1em'>installation</a>
       </li><li>
@@ -119,7 +121,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/java/' style='font-size:1.4em'>Java</a>
       </li><li>
-        <a href='/tags/linux/' style='font-size:1em'>Linux</a>
+        <a href='/tags/linux/' style='font-size:1.2em'>Linux</a>
       </li><li>
         <a href='/tags/listening/' style='font-size:1em'>listening</a>
       </li><li>
@@ -127,7 +129,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/macbook-pro/' style='font-size:1em'>Macbook-Pro</a>
       </li><li>
-        <a href='/tags/python/' style='font-size:1em'>python</a>
+        <a href='/tags/python/' style='font-size:1.2em'>python</a>
       </li><li>
         <a href='/tags/reading/' style='font-size:1em'>reading</a>
       </li><li>
@@ -286,256 +288,184 @@ if (!doNotTrack) {
   
 
   <div class='container entry-content'>
-  
-
-<p>摘要：
-1. 图像的处理有两种方式，时域（空间域）处理（比如卷积，降噪因子）和频域处理（傅里叶，低通Low pass高通High pass滤波）
-2. A common technique for increasing contrast in an image is histogram equalization . 增强图像对比度的一种常用技术是直方图均衡化
-3. <code>Median filtering 中值滤波</code>适合去除 椒盐噪声</p>
-
-<ul>
-<li><strong>Image restoration</strong><br />
-Degradation model must be known.<br />
-The degradation is reversed using this known model.</li>
-<li><strong>Image enhancement</strong><br />
-Degradation model is not known.<br />
-Goal is to (1) clean up noise or (2) make image visually more pleasing</li>
-<li><strong>Methods:</strong><br />
-Spatial filtering methods<br />
-Frequency domain methods</li>
-<li><strong>Point operations</strong><br />
-Contrast stretching<br />
-Histogram modification and histogram equalization</li>
-<li><strong>Spatial neighborhood operations</strong><br />
-Averaging filters<br />
-Median filters (nonlinear)<br />
-Unsharp masking<br /></li>
-</ul>
-
-<h1 id="image-processing">Image processing</h1>
-
-<h2 id="restoration-enhancement-图像复原-图像增强">Restoration &amp; Enhancement 图像复原&amp;图像增强</h2>
-
-<p>Both enhancement and restoration aim to improve the quality of degraded images operations on them. 增强和恢复的目的都是为了提高对退化图像的处理质量。</p>
-
-<p><strong>Restoration</strong>: the model of degradation known, and this information is used to undo its effect and obtain the undegraded image. Assumes degradation is reversible. 复原:已知退化模型，利用该信息抵消退化效果，得到未退化图像。假设退化是可逆的。<br />
-<em>需要考虑图像质量下降的原因，然后去除干扰的因素，来复原</em><br />
-<strong>Enhancement</strong>: the model of degradation not known, and the improvements are done with the goal of obtaining a visually pleasing results or reducing noise for later processing. 增强:退化模型未知，改进的目的是获得视觉上令人满意的结果或减少后续处理的噪声。</p>
-
-<h2 id="restoration-图像复原">Restoration 图像复原</h2>
-
-<h2 id="types-of-noise">Types of noise</h2>
-
-<p>The degradation can be systematic or random 降解可以是系统的，也可以是随机的<br />
-In case degradation is random, the noise can come from a known probability distribution:  如果退化是随机的，噪声可能来自一个已知的概率分布:
-Gaussian 高斯<br />
-Uniform 统一的<br />
-Salt and pepper noise 椒盐噪声</p>
-
-<h6 id="an-application">An application:</h6>
-
-<p>We knew what the degradation was: a sinusoidal noise added to the image. 如果我们知道质量下降的原因是一个正弦噪声
-We could undo the effect of the noise by 我们可以通过以下方法消除噪音的影响：<br />
-1. Identifying the frequency component, and 确定频率分量<br />
-2. Filtering it out using frequency domain techniques. 使用频域技术过滤它</p>
-
-<h6 id="another-application-vignetting-衰减">Another application: vignetting 衰减</h6>
-
-<p>可以给一个简单的输入（画面），先去分析固定灰度值的影响是什么，再用这个分析好的模型去恢复其他的模型。</p>
-
-<hr />
-
-<p>23-25</p>
-
-<hr />
-
-<h2 id="enhancement-图像增强-本科容易实现">Enhancement 图像增强（本科容易实现）</h2>
-
-<p>Goal: is to produce enhanced or cleaned up image for further processing and/or making the image more acceptable to human eye. 目标:产生增强或清除图像，以便进一步处理和/或使图像更易于人眼接受。</p>
-
-<p>Typically, the model of noise or degradation is not known. 通常，噪声或退化的模型是未知的。</p>
-
-<h3 id="image-enhancement-methods-图像增强的方法">Image enhancement methods 图像增强的方法</h3>
-
+  <p>摘要：</p>
 <ol>
-<li>Point operations 点操作<br />
-Contrast stretching 对比度拉伸<br />
-Gray level transforms 灰度变换<br />
-Histogram modifications 直方图修改<br /></li>
-<li>Spatial filtering operations 空间滤波操作<br />
-Averaging 平均<br />
-Median filtering 中值滤波<br />
+<li>图像的处理有两种方式，时域（空间域）处理（比如卷积，降噪因子）和频域处理（傅里叶，低通Low pass高通High pass滤波）</li>
+<li>A common technique for increasing contrast in an image is histogram equalization . 增强图像对比度的一种常用技术是直方图均衡化</li>
+<li><code>Median filtering 中值滤波</code>适合去除 椒盐噪声</li>
+</ol>
+<ul>
+<li><strong>Image restoration</strong><br>
+Degradation model must be known.<br>
+The degradation is reversed using this known model.</li>
+<li><strong>Image enhancement</strong><br>
+Degradation model is not known.<br>
+Goal is to (1) clean up noise or (2) make image visually more pleasing</li>
+<li><strong>Methods:</strong><br>
+Spatial filtering methods<br>
+Frequency domain methods</li>
+<li><strong>Point operations</strong><br>
+Contrast stretching<br>
+Histogram modification and histogram equalization</li>
+<li><strong>Spatial neighborhood operations</strong><br>
+Averaging filters<br>
+Median filters (nonlinear)<br>
+Unsharp masking</li>
+</ul>
+<h1 id="image-processing">Image processing</h1>
+<h2 id="restoration--enhancement-图像复原图像增强">Restoration &amp; Enhancement 图像复原&amp;图像增强</h2>
+<p>Both enhancement and restoration aim to improve the quality of degraded images operations on them. 增强和恢复的目的都是为了提高对退化图像的处理质量。</p>
+<p><strong>Restoration</strong>: the model of degradation known, and this information is used to undo its effect and obtain the undegraded image. Assumes degradation is reversible. 复原:已知退化模型，利用该信息抵消退化效果，得到未退化图像。假设退化是可逆的。<br>
+<em>需要考虑图像质量下降的原因，然后去除干扰的因素，来复原</em><br>
+<strong>Enhancement</strong>: the model of degradation not known, and the improvements are done with the goal of obtaining a visually pleasing results or reducing noise for later processing. 增强:退化模型未知，改进的目的是获得视觉上令人满意的结果或减少后续处理的噪声。</p>
+<h2 id="restoration-图像复原">Restoration 图像复原</h2>
+<h2 id="types-of-noise">Types of noise</h2>
+<p>The degradation can be systematic or random 降解可以是系统的，也可以是随机的<br>
+In case degradation is random, the noise can come from a known probability distribution:  如果退化是随机的，噪声可能来自一个已知的概率分布:
+Gaussian 高斯<br>
+Uniform 统一的<br>
+Salt and pepper noise 椒盐噪声</p>
+<h6 id="an-application">An application:</h6>
+<p>We knew what the degradation was: a sinusoidal noise added to the image. 如果我们知道质量下降的原因是一个正弦噪声
+We could undo the effect of the noise by 我们可以通过以下方法消除噪音的影响：</p>
+<ol>
+<li>Identifying the frequency component, and 确定频率分量</li>
+<li>Filtering it out using frequency domain techniques. 使用频域技术过滤它</li>
+</ol>
+<h6 id="another-application-vignetting-衰减">Another application: vignetting 衰减</h6>
+<p>可以给一个简单的输入（画面），先去分析固定灰度值的影响是什么，再用这个分析好的模型去恢复其他的模型。</p>
+<hr>
+<p>23-25</p>
+<hr>
+<h2 id="enhancement-图像增强本科容易实现">Enhancement 图像增强（本科容易实现）</h2>
+<p>Goal: is to produce enhanced or cleaned up image for further processing and/or making the image more acceptable to human eye. 目标:产生增强或清除图像，以便进一步处理和/或使图像更易于人眼接受。</p>
+<p>Typically, the model of noise or degradation is not known. 通常，噪声或退化的模型是未知的。</p>
+<h3 id="image-enhancement-methods-图像增强的方法">Image enhancement methods 图像增强的方法</h3>
+<ol>
+<li>Point operations 点操作<br>
+Contrast stretching 对比度拉伸<br>
+Gray level transforms 灰度变换<br>
+Histogram modifications 直方图修改</li>
+<li>Spatial filtering operations 空间滤波操作<br>
+Averaging 平均<br>
+Median filtering 中值滤波<br>
 Unsharp masking
-Low pass, band pass, high pass filtering 低通，带通，高通滤波<br />
-Zooming 缩放<br /></li>
-
-<li><p>Pseudocoloring 伪彩色</p>
-
+Low pass, band pass, high pass filtering 低通，带通，高通滤波<br>
+Zooming 缩放</li>
+<li>Pseudocoloring 伪彩色</li>
+</ol>
 <h4 id="point-operations-点操作">Point operations 点操作</h4>
-
 <h5 id="1-分段线性变换">1. 分段线性变换</h5>
-
 <p>Each pixel’s gray value is modified independently of the values of its spatial neighbors.
 Input 𝑢: gray level ∈[0,𝐿−1] where 𝐿 is the number of gray levels.
 Output 𝑣: gray level ∈[0,𝐿−1], 𝑣=𝑓(𝑢)
 Sometimes referred to as zero-memory methods, because there is no need to remember surrounding pixel values.
 与周围像素点无关 看每个像素点在哪个阈值里，大于就是白，小于就是黑</p>
-
 <h5 id="2-contrast-stretching-反色">2. Contrast stretching 反色</h5>
-
-<p>用最高灰度级-当前灰度级</p></li>
-</ol>
-
-<hr />
-
+<p>用最高灰度级-当前灰度级</p>
+<hr>
 <p>26 27 28！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！</p>
-
-<hr />
-
+<hr>
 <p><strong>Gray scale reversal 灰度反转</strong>
 𝑓(𝑢)=(𝐿−1)−𝑢
 Example usage: displaying X-ray images which are normally negatives.
-<strong>Nonlinear contrast stretching 非线性对比拉伸</strong><br />
+<strong>Nonlinear contrast stretching 非线性对比拉伸</strong><br>
 对数变换 拉伸暗的范围，压缩亮的范围</p>
-
-<hr />
-
+<hr>
 <p>29</p>
-
-<hr />
-
+<hr>
 <h4 id="3-point-operations-based-on-histogram-基于直方图的点操作">3. Point operations based on histogram 基于直方图的点操作</h4>
-
-<p><strong>Definitions</strong>:<br />
-The relative frequency of occurrence of gray levels in an image is ℎ(𝑢).<br />
+<p><strong>Definitions</strong>:<br>
+The relative frequency of occurrence of gray levels in an image is ℎ(𝑢).<br>
 If ℎ(𝑢) is normalized such that</p>
-
-<hr />
-
+<hr>
 <p>30
-∫_0^𝐿▒〖ℎ(𝑢)𝑑𝑢=&ldquo;image area&rdquo; 〗</p>
-
-<hr />
-
+∫_0^𝐿▒〖ℎ(𝑢)𝑑𝑢=&quot;image area&rdquo; 〗</p>
+<hr>
 <p>then ℎ(𝑢) is called the histogram.</p>
-
-<p>A common technique for increasing contrast in an image is histogram equalization (or histogram flattening). <code>增强图像对比度</code>的一种常用技术是<code>直方图均衡化</code>(或直方图平坦化)。<br />
-The goal is to redistribute gray levels among pixels so that the resulting histogram is flat. 我们的目标是在像素之间重新分配灰度，这样得到的直方图就是平坦的。<br />
-The result of this redistribution is that the gray level range is expanded near the peak of the histogram (where most pixels are) and compressed near the tails. 这种重新分布的结果是，灰度范围在直方图的峰值附近(其中大多数像素都在)扩大，并在尾部附近压缩。<br />
+<p>A common technique for increasing contrast in an image is histogram equalization (or histogram flattening). <code>增强图像对比度</code>的一种常用技术是<code>直方图均衡化</code>(或直方图平坦化)。<br>
+The goal is to redistribute gray levels among pixels so that the resulting histogram is flat. 我们的目标是在像素之间重新分配灰度，这样得到的直方图就是平坦的。<br>
+The result of this redistribution is that the gray level range is expanded near the peak of the histogram (where most pixels are) and compressed near the tails. 这种重新分布的结果是，灰度范围在直方图的峰值附近(其中大多数像素都在)扩大，并在尾部附近压缩。<br>
 Since gray levels are stretched for most pixels, more detail is visible. 由于大多数像素的灰度会被拉伸，因此可以看到更多的细节。</p>
-
 <p><em>直方图分布变成近似均匀分布，从而增强图像的对比度:将集中于一个频率区域的色彩扩大到所有频率内，使得图像中所有频率的都有，颜色就会更多彩，对比度就更高了</em></p>
-
 <p><strong>Histogram equalization 直方图均衡</strong>：
-Define a mapping E: P→ Q, where P is the set of gray levels for the input image, and Q is the new set of transformed gray levels. 定义一个映射E: P→Q，其中P为输入图像的灰度集合，Q为转换后的灰度新集合。<br />
-直方图均衡:使变换后的图像中各灰度级出现的几率相当, 变换后概率密度函数(pdf)为均匀分布<br />
+Define a mapping E: P→ Q, where P is the set of gray levels for the input image, and Q is the new set of transformed gray levels. 定义一个映射E: P→Q，其中P为输入图像的灰度集合，Q为转换后的灰度新集合。<br>
+直方图均衡:使变换后的图像中各灰度级出现的几率相当, 变换后概率密度函数(pdf)为均匀分布<br>
 直方图规定化:使处理后的直方图具有规定的形状</p>
-
-<hr />
-
+<hr>
 <p>31-32 概念</p>
-
-<hr />
-
+<hr>
 <h2 id="magnification-zooming-缩放">Magnification (zooming) 缩放</h2>
-
 <h3 id="1-zooming-in-放大">1. zooming in 放大</h3>
-
 <p><strong>Method 1: Replication 复制</strong>
 For doubling each dimension:
 Let 𝑓 be the resulting image and 𝐼 be the input image
 Each pixel in a scan line is repeated once</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">&gt;<span style="color:#a6e22e">𝑓</span>(<span style="color:#a6e22e">𝑖</span>,<span style="color:#ae81ff">2</span><span style="color:#a6e22e">𝑗</span>)=<span style="color:#a6e22e">𝐼</span>(<span style="color:#a6e22e">𝑖</span>,<span style="color:#a6e22e">𝑗</span>)
 &gt;<span style="color:#a6e22e">𝑓</span>(<span style="color:#a6e22e">𝑖</span>,<span style="color:#ae81ff">2</span><span style="color:#a6e22e">𝑗</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)=<span style="color:#a6e22e">𝐼</span>(<span style="color:#a6e22e">𝑖</span>,<span style="color:#a6e22e">𝑗</span>)</code></pre></div>
-
 <p>Each scan line is repeated once.
 最近临放大</p>
-
-<hr />
-
+<hr>
 <p>33</p>
-
-<hr />
-
-<p><strong>Method 2: Linear interpolation 差值放大</strong><br />
-The intensities between two pixels are linearly interpolated in a row<br />
-Then each scan line is interpolated<br />
+<hr>
+<p><strong>Method 2: Linear interpolation 差值放大</strong><br>
+The intensities between two pixels are linearly interpolated in a row<br>
+Then each scan line is interpolated<br>
 相邻两个像素的平均值来填充中间的像素，边缘选用丢弃法等方法</p>
-
-<hr />
-
+<hr>
 <p>34</p>
-
-<hr />
-
+<hr>
 <h3 id="2-zooming-out-缩小">2. zooming out 缩小</h3>
-
 <p><strong>Method 1: Sampling 采样</strong>
 Every other pixel is sampled from the rows and columns 隔一个像素取一个</p>
-
-<hr />
-
+<hr>
 <p>35</p>
-
-<hr />
-
+<hr>
 <p><strong>Method 2: Averaging 取平均</strong>
 2x2 windows are averaged and the result is assigned to the appropriate pixel in the smaller resulting image. 每2x2个取一个平均值</p>
-
-<hr />
-
+<hr>
 <p>36</p>
-
-<hr />
-
+<hr>
 <h2 id="other-interpolation-and-sampling-methods">Other interpolation and sampling methods</h2>
-
 <h3 id="filtering-and-sampling-滤波与采样">filtering and sampling 滤波与采样</h3>
-
-<p>Gaussian filter one possibility<br />
-在信号采样前加一个滤波，以避免屏幕混叠。如果照片中有变化快/非常细的纹理，那么降采样的时候如果频率不够高就会有波纹。加入滤波就可以避免<br />
+<p>Gaussian filter one possibility<br>
+在信号采样前加一个滤波，以避免屏幕混叠。如果照片中有变化快/非常细的纹理，那么降采样的时候如果频率不够高就会有波纹。加入滤波就可以避免<br>
 Solution:  filter the image (smooth using neighborhood operations), then subsample</p>
-
 <h3 id="spatial-neighborhood-operations-空域滤波">Spatial (neighborhood) operations 空域滤波</h3>
-
-<p>Weighted combinations of pixels in small neighborhoods<br />
-Simplest enhancement operation is replacing a pixel value with the average of its neighbors. (4-neighbors, 8-neighbors or other neighborhoods)<br />
-Let 𝐼(𝑖,𝑗) be the original image and 𝑓(𝑖,𝑗) be the computed image.<br />
-使用空域模板进行的图像处理，被称为空域滤波。<br />
-模板本身被称为空域滤波器。<br />
-在待处理的图像中逐点地移动模板，滤波器在该点的响应通过事先定义的滤波器系数与滤波模板扫过区域的相应像素值的关系来计算<br />
+<p>Weighted combinations of pixels in small neighborhoods<br>
+Simplest enhancement operation is replacing a pixel value with the average of its neighbors. (4-neighbors, 8-neighbors or other neighborhoods)<br>
+Let 𝐼(𝑖,𝑗) be the original image and 𝑓(𝑖,𝑗) be the computed image.<br>
+使用空域模板进行的图像处理，被称为空域滤波。<br>
+模板本身被称为空域滤波器。<br>
+在待处理的图像中逐点地移动模板，滤波器在该点的响应通过事先定义的滤波器系数与滤波模板扫过区域的相应像素值的关系来计算<br>
 <strong>Masks and convolution 模板与卷积</strong>
 In image processing, various convolution operations are often represented by <strong>masks with which the image is convolved</strong>. 在图像处理中，各种卷积操作通常用卷积图像的模板表示</p>
-
-<p>This is accomplished by the following steps 这可以通过以下步骤来实现<br />
-1. Place mask on pixel (𝑖,𝑗) for which result is to be computed<br />
-2. Compute point wise multiplication of all pixels of the image and mask that overlap<br />
-3. Sum up the products<br />
-4. Replace pixel (𝑖,𝑗) value with the computed sum of products<br />
-5. Slide mask over to the next pixel and repeat operation</p>
-
+<p>This is accomplished by the following steps 这可以通过以下步骤来实现</p>
+<ol>
+<li>Place mask on pixel (𝑖,𝑗) for which result is to be computed</li>
+<li>Compute point wise multiplication of all pixels of the image and mask that overlap</li>
+<li>Sum up the products</li>
+<li>Replace pixel (𝑖,𝑗) value with the computed sum of products</li>
+<li>Slide mask over to the next pixel and repeat operation</li>
+</ol>
 <h3 id="median-filtering-中值滤波">Median filtering 中值滤波</h3>
-
-<p><strong>适合去除 椒盐噪声（孤立的噪声）</strong><br />
-黑白颜色的小点<br />
+<p><strong>适合去除 椒盐噪声（孤立的噪声）</strong><br>
+黑白颜色的小点<br>
 Input pixel is replaced by the median value in a window.
-𝑓(𝑖,𝑗)=&ldquo;Median&rdquo;(𝐼(𝑖−𝑘,𝑗−𝑙),&rdquo; for&rdquo; (𝑘,𝑙)∈𝑊}</p>
-
-<hr />
-
+𝑓(𝑖,𝑗)=&quot;Median&rdquo;(𝐼(𝑖−𝑘,𝑗−𝑙),&rdquo; for&rdquo; (𝑘,𝑙)∈𝑊}</p>
+<hr>
 <p>37</p>
-
-<hr />
-
-<p><strong>Properties</strong>:<br />
-1. Nonlinear filter<br />
-2. Useful for removing isolated pixels or lines (of course, we may not want to lose lines, in which case this would be considered bad).<br />
-3. Preserves step edges (does not smooth them)<br />
-4. Clips corners<br />
-5. Performs well on binary noise (salt-and-pepper noise) but poorly on Gaussian noise.<br />
-6. Computationally costly (needs sorting of values)<br />
-Practical implementation: separable median filter: i.e., two 1D median filters in x and y directions.</p>
+<hr>
+<p><strong>Properties</strong>:</p>
+<ol>
+<li>Nonlinear filter</li>
+<li>Useful for removing isolated pixels or lines (of course, we may not want to lose lines, in which case this would be considered bad).</li>
+<li>Preserves step edges (does not smooth them)</li>
+<li>Clips corners</li>
+<li>Performs well on binary noise (salt-and-pepper noise) but poorly on Gaussian noise.</li>
+<li>Computationally costly (needs sorting of values) <br>
+Practical implementation: separable median filter: i.e., two 1D median filters in x and y directions.</li>
+</ol>
 
 </div>
 
@@ -562,7 +492,27 @@ Practical implementation: separable median filter: i.e., two 1D median filters i
 </article>
 
 <nav class='entry-nav'>
-  <div class='container'></div>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/computer/graphics/04-image-formation/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>04 image formation 成像过程</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/computer/graphics/06-edge-and-feature-detection/'>
+        <span class='screen-reader-text'>Next post: </span>06 Edge and feature detection 特征的检测提取与描述<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
 </nav>
 
 
@@ -627,7 +577,7 @@ Practical implementation: separable median filter: i.e., two 1D median filters i
           </span>
           
           <div class='copyright'>
-  <p>&ensp; &copy; 2017-2020 Amuro Peng </p>
+  <p> &copy; 2017-2020 Amuro Peng </p>
 </div>
 
         </div>

@@ -11,7 +11,7 @@
 <meta property='og:site_name' content='Amuro Peng'>
 <meta property='og:type' content='article'><meta property='article:section' content='Computer'><meta property='article:tag' content='Linux'><meta property='article:published_time' content='2019-09-28T22:30:57&#43;08:00'/><meta property='article:modified_time' content='2019-09-28T22:30:57&#43;08:00'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.55.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
   <title>Screen 会话 • Amuro Peng</title>
   <link rel='canonical' href='http://www.amuro.top/computer/linux/screen/'>
@@ -103,6 +103,8 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/brew/' style='font-size:1em'>brew</a>
       </li><li>
+        <a href='/tags/crontab/' style='font-size:1em'>crontab</a>
+      </li><li>
         <a href='/tags/environment-variable/' style='font-size:1em'>environment variable</a>
       </li><li>
         <a href='/tags/graphics/' style='font-size:2em'>Graphics</a>
@@ -111,7 +113,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/hugo/' style='font-size:1em'>Hugo</a>
       </li><li>
-        <a href='/tags/ielts/' style='font-size:2em'>ielts</a>
+        <a href='/tags/ielts/' style='font-size:1.8em'>ielts</a>
       </li><li>
         <a href='/tags/installation/' style='font-size:1em'>installation</a>
       </li><li>
@@ -119,7 +121,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/java/' style='font-size:1.4em'>Java</a>
       </li><li>
-        <a href='/tags/linux/' style='font-size:1em'>Linux</a>
+        <a href='/tags/linux/' style='font-size:1.2em'>Linux</a>
       </li><li>
         <a href='/tags/listening/' style='font-size:1em'>listening</a>
       </li><li>
@@ -127,7 +129,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/macbook-pro/' style='font-size:1em'>Macbook-Pro</a>
       </li><li>
-        <a href='/tags/python/' style='font-size:1em'>python</a>
+        <a href='/tags/python/' style='font-size:1.2em'>python</a>
       </li><li>
         <a href='/tags/reading/' style='font-size:1em'>reading</a>
       </li><li>
@@ -287,29 +289,21 @@ One min read
 
   <div class='container entry-content'>
   <p>screen 会话命令可以保持本地和服务器断开后，程序继续在服务器上运行</p>
-
 <p><strong>创建</strong>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">screen</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">S</span> <span style="color:#a6e22e">session_name</span></code></pre></div></p>
-
 <p><strong>切出去</strong>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">Ctrl</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">D</span></code></pre></div></p>
-
 <p><strong>列出所有</strong>的session
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">screen</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">ls</span> (<span style="color:#a6e22e">或screen</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">list</span>)</code></pre></div></p>
-
 <p><strong>恢复</strong>session（返回session）
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">screen</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">r</span> <span style="color:#a6e22e">session_name</span> </code></pre></div></p>
-
 <p><strong>销毁</strong>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">Ctrl</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">K</span></code></pre></div></p>
-
-<hr />
-
+<hr>
 <p>有可能出现的错误：
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">There</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">screen</span> <span style="color:#a6e22e">on</span>:
     <span style="color:#ae81ff">27863.</span><span style="color:#a6e22e">session_name</span>     (<span style="color:#a6e22e">Attached</span>)
 <span style="color:#a6e22e">There</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">no</span> <span style="color:#a6e22e">screen</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">be</span> <span style="color:#a6e22e">resumed</span>.</code></pre></div></p>
-
 <p>解决办法：先d再r
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">screen</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#a6e22e">session_name</span>
 <span style="color:#a6e22e">screen</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">r</span> <span style="color:#a6e22e">session_name</span></code></pre></div></p>
@@ -339,7 +333,17 @@ One min read
 </article>
 
 <nav class='entry-nav'>
-  <div class='container'></div>
+  <div class='container'><div class='next-entry sep-before'>
+      <a href='/computer/linux/crontab/'>
+        <span class='screen-reader-text'>Next post: </span>Crontab<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
 </nav>
 
 
@@ -404,7 +408,7 @@ One min read
           </span>
           
           <div class='copyright'>
-  <p>&ensp; &copy; 2017-2020 Amuro Peng </p>
+  <p> &copy; 2017-2020 Amuro Peng </p>
 </div>
 
         </div>

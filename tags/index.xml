@@ -1,14 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Amuro Peng</title>
     <link>http://www.amuro.top/tags/</link>
     <description>Recent content in Tags on Amuro Peng</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 28 Jan 2020 01:32:47 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2020 16:50:21 -0400</lastBuildDate>
     
 	<atom:link href="http://www.amuro.top/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>crontab</title>
+      <link>http://www.amuro.top/tags/crontab/</link>
+      <pubDate>Sun, 12 Apr 2020 16:50:21 -0400</pubDate>
+      
+      <guid>http://www.amuro.top/tags/crontab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://www.amuro.top/tags/linux/</link>
+      <pubDate>Sun, 12 Apr 2020 16:50:21 -0400</pubDate>
+      
+      <guid>http://www.amuro.top/tags/linux/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Graphics</title>
@@ -110,6 +128,15 @@
     </item>
     
     <item>
+      <title>installation</title>
+      <link>http://www.amuro.top/tags/installation/</link>
+      <pubDate>Wed, 16 Oct 2019 20:23:05 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/installation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mac</title>
       <link>http://www.amuro.top/tags/mac/</link>
       <pubDate>Wed, 16 Oct 2019 20:23:05 +0800</pubDate>
@@ -124,24 +151,6 @@
       <pubDate>Wed, 16 Oct 2019 20:23:05 +0800</pubDate>
       
       <guid>http://www.amuro.top/tags/macbook-pro/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>installation</title>
-      <link>http://www.amuro.top/tags/installation/</link>
-      <pubDate>Wed, 16 Oct 2019 20:23:05 +0800</pubDate>
-      
-      <guid>http://www.amuro.top/tags/installation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>http://www.amuro.top/tags/linux/</link>
-      <pubDate>Sat, 28 Sep 2019 22:30:57 +0800</pubDate>
-      
-      <guid>http://www.amuro.top/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -209,20 +218,20 @@
     </item>
     
     <item>
-      <title>Hugo</title>
-      <link>http://www.amuro.top/tags/hugo/</link>
-      <pubDate>Tue, 03 Sep 2019 00:04:34 +0800</pubDate>
-      
-      <guid>http://www.amuro.top/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>blog</title>
       <link>http://www.amuro.top/tags/blog/</link>
       <pubDate>Tue, 03 Sep 2019 00:04:34 +0800</pubDate>
       
       <guid>http://www.amuro.top/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://www.amuro.top/tags/hugo/</link>
+      <pubDate>Tue, 03 Sep 2019 00:04:34 +0800</pubDate>
+      
+      <guid>http://www.amuro.top/tags/hugo/</guid>
       <description></description>
     </item>
     

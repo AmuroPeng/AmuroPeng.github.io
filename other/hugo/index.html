@@ -11,7 +11,7 @@
 <meta property='og:site_name' content='Amuro Peng'>
 <meta property='og:type' content='article'><meta property='og:image' content='http://www.amuro.top/media/Other/Hugo/Hugo_logo.png'><meta property='article:section' content='Other'><meta property='article:tag' content='Hugo'><meta property='article:tag' content='blog'><meta property='article:published_time' content='2019-09-03T00:04:34&#43;08:00'/><meta property='article:modified_time' content='2019-09-03T00:04:34&#43;08:00'/><meta name='twitter:card' content='summary_large_image'><meta property='twitter:image' content='http://www.amuro.top/media/Other/Hugo/Hugo_logo.png'>
 
-<meta name="generator" content="Hugo 0.55.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
   <title>Hugo的搭建与使用 • Amuro Peng</title>
   <link rel='canonical' href='http://www.amuro.top/other/hugo/'>
@@ -103,6 +103,8 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/brew/' style='font-size:1em'>brew</a>
       </li><li>
+        <a href='/tags/crontab/' style='font-size:1em'>crontab</a>
+      </li><li>
         <a href='/tags/environment-variable/' style='font-size:1em'>environment variable</a>
       </li><li>
         <a href='/tags/graphics/' style='font-size:2em'>Graphics</a>
@@ -111,7 +113,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/hugo/' style='font-size:1em'>Hugo</a>
       </li><li>
-        <a href='/tags/ielts/' style='font-size:2em'>ielts</a>
+        <a href='/tags/ielts/' style='font-size:1.8em'>ielts</a>
       </li><li>
         <a href='/tags/installation/' style='font-size:1em'>installation</a>
       </li><li>
@@ -119,7 +121,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/java/' style='font-size:1.4em'>Java</a>
       </li><li>
-        <a href='/tags/linux/' style='font-size:1em'>Linux</a>
+        <a href='/tags/linux/' style='font-size:1.2em'>Linux</a>
       </li><li>
         <a href='/tags/listening/' style='font-size:1em'>listening</a>
       </li><li>
@@ -127,7 +129,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/macbook-pro/' style='font-size:1em'>Macbook-Pro</a>
       </li><li>
-        <a href='/tags/python/' style='font-size:1em'>python</a>
+        <a href='/tags/python/' style='font-size:1.2em'>python</a>
       </li><li>
         <a href='/tags/reading/' style='font-size:1em'>reading</a>
       </li><li>
@@ -290,90 +292,55 @@ if (!doNotTrack) {
   
 
   <div class='container entry-content'>
-  
-
-<p><a href="https://gohugo.io/" target="_blank">Hugo</a>是一个用Go语言编写的静态网站生成器，是一个非常适合搭建静态博客的工具。相似的生成器还有<a href="https://hexo.io/" target="_blank">Hexo</a>，Github自家生成器<a href="https://jekyllcn.com/" target="_blank">Jekyll</a>等。相比于其他生成器，我最终选择Hugo是由于它搭建方便简单，并且页面加载速度更快更稳定👍👍👍。</p>
-
-<p>选择使用<a href="https://pages.github.com/" target="_blank">Github Pages</a>保存博客文件是因为前几天自己租的服务器到期，平时使用时经常因为跑代码需要重启服务器或者调整配置，导致博客经常无法访问。再加上自己几乎很少有使用动态数据的情况，于是最后决定将博客这部分与服务器分开，在免费的Github Pages上搭建我的小博客😊。</p>
-
+  <p><a href="https://gohugo.io/">Hugo</a>是一个用Go语言编写的静态网站生成器，是一个非常适合搭建静态博客的工具。相似的生成器还有<a href="https://hexo.io/">Hexo</a>，Github自家生成器<a href="https://jekyllcn.com/">Jekyll</a>等。相比于其他生成器，我最终选择Hugo是由于它搭建方便简单，并且页面加载速度更快更稳定👍👍👍。</p>
+<p>选择使用<a href="https://pages.github.com/">Github Pages</a>保存博客文件是因为前几天自己租的服务器到期，平时使用时经常因为跑代码需要重启服务器或者调整配置，导致博客经常无法访问。再加上自己几乎很少有使用动态数据的情况，于是最后决定将博客这部分与服务器分开，在免费的Github Pages上搭建我的小博客😊。</p>
 <h1 id="搭建">搭建</h1>
-
 <p>在为搭建做准备时我参考了
-<a href="https://gdzhu8023.github.io/post/buildblog/" target="_blank">几</a>
-<a href="https://blog.olowolo.com/post/hugo-quick-start/" target="_blank">篇</a>
-<a href="https://blog.coderzh.com/2015/08/29/hugo/" target="_blank">文</a>
-<a href="https://www.jianshu.com/p/58c644011f7d" target="_blank">章</a>
+<a href="https://gdzhu8023.github.io/post/buildblog/">几</a>
+<a href="https://blog.olowolo.com/post/hugo-quick-start/">篇</a>
+<a href="https://blog.coderzh.com/2015/08/29/hugo/">文</a>
+<a href="https://www.jianshu.com/p/58c644011f7d">章</a>
 ，按照思路软安装了hugo.exe，添加环境变量后即可马上使用。</p>
-
 <h2 id="使用主题">使用主题</h2>
-
-<p>Hugo有很多官方或第三方的<a href="https://themes.gohugo.io/" target="_blank">主题</a>可以一键下载安装，并且所有主题都可以随时更换完全兼容（当然如果重写的话需要在自己的layout中更改，优先度高可以覆盖）。我选择的是<a href="https://themes.gohugo.io/minimo/" target="_blank">Minimo</a>主题，简约的风格我比较喜欢，并且搜索、词云等功能也被开发的比较完善，<a href="https://minimo.netlify.com/" target="_blank">官方文档</a>写的也很清晰容易上手。</p>
-
+<p>Hugo有很多官方或第三方的<a href="https://themes.gohugo.io/">主题</a>可以一键下载安装，并且所有主题都可以随时更换完全兼容（当然如果重写的话需要在自己的layout中更改，优先度高可以覆盖）。我选择的是<a href="https://themes.gohugo.io/minimo/">Minimo</a>主题，简约的风格我比较喜欢，并且搜索、词云等功能也被开发的比较完善，<a href="https://minimo.netlify.com/">官方文档</a>写的也很清晰容易上手。</p>
 <h2 id="插件">插件</h2>
-
 <h3 id="谷歌分析">谷歌分析</h3>
-
-<p><a href="https://marketingplatform.google.com/about/analytics/" target="_blank">谷歌分析</a>是由Google所提供的个人免费的网站流量统计服务，在博客运行期间可以通过网页或者移动端使用谷歌分析Google Analytics
+<p><a href="https://marketingplatform.google.com/about/analytics/">谷歌分析</a>是由Google所提供的个人免费的网站流量统计服务，在博客运行期间可以通过网页或者移动端使用谷歌分析Google Analytics
 来查看实时或一段时间内的流量等，并有很多看着很高大上的数据分析功能。</p>
-
 <p>使用时只需要申请建立一个个人免费项目，获得独一无二的追踪编号UA-XXXXXX-X，并将它添加在config.toml中。</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">googleAnalytics</span> = <span style="color:#e6db74">&#34;UA-XXXXXX-X&#34;</span></code></pre></div>
-
 <p>然后在重写的\layouts\partials\header.html下添加代码</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">&lt;!<span style="color:#f92672">--</span> <span style="color:#a6e22e">添加谷歌分析插件Google</span> <span style="color:#a6e22e">Analytics</span> <span style="color:#f92672">--</span>&gt;
 {{ <span style="color:#a6e22e">template</span> <span style="color:#e6db74">&#34;_internal/google_analytics.html&#34;</span> . }}</code></pre></div>
-
 <p>即可放心食用。</p>
-
-<p>完整详细清晰的步骤在<a href="http://cloudywithachanceofdevops.com/posts/2018/05/17/setting-up-google-analytics-on-hugo/" target="_blank">这里</a>，这个大佬把所有的情况全部列举了。</p>
-
+<p>完整详细清晰的步骤在<a href="http://cloudywithachanceofdevops.com/posts/2018/05/17/setting-up-google-analytics-on-hugo/">这里</a>，这个大佬把所有的情况全部列举了。</p>
 <h3 id="不蒜子">不蒜子</h3>
-
-<p><a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank">不蒜子</a>是一个静态页面计数服务，可以将页面的访问次数显示在页面之上。配置很简单，但是如果想更美观的话需要重写自己的主题文件，包括图标、框架等。前端小白表示需要善用搜索功能，对着主题提供的example_sites和官方文档进行重写。</p>
-
+<p><a href="http://ibruce.info/2015/04/04/busuanzi/">不蒜子</a>是一个静态页面计数服务，可以将页面的访问次数显示在页面之上。配置很简单，但是如果想更美观的话需要重写自己的主题文件，包括图标、框架等。前端小白表示需要善用搜索功能，对着主题提供的example_sites和官方文档进行重写。</p>
 <p>总的来说分为<strong>两步</strong>，<strong>第一步</strong>需要在一个所有网页都会加载的html部分，加入不蒜子插件的源网址，我是在header.html中加载的（虽然是在header里添加，但是不会显示出来）。</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">&lt;!<span style="color:#f92672">--</span> <span style="color:#a6e22e">插件</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">不蒜子</span><span style="color:#f92672">-</span><span style="color:#a6e22e">展示统计信息</span> <span style="color:#f92672">--</span>&gt;
 &lt;<span style="color:#a6e22e">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&#34;</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">script</span>&gt;</code></pre></div>
-
 <p><strong>第二步</strong>即是在需要显示的位置单独添加需要的不同部件。</p>
-
 <p>可以通过不同的id选择三种计数：</p>
-
 <ul>
 <li>显示站点总访问量Page View(site_pv)</li>
 <li>显示站点总访客数User View(site_uv)</li>
 <li>显示单页面访问量Page View(page_pv)</li>
 </ul>
-
 <h4 id="站点数据统计">站点数据统计</h4>
-
 <p>站点总访问量和总访客数的显示，我放在了footer.html中</p>
-
-<figure>
-    <img src="/media/Other/Hugo/screenshot_busuanzi_site.png"
-         alt="站点数据统计示意图"/> 
-</figure>
-
+<!-- raw HTML omitted -->
 <p>踩坑：原则上并不需要初始化计数（清零），如果出现下面这个😵情况:</p>
-
 <blockquote>
 <p>Pv:13319922次   Uv:805087次 本文总阅读量4815665次</p>
 </blockquote>
-
-<p><a href="https://blog.skk.moe/post/busuanzi-offset/" target="_blank">可能</a>是由于在使用localhost调试，真正部署到站点上就没事啦😊</p>
-
+<p><a href="https://blog.skk.moe/post/busuanzi-offset/">可能</a>是由于在使用localhost调试，真正部署到站点上就没事啦😊</p>
 <h4 id="页面数据统计">页面数据统计</h4>
-
 <p>出于美观的考虑我不得不放弃之前footer那样贴补丁的显示方法，而选择在本身的主题设计上添加数据统计一向，来显示单篇页面访问量。实现起来很简单，原始搜索定位同div的其他item，将几层嵌套的模板进行添加和替换即可。
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">/</span><span style="color:#a6e22e">themes</span><span style="color:#f92672">/</span><span style="color:#a6e22e">minimo</span><span style="color:#f92672">/</span><span style="color:#a6e22e">layouts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">partials</span><span style="color:#f92672">/</span><span style="color:#a6e22e">entry</span><span style="color:#f92672">/</span><span style="color:#a6e22e">meta</span>.<span style="color:#a6e22e">html</span>
   {{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;entry/meta/posted-on&#34;</span> . }}
   {{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;entry/meta/author&#34;</span> . }}
   {{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;entry/meta/reading-time&#34;</span> . }}
   <span style="color:#960050;background-color:#1e0010">👉</span>{{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;entry/meta/PageView&#34;</span> . }}<span style="color:#960050;background-color:#1e0010">👈</span></code></pre></div></p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">/</span><span style="color:#a6e22e">layouts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">partials</span><span style="color:#f92672">/</span><span style="color:#a6e22e">entry</span><span style="color:#f92672">/</span><span style="color:#a6e22e">meta</span><span style="color:#f92672">/</span><span style="color:#a6e22e">PageView</span>.<span style="color:#a6e22e">html</span>
   {{ <span style="color:#66d9ef">if</span> .<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">settings</span>.<span style="color:#a6e22e">showPageView</span> }}
     &lt;<span style="color:#a6e22e">span</span> <span style="color:#a6e22e">class</span>=<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">PageView</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;
@@ -383,82 +350,51 @@ if (!doNotTrack) {
       &lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">span</span>&gt;
     &lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">span</span>&gt;
 {{ <span style="color:#a6e22e">end</span> }}</code></pre></div>
-
-<p>实现后的样子像这样：
-<figure>
-    <img src="/media/Other/Hugo/screenshot_busuanzi_page.png"
-         alt="页面数据统计示意图"/>
-</figure></p>
-
-<p>当然同风格的icon资源需要<a href="https://feathericons.com/" target="_blank">在网上找一些</a>，找到后将size和color适当调整，把svg代码复制到&rdquo;layouts\partials\svg\icons.html&rdquo;中，模仿着之前的逻辑加个判断即可。</p>
-
+<p>实现后的样子像这样：</p>
+<!-- raw HTML omitted -->
+<p>当然同风格的icon资源需要<a href="https://feathericons.com/">在网上找一些</a>，找到后将size和color适当调整，把svg代码复制到&quot;layouts\partials\svg\icons.html&quot;中，模仿着之前的逻辑加个判断即可。</p>
 <p>到此为止所有的搭建告一段落，不出意外以上的内容不需要再进行调整啦🆒</p>
-
 <h1 id="hugo的日常使用">Hugo的日常使用</h1>
-
 <ul>
 <li>中文显示</li>
 </ul>
-
 <p>为了博客对中文的显示更加友好，在第一步我在config.toml中加入了一行命令来适配：
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">hasCJKLanguage</span> = <span style="color:#66d9ef">true</span></code></pre></div></p>
-
 <ul>
 <li>设置文章默认模板</li>
 </ul>
-
 <p>在根目录archetypes文件夹中添加default.md文件，设置一些信息等重复的内容，比如作者名字等等。</p>
-
 <h2 id="新建文章">新建文章</h2>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">hugo</span> <span style="color:#a6e22e">new</span> <span style="color:#a6e22e">new_category</span><span style="color:#f92672">/</span><span style="color:#a6e22e">_index</span>.<span style="color:#a6e22e">md</span>
-<span style="color:#960050;background-color:#1e0010">👆</span><span style="color:#a6e22e">可在_index中加入父关系和新分类的介绍文字</span><span style="color:#960050;background-color:#1e0010">。（</span><span style="color:#a6e22e">博客规范</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">可以不添加</span><span style="color:#960050;background-color:#1e0010">）</span>
+<span style="color:#960050;background-color:#1e0010">👆</span><span style="color:#a6e22e">可在_index中加入父关系和新分类的介绍文字</span><span style="color:#960050;background-color:#1e0010">。</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#a6e22e">博客规范</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">可以不添加</span><span style="color:#960050;background-color:#1e0010">）</span>
 <span style="color:#a6e22e">hugo</span> <span style="color:#a6e22e">new</span> <span style="color:#a6e22e">new_category</span><span style="color:#f92672">/</span><span style="color:#a6e22e">new_blog</span>.<span style="color:#a6e22e">md</span>
 <span style="color:#960050;background-color:#1e0010">👆</span><span style="color:#a6e22e">正文</span></code></pre></div>
-
 <p>*_index.md- 的作用：定义与menu的关系，创建新分类（具体分类其实跟文件夹是妹有关系的，父子层只靠parent标签决定，归属分类只靠menu决定）</p>
-
 <h2 id="保存生成上传">保存生成上传</h2>
-
 <p>（待完善）由于每次更新博客需要在源程序中使用hugo命令，之后将自动生成的public文件上传到Git Pages上。而程序和博客两个文件夹需要分开在GitHub备份，所以熟练之后可以写一个shell脚本进行更新（大概妹太大必要）</p>
-
 <h2 id="添加图片">添加图片</h2>
-
 <p>我将图片和视频放在media文件夹中，在Hugo的设定里，只需要把文件放在根目录中static文件夹中就可以在博客内容中引用到。引用方法：
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">{<span style="color:#a6e22e">去掉</span>{<span style="color:#f92672">%</span> <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;/media/example.png&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;example&#34;</span> 
 <span style="color:#a6e22e">title</span>=<span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">link</span>=<span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">attr</span>=<span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">attrlink</span>=<span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">%</span>}}</code></pre></div></p>
-
 <p>关于添加图片网上居然有很多版本，而我在实际过程中发现都不能用，踩了一些坑之后发现有的地方要注意 ：</p>
-
 <ul>
 <li>属性只能用<strong>figure</strong>，不能用img（至少我这边是这样）</li>
 <li>src位置必须是右上到左下的正斜杠“/”，不能使用反斜杠“\”
 必须使用%%作为模板替换文本，不能使用&lt;&gt;</li>
 </ul>
-
 <h2 id="添加高亮代码">添加高亮代码</h2>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">{{<span style="color:#a6e22e">去掉</span>&lt; <span style="color:#a6e22e">highlight</span> <span style="color:#66d9ef">go</span>&gt;}}
 <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">code</span><span style="color:#f92672">...</span>
 {{<span style="color:#a6e22e">去掉</span>&lt; <span style="color:#f92672">/</span> <span style="color:#a6e22e">highlight</span> &gt;}}</code></pre></div>
-
 <h1 id="预览">预览</h1>
-
 <p>在根目录输入指令：
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">hugo</span> <span style="color:#a6e22e">server</span></code></pre></div></p>
-
 <p>模板渲染成功之后会提示：
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">Web</span> <span style="color:#a6e22e">Server</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">available</span> <span style="color:#a6e22e">at</span> <span style="color:#a6e22e">http</span>:<span style="color:#f92672">//</span><span style="color:#a6e22e">localhost</span>:<span style="color:#ae81ff">1313</span><span style="color:#f92672">/</span> (<span style="color:#a6e22e">bind</span> <span style="color:#a6e22e">address</span> <span style="color:#ae81ff">127.0.0.1</span>)</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">Web</span> <span style="color:#a6e22e">Server</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">available</span> <span style="color:#a6e22e">at</span> <span style="color:#a6e22e">http</span>:<span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#a6e22e">localhost</span>:<span style="color:#ae81ff">1313</span><span style="color:#f92672">/</span> (<span style="color:#a6e22e">bind</span> <span style="color:#a6e22e">address</span> <span style="color:#ae81ff">127.0</span><span style="color:#ae81ff">.0</span><span style="color:#ae81ff">.1</span>)</code></pre></div>
 即可在本地localhost调试页面布局和内容，完全不需要markdown预览插件的辅助。</p>
-
-<h2 id="隐藏关卡-social图标的添加">隐藏关卡：Social图标的添加</h2>
-
-<p>大多数国外制作的主题，在社交选项中有大部分主流<del>被墙</del>链接可以选择，但是对于国内的一些社交网站没有跳转的途径。比如我想在社交栏中加入知乎的地址（如下图），需要在<strong>主题、插件、图标</strong>位置加入自定义的信息。
-<figure>
-    <img src="/media/Other/Hugo/screenshot_social_zhihu.png"
-         alt="页面数据统计示意图"/>
-</figure></p>
-
+<h2 id="隐藏关卡social图标的添加">隐藏关卡：Social图标的添加</h2>
+<p>大多数国外制作的主题，在社交选项中有大部分主流<del>被墙</del>链接可以选择，但是对于国内的一些社交网站没有跳转的途径。比如我想在社交栏中加入知乎的地址（如下图），需要在<strong>主题、插件、图标</strong>位置加入自定义的信息。</p>
+<!-- raw HTML omitted -->
 <ul>
 <li><strong>主题</strong>：在themes\minimo\data\theme.toml中加入知乎的主页链接前缀
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">[<span style="color:#a6e22e">social</span>.<span style="color:#a6e22e">base</span>]
@@ -467,19 +403,15 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">[<span style="color:#a6e22e">social_menu</span>]
 <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;&#34;</span>
 <span style="color:#a6e22e">platforms</span> = [<span style="color:#e6db74">&#34;github&#34;</span>,<span style="color:#e6db74">&#34;twitter&#34;</span>,<span style="color:#e6db74">&#34;instagram&#34;</span>,<span style="color:#e6db74">&#34;email&#34;</span>,<span style="color:#e6db74">&#34;codepen&#34;</span>,<span style="color:#e6db74">&#34;gitlab&#34;</span>,<span style="color:#e6db74">&#34;linkedin&#34;</span>,<span style="color:#e6db74">&#34;telegram&#34;</span>,<span style="color:#e6db74">&#34;google_scholar&#34;</span>,<span style="color:#e6db74">&#34;youtube&#34;</span>,<span style="color:#e6db74">&#34;zhihu&#34;</span>,<span style="color:#e6db74">&#34;facebook&#34;</span>]
-<span style="color:#f92672">//</span> <span style="color:#a6e22e">Hugo会根据这里的排列顺序逐个显示</span>(<span style="color:#a6e22e">由于自带Facebook的图标长得太奇怪我把它扔到了最后</span>)</code></pre></div></li>
+<span style="color:#f92672">/</span><span style="color:#f92672">/</span> <span style="color:#a6e22e">Hugo会根据这里的排列顺序逐个显示</span>(<span style="color:#a6e22e">由于自带Facebook的图标长得太奇怪我把它扔到了最后</span>)</code></pre></div></li>
 <li><strong>图标</strong>：在layouts\partials\svg\icons.html中加入知乎logo的矢量图，在一些矢量图网站中搜索相应的svg图片，适当更改size和color后将svg信息按照逻辑加入到html文件中即可（和之前写到的页面数据统计功能中添加图标方法一样）
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">[<span style="color:#a6e22e">social</span>.<span style="color:#a6e22e">base</span>]
 {{ <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">eq</span> <span style="color:#e6db74">&#34;zhihu&#34;</span> . }}
   &lt;<span style="color:#a6e22e">svg</span> <span style="color:#a6e22e">t</span>=<span style="color:#e6db74">&#34;1567847682896&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;icon&#34;</span> <span style="color:#a6e22e">viewBox</span>=<span style="color:#e6db74">&#34;0 0 1077 1024&#34;</span> <span style="color:#a6e22e">version</span>=<span style="color:#e6db74">&#34;1.1&#34;</span> <span style="color:#a6e22e">xmlns</span>=<span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#a6e22e">p</span><span style="color:#f92672">-</span><span style="color:#a6e22e">id</span>=<span style="color:#e6db74">&#34;1129&#34;</span> <span style="color:#a6e22e">width</span>=<span style="color:#e6db74">&#34;23&#34;</span> <span style="color:#a6e22e">height</span>=<span style="color:#e6db74">&#34;23&#34;</span>&gt;&lt;<span style="color:#a6e22e">path</span> <span style="color:#a6e22e">d</span>=<span style="color:#e6db74">&#34;M313.825419 708.611652l22.527739-17.461693c7.060129-5.4972 14.012469-11.102187 21.126492-16.707175l4.85047-3.503117c2.155765 2.047976 4.203741 3.772588 5.982247 5.76667 18.539575 20.587551 37.294726 41.01342 55.56483 61.870442 21.665433 xxxxxxx&#34;</span> <span style="color:#a6e22e">fill</span>=<span style="color:#e6db74">&#34;#455a64&#34;</span> <span style="color:#a6e22e">p</span><span style="color:#f92672">-</span><span style="color:#a6e22e">id</span>=<span style="color:#e6db74">&#34;1130&#34;</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">path</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">svg</span>&gt;  </code></pre></div></li>
 </ul>
-
 <h1 id="后记">后记</h1>
-
 <p>总的来说，Hugo是一个稳定好用的静态博客搭建小帮手，它提供的渲染模板功能齐全，并且插件也有（不算多但是实用的都有），而且有一个活跃的主题社区提供和维护超级多的好看的主题，并且绝大多数Hexo等平台的主题也可以移植到Hugo中。最重要的是，搭建简单！便捷！*# 对于后端程序员来说可太方便聊- 😊 <em>#</em></p>
-
 <p>当然，如果需要按照自己需求更改网页布局时，还是或多或少需要些前端知识（大概</p>
-
 <p>（善用重写 以后换主题时可以省很多事🙋‍）</p>
 
 </div>
@@ -566,7 +498,7 @@ if (!doNotTrack) {
           </span>
           
           <div class='copyright'>
-  <p>&ensp; &copy; 2017-2020 Amuro Peng </p>
+  <p> &copy; 2017-2020 Amuro Peng </p>
 </div>
 
         </div>

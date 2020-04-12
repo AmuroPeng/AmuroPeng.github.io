@@ -11,7 +11,7 @@
 <meta property='og:site_name' content='Amuro Peng'>
 <meta property='og:type' content='article'><meta property='article:section' content='Computer'><meta property='article:tag' content='Graphics'><meta property='article:published_time' content='2020-01-28T01:32:47&#43;08:00'/><meta property='article:modified_time' content='2020-01-28T01:32:47&#43;08:00'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.55.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
   <title>06 Edge and feature detection 特征的检测提取与描述 • Amuro Peng</title>
   <link rel='canonical' href='http://www.amuro.top/computer/graphics/06-edge-and-feature-detection/'>
@@ -103,6 +103,8 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/brew/' style='font-size:1em'>brew</a>
       </li><li>
+        <a href='/tags/crontab/' style='font-size:1em'>crontab</a>
+      </li><li>
         <a href='/tags/environment-variable/' style='font-size:1em'>environment variable</a>
       </li><li>
         <a href='/tags/graphics/' style='font-size:2em'>Graphics</a>
@@ -111,7 +113,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/hugo/' style='font-size:1em'>Hugo</a>
       </li><li>
-        <a href='/tags/ielts/' style='font-size:2em'>ielts</a>
+        <a href='/tags/ielts/' style='font-size:1.8em'>ielts</a>
       </li><li>
         <a href='/tags/installation/' style='font-size:1em'>installation</a>
       </li><li>
@@ -119,7 +121,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/java/' style='font-size:1.4em'>Java</a>
       </li><li>
-        <a href='/tags/linux/' style='font-size:1em'>Linux</a>
+        <a href='/tags/linux/' style='font-size:1.2em'>Linux</a>
       </li><li>
         <a href='/tags/listening/' style='font-size:1em'>listening</a>
       </li><li>
@@ -127,7 +129,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/macbook-pro/' style='font-size:1em'>Macbook-Pro</a>
       </li><li>
-        <a href='/tags/python/' style='font-size:1em'>python</a>
+        <a href='/tags/python/' style='font-size:1.2em'>python</a>
       </li><li>
         <a href='/tags/reading/' style='font-size:1em'>reading</a>
       </li><li>
@@ -286,73 +288,59 @@ if (!doNotTrack) {
   
 
   <div class='container entry-content'>
-  
-
-<p>摘要：
-1. 之前都是图到图的转换，这章是需要从图中提去到信息 Images → symbols
-2. 低通滤波-&gt;只允许低频通过-&gt;剩下高频-&gt;用于边缘提取（边缘是高频信息）
-3. 霍夫变换是用来辨别找出物件中的特征</p>
-
+  <p>摘要：</p>
+<ol>
+<li>之前都是图到图的转换，这章是需要从图中提去到信息 Images → symbols</li>
+<li>低通滤波-&gt;只允许低频通过-&gt;剩下高频-&gt;用于边缘提取（边缘是高频信息）</li>
+<li>霍夫变换是用来辨别找出物件中的特征</li>
+</ol>
 <h1 id="feature-detection">Feature detection</h1>
-
-<p>Point features: corners 点特征<br />
-Edge detection 边缘特征<br />
-Line detection 线特征<br />
+<p>Point features: corners 点特征<br>
+Edge detection 边缘特征<br>
+Line detection 线特征<br>
 Interest Points and Corners</p>
-
 <h2 id="point-features-corners-点特征">Point features: corners 点特征</h2>
-
-<p>Correspondence 对应: matching points, patches, edges, or regions across images<br />
-Example: matching points in multiple views for stereo depth extraction 在多个视图中匹配点以提取立体深度<br />
-<strong>Overview of Keypoint Matching 找关键点的流程</strong>
-1. Find a set of distinctive key-points
-2. Define a region around each  key point<br />
-3. Extract and normalize the region content<br />
-4. Compute a local descriptor from the normalized region
-5. Match local descriptors</p>
-
+<p>Correspondence 对应: matching points, patches, edges, or regions across images<br>
+Example: matching points in multiple views for stereo depth extraction 在多个视图中匹配点以提取立体深度<br>
+<strong>Overview of Keypoint Matching 找关键点的流程</strong></p>
+<ol>
+<li>Find a set of distinctive key-points</li>
+<li>Define a region around each  key point</li>
+<li>Extract and normalize the region content</li>
+<li>Compute a local descriptor from the normalized region</li>
+<li>Match local descriptors</li>
+</ol>
 <p>Detect points that are <strong>repeatable</strong> and <strong>distinctive</strong> 独特&amp;有可重复性</p>
-
 <p>判断 模板在边，角，还是内部外部 来找边缘</p>
-
-<hr />
-
+<hr>
 <p>38-44!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
-
-<hr />
-
-<p>好的特性：<br />
+<hr>
+<p>好的特性：<br>
 Invariance and covariance 旋转平移不变性</p>
-
 <h2 id="edge-detection-边缘特征">Edge detection 边缘特征</h2>
-
 <p>Definition of edge
-Discontinuity or abrupt change in the gray level or color. 在灰度或颜色上的不连续或突变<br />
-They may occur at any orientation 它们可能发生在任何方向<br />
-They may occur at many scales. 它们可能以多种规模出现<br />
-<strong>Types of edges</strong><br />
-For most edge detection algorithms, the assumption is the “step edge” given below (as 1D profile) 屋顶形状<br />
+Discontinuity or abrupt change in the gray level or color. 在灰度或颜色上的不连续或突变<br>
+They may occur at any orientation 它们可能发生在任何方向<br>
+They may occur at many scales. 它们可能以多种规模出现<br>
+<strong>Types of edges</strong><br>
+For most edge detection algorithms, the assumption is the “step edge” given below (as 1D profile) 屋顶形状<br>
 Others: Roof edge Bars or spike edges Ramp edges</p>
-
 <p>Ideally, intensity edges in pictures are related to physical geometric boundaries. 理想情况下，图像中的强度边缘与物理几何边界有关。</p>
-
-<p><strong>Each edge element has properties</strong>
-1. Type of edge
-1. Amount of contrast
-1. Position
-1. Orientation
-1. Fuzziness/width/frequency content </p>
-
+<p><strong>Each edge element has properties</strong></p>
+<ol>
+<li>Type of edge</li>
+<li>Amount of contrast</li>
+<li>Position</li>
+<li>Orientation</li>
+<li>Fuzziness/width/frequency content </li>
+</ol>
 <p><strong>Start with step edges</strong>
 Two major approaches:
-Take first derivative and threshold the magnitude 对大小取一阶导数和阈值<br />
+Take first derivative and threshold the magnitude 对大小取一阶导数和阈值<br>
 Take second derivative and find the zero-crossing 求二阶导，求过零点</p>
-
 <p><strong>Characterizing edges 边缘描述</strong>
 An edge is a place of rapid change in the image intensity function. 边缘是图像强度函数快速变化的地方</p>
-
 <p><em>低通滤波就是边缘提取</em></p>
-
 <p><strong>Designing an edge detector 设计边缘检测算子</strong>
 Criteria for a good edge detector:
 <strong>Good detection</strong>: the optimal detector should find all real edges, ignoring noise or other artifacts
@@ -360,21 +348,18 @@ Criteria for a good edge detector:
 1.the edges detected must be as close as possible to the true edges
 2.the detector must return one point only for each true edge point
 <strong>Cues of edge detection</strong>
-Differences in color, intensity, or texture across the boundary<br />
-Continuity and closure<br />
+Differences in color, intensity, or texture across the boundary<br>
+Continuity and closure<br>
 High-level knowledge</p>
-
 <h3 id="canny-edge-detector">Canny edge detector</h3>
-
-<p>This is probably the most widely used edge detector in computer vision 这可能是计算机视觉中应用最广泛的边缘检测器<br />
-Theoretical model: step-edges corrupted by additive Gaussian noise 理论模型:加性高斯噪声对阶跃边缘的破坏<br />
-Define an objective function to optimize to obtain the best edge detection filter.  定义目标函数进行优化，得到最佳的边缘检测滤波器。<br />
+<p>This is probably the most widely used edge detector in computer vision 这可能是计算机视觉中应用最广泛的边缘检测器<br>
+Theoretical model: step-edges corrupted by additive Gaussian noise 理论模型:加性高斯噪声对阶跃边缘的破坏<br>
+Define an objective function to optimize to obtain the best edge detection filter.  定义目标函数进行优化，得到最佳的边缘检测滤波器。<br>
 Objective function to optimize consists of three components:
 <strong>Good detection</strong>: There should be a low probability of failing to mark real edge points, and low probability of falsely marking nonedge points (Signal-to-noise ratio: SNR)
 <strong>Good localization</strong>. The points marked as edge points by the operator should be as close as possible to the center of the true edge. (Localization)
 <strong>Only one response to a single edge</strong>.</p>
-
-<p>Canny边缘检测算法的处理流程<br />
+<p>Canny边缘检测算法的处理流程<br>
 1.Filter image with x, y derivatives of Gaussian
 2.Find magnitude and orientation of gradient
 3.Non-maximum suppression:
@@ -382,36 +367,31 @@ Thin multi-pixel wide “ridges” down to single pixel width
 4.Thresholding and linking (hysteresis):
 Define two thresholds: low and high
 Use the high threshold to start edge curves and the low threshold to continue them
-Canny边缘检测算法可以分为以下5个步骤：<br />
-1)使用高斯滤波器，以平滑图像，滤除噪声。<br />
-2)计算图像中每个像素点的梯度强度和方向。<br />
-3)应用非极大值（Non-Maximum Suppression）抑制，以消除边缘检测带来的杂散响应。<br />
-4)应用双阈值（Double-Threshold）检测来确定真实的和潜在的边缘。<br />
+Canny边缘检测算法可以分为以下5个步骤：<br>
+1)使用高斯滤波器，以平滑图像，滤除噪声。<br>
+2)计算图像中每个像素点的梯度强度和方向。<br>
+3)应用非极大值（Non-Maximum Suppression）抑制，以消除边缘检测带来的杂散响应。<br>
+4)应用双阈值（Double-Threshold）检测来确定真实的和潜在的边缘。<br>
 5)通过抑制孤立的弱边缘最终完成边缘检测</p>
-
 <p><strong>原理</strong>：Suppress all pixels which are not on a local maximum along the gradient direction. 沿边缘的垂直方向删除所有不在局部最大值上的像素（即：把厚的边缘变薄，取最深的一个像素）。</p>
-
 <h2 id="line-detection-线特征">Line detection 线特征</h2>
-
-<h3 id="total-least-squares-完全最小二乘">Total least squares（完全最小二乘）</h3>
-
+<h3 id="total-least-squares完全最小二乘">Total least squares（完全最小二乘）</h3>
 <p>Instead of vertical distance to the line, use the perpendicular distance.
 If 𝑎^2+𝑏^2=1 then the distance between point (𝑥_𝑖,𝑦_𝑖) and the line is
 𝑑_𝑖=|𝑎𝑥_𝑖+𝑏𝑦_𝑖+𝑐|
 i.e., substitute the coordinates (𝑥_𝑖,𝑦_𝑖) in the equation of the line.</p>
-
 <h3 id="hough-transform-霍夫变换">Hough transform 霍夫变换</h3>
-
 <p>把图像由图像空间（xy坐标固定，ab是系数）转换到参数空间（𝜃𝜌固定）
-It maps contributions of points in image space to the parameter space. 它将图像空间中的点映射到参数空间。<br />
-If there is a lot of support from many points to one set of parameters 如果有很多支持从多个点到一组参数<br />
-then we have detected a related set of points 然后我们检测到一组相关的点<br />
+It maps contributions of points in image space to the parameter space. 它将图像空间中的点映射到参数空间。<br>
+If there is a lot of support from many points to one set of parameters 如果有很多支持从多个点到一组参数<br>
+then we have detected a related set of points 然后我们检测到一组相关的点<br>
 Requires a model (line in this case, but could also be other parameterized shapes) 需要一个模型(在本例中是直线，但也可以是其他参数化的形状)</p>
-
-<p><strong>Steps</strong> 用霍夫变换来检测直线
-1. Create a grid of parameter values
-1. Each point votes for a set of parameters, incrementing those values in grid
-1. Find maximum or local maxima in grid</p>
+<p><strong>Steps</strong> 用霍夫变换来检测直线</p>
+<ol>
+<li>Create a grid of parameter values</li>
+<li>Each point votes for a set of parameters, incrementing those values in grid</li>
+<li>Find maximum or local maxima in grid</li>
+</ol>
 
 </div>
 
@@ -438,7 +418,17 @@ Requires a model (line in this case, but could also be other parameterized shape
 </article>
 
 <nav class='entry-nav'>
-  <div class='container'></div>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/computer/graphics/05-image-processing/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>05 image processing 图像处理</a>
+    </div></div>
 </nav>
 
 
@@ -503,7 +493,7 @@ Requires a model (line in this case, but could also be other parameterized shape
           </span>
           
           <div class='copyright'>
-  <p>&ensp; &copy; 2017-2020 Amuro Peng </p>
+  <p> &copy; 2017-2020 Amuro Peng </p>
 </div>
 
         </div>
