@@ -5,10 +5,19 @@
     <link>http://www.amuro.top/categories/</link>
     <description>Recent content in Categories on Amuro Peng</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 12 Apr 2020 16:50:21 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2020 17:35:15 -0400</lastBuildDate>
     
 	<atom:link href="http://www.amuro.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>sort</title>
+      <link>http://www.amuro.top/categories/sort/</link>
+      <pubDate>Mon, 13 Apr 2020 17:35:15 -0400</pubDate>
+      
+      <guid>http://www.amuro.top/categories/sort/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>command</title>
@@ -47,7 +56,7 @@
     </item>
     
     <item>
-      <title>installation</title>
+      <title>Installation</title>
       <link>http://www.amuro.top/categories/installation/</link>
       <pubDate>Sun, 20 Oct 2019 20:55:56 +0800</pubDate>
       

@@ -5,7 +5,7 @@
     <link>http://www.amuro.top/</link>
     <description>Recent content in Home on Amuro Peng</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 12 Apr 2020 16:50:21 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2020 17:35:15 -0400</lastBuildDate>
     
 	<atom:link href="http://www.amuro.top/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,6 +17,15 @@
       
       <guid>http://www.amuro.top/about/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Heapq</title>
+      <link>http://www.amuro.top/computer/python/heapq/</link>
+      <pubDate>Mon, 13 Apr 2020 17:35:15 -0400</pubDate>
+      
+      <guid>http://www.amuro.top/computer/python/heapq/</guid>
+      <description>python的堆库：heapq heap = []#建立一个常见的堆 heappush(heap,item)#往堆中插入一条新的值 item = heappop(he</description>
     </item>
     
     <item>

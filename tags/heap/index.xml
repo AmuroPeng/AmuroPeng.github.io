@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>heap on Amuro Peng</title>
+    <link>http://www.amuro.top/tags/heap/</link>
+    <description>Recent content in heap on Amuro Peng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 13 Apr 2020 17:35:15 -0400</lastBuildDate>
+    
+	<atom:link href="http://www.amuro.top/tags/heap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Heapq</title>
+      <link>http://www.amuro.top/computer/python/heapq/</link>
+      <pubDate>Mon, 13 Apr 2020 17:35:15 -0400</pubDate>
+      
+      <guid>http://www.amuro.top/computer/python/heapq/</guid>
+      <description>python的堆库：heapq heap = []#建立一个常见的堆 heappush(heap,item)#往堆中插入一条新的值 item = heappop(he</description>
+    </item>
+    
+  </channel>
+</rss>
