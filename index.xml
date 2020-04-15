@@ -5,7 +5,7 @@
     <link>http://www.amuro.top/</link>
     <description>Recent content in Home on Amuro Peng</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 13 Apr 2020 17:35:15 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2020 19:35:15 -0400</lastBuildDate>
     
 	<atom:link href="http://www.amuro.top/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,6 +17,15 @@
       
       <guid>http://www.amuro.top/about/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>deque</title>
+      <link>http://www.amuro.top/computer/python/deque/</link>
+      <pubDate>Tue, 14 Apr 2020 19:35:15 -0400</pubDate>
+      
+      <guid>http://www.amuro.top/computer/python/deque/</guid>
+      <description>python的双端队列库：deque d = collections.deque([]) d.append(&amp;lsquo;a&amp;rsquo;) # 在最右边添加一个元素，此时 d=deque(&amp;lsquo;a&amp;rsquo;) d.appendleft(&amp;lsquo;b&amp;rsquo;) # 在最左边添加一个元素，此时 d=deque([&amp;lsquo;b&amp;rsquo;, &amp;lsquo;a&amp;rsquo;]) d.extend([&amp;lsquo;c&amp;rsquo;,&amp;lsquo;d&amp;rsquo;]) # 在最右边添加所有元素，此时 d=deque([&amp;lsquo;b&amp;rsquo;,</description>
     </item>
     
     <item>
